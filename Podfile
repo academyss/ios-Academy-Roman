@@ -19,13 +19,14 @@ target 'SSAnalytics' do
     pod 'Cuckoo'
   end
 
-  pod 'STT'#, :path => '../../STT'
+  pod 'STT', :path => '../../STT/STT'
   pod 'AlamofireNetworkActivityLogger', '~> 2.3'
   pod 'SDWebImage', '~> 4.0'
   pod 'Swinject'
   pod 'SwinjectStoryboard'
   pod 'LightRoute', :git => 'https://github.com/SpectralDragon/LightRoute.git', :tag => '2.1.20'
   pod 'AppCenter'
+  pod 'SideMenu'
 #  pod 'RxRealm'
 #  pod 'RealmSwift'
   pod 'SINQ'

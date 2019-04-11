@@ -8,6 +8,7 @@
 
 import Foundation
 import STT
+
 protocol CellTableViewCellViewDelegate: SttViewable {
     
 }

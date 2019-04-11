@@ -14,4 +14,5 @@ protocol ApiDataProviderType {
     // MARK: - ACCOUNT
     
      func signIn(data: SignInApiModel) -> Observable<TokenApiModel>
+    
 }

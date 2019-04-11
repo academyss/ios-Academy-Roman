@@ -10,5 +10,7 @@ import Foundation
 import STT
 
 protocol StartPageViewDelegate: SttViewControlable {
+  
+  func changeLogo()
     
 }

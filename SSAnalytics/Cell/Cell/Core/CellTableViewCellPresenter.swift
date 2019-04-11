@@ -13,7 +13,14 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     
     weak var parent: CellTableViewCellDelegate!
     
-    init() {
+    let avatarImage: Dynamic<Image>
+    let name: Dynamic<String>
+    let job: Dynamic<String>
+    
+    init(avatarImage: String?, name: String, job: String) {
+        self.avatarImage = Dynamic(Image(data: nil, url: avatarImage))
+        self.name = Dynamic(name)
+        self.job = Dynamic(job)
         
         super.init(notificationError: nil)
     }

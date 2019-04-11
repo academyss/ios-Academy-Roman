@@ -9,6 +9,7 @@
 // Configuration settings file format documentation can be found at:
 // https://help.apple.com/xcode/#/dev745c5c974
 
-server_url              = https:/$()/someurl.com
-server_api_version      = api/v1/
+server_url              = https:/$()/qa-startupsoft-analytics.azurewebsites.net/
+server_api_version      = api/
 ID_SUFFIX               = DEV
+

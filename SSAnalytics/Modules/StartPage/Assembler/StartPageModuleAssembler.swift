@@ -21,7 +21,8 @@ final class StartPageModuleAssembler: Assembly {
         container.register(StartPagePresenter.self) { (r, vc: StartPageViewController) in
             StartPagePresenter(view: vc, notificationService: r.resolve(SttNotificationErrorServiceType.self)!,
                           router: SttRouter(transitionHandler: vc),
-                          interactor: r.resolve(StartPageInteractorType.self)!)
+                          interactor: r.resolve(StartPageInteractorType.self)!,
+                          validatorFactory: r.resolve(ValidatorFactoryType.self)!)
         }
         container.storyboardInitCompleted(StartPageViewController.self) { r, viewController in
             viewController.presenter = r.resolve(StartPagePresenter.self, argument: viewController)!

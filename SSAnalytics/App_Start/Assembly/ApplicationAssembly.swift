@@ -28,8 +28,9 @@ final class ApplicationAssembly {
     lazy var assembler: Assembler = Assembler([
         SharedAsembly(),
         
-        StartPageModuleAssembler()
-       // There are other ModuleAssembler
+        StartPageModuleAssembler(),
+        EmployeeListModuleAssembler()
+        // There are other ModuleAssembler
         ])
     
     fileprivate init() { }
@@ -86,6 +87,8 @@ final class SharedAsembly: Assembly {
     
     private func registerFactories(container: Container) {
         
+        container.register(ValidatorFactoryType.self, factory: { _ in ValidatorFactory() })
+            .inObjectScope(.container)
         // Factories registration
     }
 }

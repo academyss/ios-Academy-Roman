@@ -10,4 +10,6 @@ import Foundation
 
 struct TokenApiModel: Codable {
     let token: String
+    var userName: String
+    var roles: [String]
 }

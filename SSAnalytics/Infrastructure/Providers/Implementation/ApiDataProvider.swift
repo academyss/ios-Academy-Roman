@@ -22,7 +22,10 @@ final class ApiDataProvider: ApiDataProviderType {
     
    
     func signIn(data: SignInApiModel) -> Observable<TokenApiModel> {
-        return _httpService.post(controller: ApiConroller.auth(nil), object: data, insertToken: true)
-            .getResult()
+//        return _httpService.post(controller: ApiConroller.auth(nil), object: data, insertToken: true)
+//            .getResult()
+        notImplementException()
     }
+    
+    
 }

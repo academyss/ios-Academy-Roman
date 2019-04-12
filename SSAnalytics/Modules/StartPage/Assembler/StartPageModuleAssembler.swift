@@ -16,7 +16,8 @@ final class StartPageModuleAssembler: Assembly {
     func assemble(container: Container) {
         
 		container.register(StartPageInteractorType.self,
-                           factory: { (r) in StartPageInteractor() })
+                           factory: { (r) in StartPageInteractor(accountsRepository: r.resolve(AccountRepositoryType.self)!,
+                                                                 notificationErrorService: r.resolve(SttNotificationErrorServiceType.self)!) })
 
         container.register(StartPagePresenter.self) { (r, vc: StartPageViewController) in
             StartPagePresenter(view: vc, notificationService: r.resolve(SttNotificationErrorServiceType.self)!,

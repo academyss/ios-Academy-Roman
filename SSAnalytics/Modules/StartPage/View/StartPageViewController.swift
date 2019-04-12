@@ -25,12 +25,12 @@ class StartPageViewController: SttKeyboardViewController<StartPagePresenter>, St
         super.viewDidLoad()
         setupInputBoxes()
         setupLoginButton()
-       
-
     }
 
     override func keyboardWillHide(height: CGFloat) {
         super.keyboardWillHide(height: height)
+        self.loginInputBox.endEditing()
+        self.passwordInputBox.endEditing()
         changeLogo()
     }
     
@@ -79,6 +79,7 @@ class StartPageViewController: SttKeyboardViewController<StartPagePresenter>, St
         loginInputBox.underlineActiveColor = UIColor(named: "InputBoxActiveColor")!
         loginInputBox.underlineActiveHeight = CGFloat(1)
         loginInputBox.underlineDisableHeight = CGFloat(1)
+        loginInputBox.textField.keyboardType = .emailAddress
         loginInputBox.label.text = "Login"
         loginInputBox.tintColor = UIColor.black
         loginInputBox.labelFont = UIFont.init(name: "Roboto", size: 36)
@@ -110,7 +111,7 @@ class StartPageViewController: SttKeyboardViewController<StartPagePresenter>, St
     }
     
     func changeLogo() {
-        if self.loginInputBox.textField.isFirstResponder || self.passwordInputBox.textField.isFirstResponder {
+        if self.loginInputBox.isEdited || self.passwordInputBox.isEdited {
             UIView.animate(withDuration: 2, animations: {
                 self.logoImageView.image = #imageLiteral(resourceName: "StartupSoftFullLogo")
             }, completion: nil)

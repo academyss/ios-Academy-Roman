@@ -17,8 +17,8 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     
     var menuBarButton: UIBarButtonItem?
     var searchBarButton: UIBarButtonItem?
-    var searhBar:UISearchBar?
-    var employees:CellTableViewSource!
+    var searchBar: UISearchBar!
+    var employees: CellTableViewSource!
     
     
     override func viewDidLoad() {
@@ -26,20 +26,24 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         configureNavigationBar()
         configureTableView()
         configureSideMenu()
-        
+        searchBar = UISearchBar()
     }
     
     var set: SttBindingSet<EmployeeListViewController>!
+    
     override func bind() {
         super.bind()
         employees = CellTableViewSource(tableView: employeesTableView, collection: presenter.employeesCollection)
-        //set.apply()
+        set = SttBindingSet(parent: self)
+        set.bind(String.self).forProperty({ $0.searchBar.text = $1 }).to(presenter.searchString)
+        
+        set.apply()
     }
     
     private func configureSideMenu() {
     
         SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
-        SideMenuManager.default.menuWidth = view.bounds.width * 0.75
+        SideMenuManager.default.menuWidth = view.bounds.width * 0.8
         
     }
     
@@ -61,10 +65,9 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     @objc func showSearchBar() {
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = nil
-        self.searhBar = UISearchBar()
-        self.searhBar?.showsCancelButton = true
-        navigationItem.titleView = searhBar
-        searhBar?.becomeFirstResponder()
+        self.searchBar.showsCancelButton = true
+        navigationItem.titleView = searchBar
+        searchBar.becomeFirstResponder()
     }
     
     

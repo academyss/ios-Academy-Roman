@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol EmployeeListInteractorType {
-    
+    func getUsersByInput(input: String) -> Observable<[CellTableViewCellPresenter]>
 }

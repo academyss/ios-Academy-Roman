@@ -71,11 +71,17 @@ final class SharedAsembly: Assembly {
     
     private func registerRepositories(container: Container) {
         
+        container.register(AccountRepositoryType.self) { r in
+            AccountRepository(apiDataProvider: r.resolve(ApiDataProviderType.self)!,
+                              keyValueStorageProvider: r.resolve(KeyValueStorageType.self)! )}
+        container.register(UsersRepositoryType.self) { r in
+            UsersRepository(apiDataProvider: r.resolve(ApiDataProviderType.self)!,
+                            keyValueStorageProvider: r.resolve(KeyValueStorageType.self)! )}
+            .inObjectScope(.container)
         // Repositories registration
     }
     
-    private func registerServices(container: Container) {
-        
+    private func registerServices(container: Container) {        
         // Services registration
     }
     
@@ -89,6 +95,7 @@ final class SharedAsembly: Assembly {
         
         container.register(ValidatorFactoryType.self, factory: { _ in ValidatorFactory() })
             .inObjectScope(.container)
+        
         // Factories registration
     }
 }

@@ -8,6 +8,7 @@
 
 import Foundation
 import STT
+import RxSwift
 
 final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
     
@@ -23,7 +24,7 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
     private(set) lazy var changeLogoCommand = SttCommand(delegate: self, handler: { $0.onLogo() })
     
     private(set) lazy var validate = SttComandWithParametr(delegate: self, handler: { $0.onValidate($1) })
-    
+    let disposeBag = DisposeBag()
     
     init(view: SttViewable, notificationService: SttNotificationErrorServiceType, router: SttRouterType,
          interactor: StartPageInteractorType, validatorFactory: ValidatorFactoryType) {
@@ -39,7 +40,14 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
     }
     
     func onLogin() {
-        _router.navigateWithId(to: EmployeeListPresenter.self)
+        if canSignUp {
+            _interactor.signIn(data: SignInApiModel(email: email.rawValue.value!, password: password.rawValue.value!))
+                .subscribe(onNext: { (token) in
+                    print(token)
+                }, onCompleted: {
+                    self._router.navigateWithSegue(to: EmployeeListPresenter.self, parametr: nil)
+                }).disposed(by: disposeBag)
+        }
     }
     
     func onLogo() {

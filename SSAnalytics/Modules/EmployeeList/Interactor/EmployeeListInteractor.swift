@@ -8,7 +8,24 @@
 
 import Foundation
 import RxSwift
+import STT
 
 final class EmployeeListInteractor: EmployeeListInteractorType {
+    
+    
+    private let _usersRepository: UsersRepositoryType
+    private let _notificationErrorService: SttNotificationErrorServiceType
+    
+    init(usersRepository: UsersRepositoryType, notificationErrorService: SttNotificationErrorServiceType) {
+        _usersRepository = usersRepository
+        _notificationErrorService = notificationErrorService
+    }
+    
+    func getUsersByInput(input: String) -> Observable<[CellTableViewCellPresenter]> {
+        return _usersRepository.getUsersByInput(input: input)
+            .useError(service: _notificationErrorService)
+            .map({ $0.convertToViewModel() })
+    }
+    
     
 }

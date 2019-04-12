@@ -17,7 +17,8 @@ final class EmployeeListModuleAssembler: Assembly {
         container.register(EmployeeListRouterType.self) { (r, vc: EmployeeListViewController) in EmployeeListRouter(transitionHandler: vc) }
         
 		container.register(EmployeeListInteractorType.self,
-                           factory: { (r) in EmployeeListInteractor() })
+                           factory: { (r) in EmployeeListInteractor(usersRepository: r.resolve(UsersRepositoryType.self)!,
+                                                                    notificationErrorService: r.resolve(SttNotificationErrorServiceType.self)!) })
 
         container.register(EmployeeListPresenter.self) { (r, vc: EmployeeListViewController) in
             EmployeeListPresenter(view: vc, notificationService: r.resolve(SttNotificationErrorServiceType.self)!,

@@ -10,6 +10,8 @@ import Foundation
 import STT
 
 protocol ValidatorFactoryType {
+    
     func createEmailValidator() -> ValidatorFieldData
     func createPasswordValidator() -> ValidatorFieldData
+    
 }

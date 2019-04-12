@@ -94,10 +94,15 @@
 		52605E1163DEFE419D3FF8C2 /* Pods_SSAnalytics_SSAnalyticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779807B0E3D2D503F3DFFCAF /* Pods_SSAnalytics_SSAnalyticsTests.framework */; };
 		6C6C3190F1D5E8331028A272 /* Pods_SSAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED8297239D7CA178071780B /* Pods_SSAnalytics.framework */; };
 		94EF5FFC225CD78200516BB1 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF5FFB225CD78200516BB1 /* MenuTableViewController.swift */; };
+		94F03CE2225F59BA00C6C1D0 /* UsersApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE1225F59BA00C6C1D0 /* UsersApiModel.swift */; };
+		94F03CE4225F5A0400C6C1D0 /* UsersRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE3225F5A0400C6C1D0 /* UsersRepositoryType.swift */; };
+		94F03CE6225F5A1700C6C1D0 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE5225F5A1700C6C1D0 /* UsersRepository.swift */; };
+		94F03CE8225F6E1200C6C1D0 /* GetUsersByInputMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE7225F6E1200C6C1D0 /* GetUsersByInputMaper.swift */; };
 		94F15394225E430B00691DA7 /* ValidatorFactoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F15393225E430B00691DA7 /* ValidatorFactoryType.swift */; };
 		94F15396225E433000691DA7 /* ValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F15395225E433000691DA7 /* ValidatorFactory.swift */; };
 		94F15398225E43E400691DA7 /* ValidatorFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F15397225E43E400691DA7 /* ValidatorFieldData.swift */; };
 		94F1539B225E4FCF00691DA7 /* ValidationFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1539A225E4FCF00691DA7 /* ValidationFieldType.swift */; };
+		94F25CC422608B8E00A57665 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F25CC322608B8E00A57665 /* Application.storyboard */; };
 		94F4224D225783D500098818 /* EmployeeListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F42245225783D500098818 /* EmployeeListViewDelegate.swift */; };
 		94F4224E225783D500098818 /* EmployeeListModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F42246225783D500098818 /* EmployeeListModuleAssembler.swift */; };
 		94F4224F225783D500098818 /* EmployeeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F42247225783D500098818 /* EmployeeListRouter.swift */; };
@@ -106,7 +111,6 @@
 		94F42252225783D500098818 /* EmployeeListRouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4224A225783D500098818 /* EmployeeListRouterType.swift */; };
 		94F42253225783D500098818 /* EmployeeListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4224B225783D500098818 /* EmployeeListInteractor.swift */; };
 		94F42254225783D500098818 /* EmployeeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4224C225783D500098818 /* EmployeeListPresenter.swift */; };
-		94F57033225B9BC000A48FA6 /* EmployeeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F57032225B9BC000A48FA6 /* EmployeeModel.swift */; };
 		94F5703A225B9FE600A48FA6 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F57039225B9FE600A48FA6 /* CachedImageView.swift */; };
 		94F5703C225BA26200A48FA6 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5703B225BA26200A48FA6 /* Image.swift */; };
 /* End PBXBuildFile section */
@@ -217,10 +221,15 @@
 		779807B0E3D2D503F3DFFCAF /* Pods_SSAnalytics_SSAnalyticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAnalytics_SSAnalyticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		825B874B32B9E634203C9F4A /* Pods-SSAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.release.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.release.xcconfig"; sourceTree = "<group>"; };
 		94EF5FFB225CD78200516BB1 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		94F03CE1225F59BA00C6C1D0 /* UsersApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApiModel.swift; sourceTree = "<group>"; };
+		94F03CE3225F5A0400C6C1D0 /* UsersRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryType.swift; sourceTree = "<group>"; };
+		94F03CE5225F5A1700C6C1D0 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
+		94F03CE7225F6E1200C6C1D0 /* GetUsersByInputMaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersByInputMaper.swift; sourceTree = "<group>"; };
 		94F15393225E430B00691DA7 /* ValidatorFactoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFactoryType.swift; sourceTree = "<group>"; };
 		94F15395225E433000691DA7 /* ValidatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFactory.swift; sourceTree = "<group>"; };
 		94F15397225E43E400691DA7 /* ValidatorFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFieldData.swift; sourceTree = "<group>"; };
 		94F1539A225E4FCF00691DA7 /* ValidationFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationFieldType.swift; sourceTree = "<group>"; };
+		94F25CC322608B8E00A57665 /* Application.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Application.storyboard; sourceTree = "<group>"; };
 		94F42245225783D500098818 /* EmployeeListViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewDelegate.swift; sourceTree = "<group>"; };
 		94F42246225783D500098818 /* EmployeeListModuleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListModuleAssembler.swift; sourceTree = "<group>"; };
 		94F42247225783D500098818 /* EmployeeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListRouter.swift; sourceTree = "<group>"; };
@@ -229,7 +238,6 @@
 		94F4224A225783D500098818 /* EmployeeListRouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListRouterType.swift; sourceTree = "<group>"; };
 		94F4224B225783D500098818 /* EmployeeListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListInteractor.swift; sourceTree = "<group>"; };
 		94F4224C225783D500098818 /* EmployeeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListPresenter.swift; sourceTree = "<group>"; };
-		94F57032225B9BC000A48FA6 /* EmployeeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = EmployeeModel.swift; path = ../EmployeeModel.swift; sourceTree = "<group>"; };
 		94F57039225B9FE600A48FA6 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 		94F5703B225BA26200A48FA6 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
 		B3F512D28292C3F8E4271A5E /* Pods-SSAnalytics.debug uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.debug uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.debug uat.xcconfig"; sourceTree = "<group>"; };
@@ -393,6 +401,7 @@
 			children = (
 				507353FE2255FD1000998237 /* BaseRepository.swift */,
 				507353FF2255FD1000998237 /* AccountRepositoryType.swift */,
+				94F03CE3225F5A0400C6C1D0 /* UsersRepositoryType.swift */,
 			);
 			path = Abstract;
 			sourceTree = "<group>";
@@ -401,6 +410,7 @@
 			isa = PBXGroup;
 			children = (
 				507354012255FD1000998237 /* AccountRepository.swift */,
+				94F03CE5225F5A1700C6C1D0 /* UsersRepository.swift */,
 			);
 			path = Implementation;
 			sourceTree = "<group>";
@@ -426,8 +436,8 @@
 		507354042255FD1000998237 /* Response */ = {
 			isa = PBXGroup;
 			children = (
-				94F57032225B9BC000A48FA6 /* EmployeeModel.swift */,
 				507354052255FD1000998237 /* TokenApiModel.swift */,
+				94F03CE1225F59BA00C6C1D0 /* UsersApiModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -452,6 +462,7 @@
 			isa = PBXGroup;
 			children = (
 				5073540B2255FD1000998237 /* AccountMappers.swift */,
+				94F03CE7225F6E1200C6C1D0 /* GetUsersByInputMaper.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -524,6 +535,7 @@
 			isa = PBXGroup;
 			children = (
 				5073541F2255FD1000998237 /* Start.storyboard */,
+				94F25CC322608B8E00A57665 /* Application.storyboard */,
 			);
 			path = Storyboards;
 			sourceTree = "<group>";
@@ -953,6 +965,7 @@
 				507354BF2255FD1100998237 /* Development.xcconfig in Resources */,
 				507354BE2255FD1100998237 /* UAT.xcconfig in Resources */,
 				507354C02255FD1100998237 /* PROD.xcconfig in Resources */,
+				94F25CC422608B8E00A57665 /* Application.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1076,6 +1089,7 @@
 				94EF5FFC225CD78200516BB1 /* MenuTableViewController.swift in Sources */,
 				507354952255FD1000998237 /* UISearchBars.swift in Sources */,
 				5073549D2255FD1000998237 /* ColorAppearanceDecoratorType.swift in Sources */,
+				94F03CE2225F59BA00C6C1D0 /* UsersApiModel.swift in Sources */,
 				94F15396225E433000691DA7 /* ValidatorFactory.swift in Sources */,
 				507354A72255FD1000998237 /* ButtonAppearanceType.swift in Sources */,
 				507354932255FD1000998237 /* UIViews.swift in Sources */,
@@ -1084,6 +1098,7 @@
 				507354C42255FD1100998237 /* AppDelegateExtensions.swift in Sources */,
 				507354AC2255FD1000998237 /* LightFontAppearanceDecorator.swift in Sources */,
 				507354B82255FD1100998237 /* LightAppearanceFactory.swift in Sources */,
+				94F03CE6225F5A1700C6C1D0 /* UsersRepository.swift in Sources */,
 				507354852255FD1000998237 /* CellTableViewCellDelegate.swift in Sources */,
 				5073548E2255FD1000998237 /* StartPagePresenter.swift in Sources */,
 				507354AD2255FD1000998237 /* LightTextViewAppearance.swift in Sources */,
@@ -1091,6 +1106,7 @@
 				5073547B2255FD1000998237 /* BaseRepository.swift in Sources */,
 				507354C52255FD1100998237 /* AppDelegate.swift in Sources */,
 				507354992255FD1000998237 /* UILabels.swift in Sources */,
+				94F03CE8225F6E1200C6C1D0 /* GetUsersByInputMaper.swift in Sources */,
 				94F4224F225783D500098818 /* EmployeeListRouter.swift in Sources */,
 				507354A62255FD1000998237 /* SliderAppearanceType.swift in Sources */,
 				5073547F2255FD1000998237 /* BaseResult.swift in Sources */,
@@ -1113,6 +1129,7 @@
 				94F1539B225E4FCF00691DA7 /* ValidationFieldType.swift in Sources */,
 				507354A22255FD1000998237 /* LabelAppearanceType.swift in Sources */,
 				507354A92255FD1000998237 /* LightNavigationBarAppearance.swift in Sources */,
+				94F03CE4225F5A0400C6C1D0 /* UsersRepositoryType.swift in Sources */,
 				94F42250225783D500098818 /* EmployeeListViewController.swift in Sources */,
 				507354802255FD1000998237 /* SignInApiModel.swift in Sources */,
 				507354792255FD1000998237 /* KeyValueStorage.swift in Sources */,
@@ -1125,7 +1142,6 @@
 				507354A32255FD1000998237 /* NavigationBarAppearanceType.swift in Sources */,
 				507354A02255FD1000998237 /* ViewAppearanceType.swift in Sources */,
 				507354882255FD1000998237 /* CellTableViewSource.swift in Sources */,
-				94F57033225B9BC000A48FA6 /* EmployeeModel.swift in Sources */,
 				507354B22255FD1100998237 /* LightTableViewAppearance.swift in Sources */,
 				507354C12255FD1100998237 /* Environment.swift in Sources */,
 				507354A42255FD1000998237 /* ComponentsAppearanceType.swift in Sources */,

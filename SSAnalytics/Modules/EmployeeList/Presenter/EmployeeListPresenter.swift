@@ -34,22 +34,18 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate> {
         super.injectView(delegate: view)
     }
     
-    private var firstStart = true
     override func viewAppeared() {
         super.viewAppeared()
-        
-        if firstStart {
-            firstStart = false
-            searchString.bind { [unowned self] _ in
-                self.download.execute()
-            }
+        searchString.bind { [unowned self] _ in
+            self.download.execute()
         }
-        
     }
     
     func onDownload() {
         _interactor.getUsersByInput(input: searchString.value ?? "").useWork(download)
+            .delaySubscription(1, scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
             .subscribe(onNext: { [unowned self] users in
+                self.employeesCollection.removeAll()
                 self.employeesCollection.append(contentsOf: users)
             }).disposed(by: disposeBag)
     }

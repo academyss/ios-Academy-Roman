@@ -11,5 +11,6 @@ import RxSwift
 
 protocol AccountRepositoryType {
     
-    func signIn(data: SignInApiModel) -> Observable<TokenApiModel>
+    func getToken(data: SignInApiModel) -> Observable<TokenApiModel>
+    
 }

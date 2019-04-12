@@ -9,7 +9,7 @@
 import Foundation
 import STT
 
-extension UsersApiModel {
+extension UserApiModel {
     
     func convertToViewModel() -> CellTableViewCellPresenter {
         return CellTableViewCellPresenter(avatarImage: self.imageUrl,
@@ -18,7 +18,7 @@ extension UsersApiModel {
     }
 }
 
-extension Array where Element == UsersApiModel {
+extension Array where Element == UserApiModel {
     
     func convertToViewModel() -> [CellTableViewCellPresenter] {
         return self.map({ $0.convertToViewModel() })

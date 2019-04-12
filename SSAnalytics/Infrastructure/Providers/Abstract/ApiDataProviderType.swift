@@ -14,6 +14,7 @@ protocol ApiDataProviderType {
     // MARK: - ACCOUNT
     
     func signIn(data: SignInApiModel) -> Observable<TokenApiModel>
-    func getUsersByInput(input: String) -> Observable<[UsersApiModel]>
+    func getUsersByInput(input: String) -> Observable<[UserApiModel]>
+    func getUsersById(userId: String) -> Observable<UserApiModel>
     
 }

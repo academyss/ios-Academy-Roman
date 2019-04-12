@@ -12,7 +12,7 @@ import RxSwift
 
 final class UsersRepository: BaseRepository, UsersRepositoryType {
     
-    func getUsersByInput(input: String) -> Observable<[UsersApiModel]> {
+    func getUsersByInput(input: String) -> Observable<[UserApiModel]> {
         return _apiDataProvider.getUsersByInput(input: input)
     }
     

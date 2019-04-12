@@ -10,5 +10,5 @@ import Foundation
 import RxSwift
 
 protocol UsersRepositoryType {
-    func getUsersByInput(input: String) -> Observable<[UsersApiModel]>
+    func getUsersByInput(input: String) -> Observable<[UserApiModel]>
 }

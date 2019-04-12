@@ -9,7 +9,7 @@
 import Foundation
 
 
-struct UsersApiModel: Decodable {
+struct UserApiModel: Decodable {
     
     var imageUrl: String
     var firstName: String
@@ -23,11 +23,23 @@ struct UsersApiModel: Decodable {
     var roles: [String]
     
     enum CodingKeys: String, CodingKey {
-        case imageUrl = "avatarUrl"
+        case imageUrl = "croppedAvatarUrl"
         case firstName
         case lastName
         case roles
     }
-     
+    
+    init(from decoder: Decoder) throws {
+        let values = try decoder.container(keyedBy: CodingKeys.self)
+        imageUrl = try values.decode(String.self, forKey: .imageUrl)
+        if imageUrl == "" {
+            imageUrl = "analytics.startupsoft.org/Content/img/userProfile/user.jpg"
+        } else {
+            imageUrl = "qassanalytics.blob.core.windows.net" + imageUrl
+        }
+        firstName = try values.decode(String.self, forKey: .firstName)
+        lastName = try values.decode(String.self, forKey: .lastName)
+        roles = try values.decode([String].self, forKey: .roles)
+    }
     
 }

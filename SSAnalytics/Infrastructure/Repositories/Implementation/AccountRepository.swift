@@ -11,9 +11,8 @@ import RxSwift
 
 final class AccountRepository: BaseRepository, AccountRepositoryType {
    
-    func signIn(data: SignInApiModel) -> Observable<TokenApiModel> {
+    func getToken(data: SignInApiModel) -> Observable<TokenApiModel> {
         return _apiDataProvider.signIn(data: data)
-            .map({self._keyValueStorageProvider.token.put(item: $0);
-                print($0); return $0 })
+            .map({self._keyValueStorageProvider.token.put(item: $0); return $0 })
     }
 }

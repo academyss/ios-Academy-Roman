@@ -26,13 +26,18 @@ final class ApiDataProvider: ApiDataProviderType {
     func signIn(data: SignInApiModel) -> Observable<TokenApiModel> {
         return _httpService.post(controller: ApiConroller.token,
                                  data: ["grant_type": "password",
-                                          "username": "Ivan12S@gmail.com",
-                                          "password": "Ivan12S@gmail.com"], insertToken: false)
+                                          "username": data.email,
+                                          "password": data.password], insertToken: false)
             .getResult()
     }
     
-    func getUsersByInput(input: String) -> Observable<[UsersApiModel]> {
+    func getUsersByInput(input: String) -> Observable<[UserApiModel]> {
         return _httpService.get(controller: ApiConroller.users("GetUsersByInput"), data: ["input": input], insertToken: true)
+            .getResult()
+    }
+    
+    func getUsersById(userId: String) -> Observable<UserApiModel> {
+        return _httpService.get(controller: ApiConroller.users("GetUsersById"), data: ["UserId": userId], insertToken: true)
             .getResult()
     }
     

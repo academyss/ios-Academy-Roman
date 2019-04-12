@@ -15,18 +15,18 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     
     @IBOutlet weak var employeesTableView: UITableView!
     
-    var menuBarButton: UIBarButtonItem?
-    var searchBarButton: UIBarButtonItem?
     var searchBar: UISearchBar!
+    var menuBarButton: UIBarButtonItem!
+    var searchBarButton: UIBarButtonItem!
     var employees: CellTableViewSource!
-    
+    var searchBarHandler: SttHanlderSearchBar!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        initialSetup()
         configureNavigationBar()
         configureTableView()
         configureSideMenu()
-        searchBar = UISearchBar()
     }
     
     var set: SttBindingSet<EmployeeListViewController>!
@@ -34,10 +34,33 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     override func bind() {
         super.bind()
         employees = CellTableViewSource(tableView: employeesTableView, collection: presenter.employeesCollection)
+        
         set = SttBindingSet(parent: self)
-        set.bind(String.self).forProperty({ $0.searchBar.text = $1 }).to(presenter.searchString)
+        set.bind(String.self).forProperty({ $0.searchBar.text = $1; print($0); print($1) }).to(presenter.searchString)
         
         set.apply()
+    }
+    
+    func initialSetup() {
+        self.title = "Employees"
+        self.navigationItem.hidesBackButton = true
+        self.menuBarButton = UIBarButtonItem(image: UIImage(named: "MenuIcon")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showEmployeeMenu))
+        self.searchBarButton = UIBarButtonItem(image: UIImage(named: "SearchIcon")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showSearchBar))
+
+        self.searchBar = UISearchBar()
+        self.searchBarHandler = SttHanlderSearchBar()
+        searchBar.delegate = searchBarHandler
+        self.searchBarHandler.addTarget(type: .textDidChange, delegate: self) { (v, sb) in
+            v.presenter.searchString.value = sb.text
+        }
+        self.searchBarHandler.addTarget(type: .searchButtonClicked, delegate: self) { (view, sb) in
+            sb.endEditing(true)
+        }
+        self.searchBarHandler.addTarget(type: .cancelClicked, delegate: self) { (view, sb) in
+            sb.text = ""
+            view.presenter.searchString.value = ""
+            self.configureNavigationBar()
+        }
     }
     
     private func configureSideMenu() {
@@ -48,10 +71,9 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     }
     
     private func configureNavigationBar() {
-        self.navigationItem.hidesBackButton = true
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "MenuIcon").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showEmployeeMenu))
-        self.navigationItem.rightBarButtonItem = UIBarButtonItem(image: #imageLiteral(resourceName: "SearchIcon").withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showSearchBar))
-        self.title = "Employees"
+        self.navigationItem.leftBarButtonItem = menuBarButton
+        self.navigationItem.rightBarButtonItem = searchBarButton
+        self.navigationItem.titleView = nil
     }
     
     private func configureTableView() {
@@ -69,6 +91,8 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         navigationItem.titleView = searchBar
         searchBar.becomeFirstResponder()
     }
+    
+   
     
     
 }

@@ -41,7 +41,7 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
     
     func onLogin() {
         if canSignUp {
-            _interactor.signIn(data: SignInApiModel(email: email.rawValue.value!, password: password.rawValue.value!))
+            _interactor.getToken(data: SignInApiModel(email: email.rawValue.value!, password: password.rawValue.value!))
                 .subscribe(onNext: { (token) in
                     print(token)
                 }, onCompleted: {

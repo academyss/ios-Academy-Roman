@@ -12,9 +12,23 @@ import RxSwift
 
 final class UsersRepository: BaseRepository, UsersRepositoryType {
     
-    func getUsersByInput(input: String) -> Observable<[UserApiModel]> {
+    func getUsersByInput(input: String) -> Observable<[EmployeeApiModel]> {
         return _apiDataProvider.getUsersByInput(input: input)
     }
     
+    func getUsersById(userId: String?) -> Observable<UserApiModel> {
+        if let id = userId {
+            return _apiDataProvider.getUsersById(userId: id)
+        }
+        if _keyValueStorageProvider.token.isExists() {
+            return _apiDataProvider.getUsersById(userId: _keyValueStorageProvider.token.get().userId)
+        } else {
+            return Observable.error(MyError.tokenNotExist)
+        }
+    }
     
+}
+
+enum MyError: Error {
+    case tokenNotExist
 }

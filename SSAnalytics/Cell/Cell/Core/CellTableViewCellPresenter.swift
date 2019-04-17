@@ -18,11 +18,8 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     let job: Dynamic<String>
     
     init(avatarImage: String?, name: String, job: String) {
-        if avatarImage?.isEmpty ?? false {
-            self.avatarImage = Dynamic(Image(data: nil, url: avatarImage))
-        } else {
-            self.avatarImage = Dynamic(Image(data: nil, url: "http://pluspng.com/img-png/user-png-icon-male-user-icon-512.png"))
-        }
+        
+        self.avatarImage = Dynamic(Image(data: nil, url: avatarImage))
         self.name = Dynamic(name)
         self.job = Dynamic(job)
         

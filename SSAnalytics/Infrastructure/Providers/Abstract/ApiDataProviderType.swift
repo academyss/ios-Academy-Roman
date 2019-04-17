@@ -11,10 +11,9 @@ import RxSwift
 
 protocol ApiDataProviderType {
     
-    // MARK: - ACCOUNT
-    
-    func signIn(data: SignInApiModel) -> Observable<TokenApiModel>
-    func getUsersByInput(input: String) -> Observable<[UserApiModel]>
+    // MARK: - ACCOUNT    
+    func getToken(data: SignInApiModel) -> Observable<TokenApiModel>
+    func getUsersByInput(input: String) -> Observable<[EmployeeApiModel]>
     func getUsersById(userId: String) -> Observable<UserApiModel>
     
 }

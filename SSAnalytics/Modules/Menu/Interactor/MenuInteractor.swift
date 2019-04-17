@@ -1,8 +1,8 @@
 //
-//  EmployeeListInteractor.swift
+//  MenuInteractor.swift
 //  SSAnalytics
 //
-//  Created by StartupSoft Mac6 on 4/5/19.
+//  Created by StartupSoft Mac6 on 4/15/19.
 //  Copyright © 2019 startupsoft. All rights reserved.
 //
 
@@ -10,8 +10,7 @@ import Foundation
 import RxSwift
 import STT
 
-final class EmployeeListInteractor: EmployeeListInteractorType {
-    
+final class MenuInteractor: MenuInteractorType {
     
     private let _usersRepository: UsersRepositoryType
     private let _notificationErrorService: SttNotificationErrorServiceType
@@ -21,14 +20,10 @@ final class EmployeeListInteractor: EmployeeListInteractorType {
         _notificationErrorService = notificationErrorService
     }
     
-    func getUsersByInput(input: String) -> Observable<[CellTableViewCellPresenter]> {
-        return _usersRepository.getUsersByInput(input: input)
+    func getCurrentUserInfo() -> Observable<UserApiModel> {
+        return _usersRepository.getUsersById(userId: nil)
             .useError(service: _notificationErrorService)
-            .map({ $0.convertToViewModel() })
     }
     
-    func getUsersById(userId: String) -> Observable<UserApiModel> {
-        return _usersRepository.getUsersById(userId: userId)
-    }
     
 }

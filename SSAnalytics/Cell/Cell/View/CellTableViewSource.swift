@@ -34,7 +34,7 @@ final class CellTableViewSource: SttTableViewSource<CellTableViewCellPresenter> 
             print(employee)
             completion(true)
         }
-        action.image = #imageLiteral(resourceName: "CallIcon")
+        action.image = UIImage(named: "CallIcon")
         action.backgroundColor = UIColor(named: "InputBoxActiveColor")
         
         return action

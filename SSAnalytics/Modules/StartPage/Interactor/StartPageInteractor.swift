@@ -20,8 +20,12 @@ final class StartPageInteractor: StartPageInteractorType {
         _notificationErrorService = notificationErrorService
     }
     
-    func getToken(data: SignInApiModel) -> Observable<TokenApiModel> {
-        return _accountsRepository.getToken(data: data)
+    func getToken(email: String, password: String) -> Observable<TokenApiModel> {
+        return _accountsRepository.getToken(data: SignInApiModel(email: email, password: password))
             .useError(service: _notificationErrorService)
+    }
+    
+    func logOut() {
+        _accountsRepository.logOut()
     }
 }

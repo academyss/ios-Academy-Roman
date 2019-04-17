@@ -20,10 +20,12 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
     
     var canSignUp: Bool { return !email.rawValidator.isError && !password.rawValidator.isError }
     
-    private(set) lazy var loginCommand = SttCommand(delegate: self, handler: { $0.onLogin() })
+    private(set) lazy var loginCommand = SttCommand(delegate: self, handler: { $0.onLogin() }, handlerCanExecute: { $0.canSignUp })
     private(set) lazy var changeLogoCommand = SttCommand(delegate: self, handler: { $0.onLogo() })
+    private(set) lazy var logOut = SttCommand(delegate: self, handler: { $0.onLogOut() })
     
     private(set) lazy var validate = SttComandWithParametr(delegate: self, handler: { $0.onValidate($1) })
+    
     let disposeBag = DisposeBag()
     
     init(view: SttViewable, notificationService: SttNotificationErrorServiceType, router: SttRouterType,
@@ -39,15 +41,14 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
         super.injectView(delegate: view)
     }
     
+    override func viewAppeared() {
+        self.logOut.execute()
+    }      
+    
     func onLogin() {
-        if canSignUp {
-            _interactor.getToken(data: SignInApiModel(email: email.rawValue.value!, password: password.rawValue.value!))
-                .subscribe(onNext: { (token) in
-                    print(token)
-                }, onCompleted: {
-                    self._router.navigateWithSegue(to: EmployeeListPresenter.self, parametr: nil)
-                }).disposed(by: disposeBag)
-        }
+        _interactor.getToken(email: email.rawValue.value!, password: password.rawValue.value!)
+            .subscribe(onNext: { _ in self._router.navigateWithSegue(to: EmployeeListPresenter.self, parametr: nil)
+            }).disposed(by: disposeBag)
     }
     
     func onLogo() {
@@ -60,7 +61,13 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
             self.email.raiseError(email.rawValue.value)
         case .password:
             self.password.raiseError(password.rawValue.value)
-        }
-    }
+        }        
+        self.loginCommand.raiseCanExecute(parametr: nil)
         
+    }
+    
+    func onLogOut() {
+        _interactor.logOut()
+    }
+    
 }

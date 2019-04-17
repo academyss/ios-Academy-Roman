@@ -26,6 +26,7 @@ class ValidatorFactory: ValidatorFactoryType {
         let validator = SttValidatorBuilder<SttValidator>(name: "Password")
             .useMin(5)
             .useMax(100)
+            .useUnique(true)
             .build()
         
         return ValidatorFieldData(rawValidator: validator)

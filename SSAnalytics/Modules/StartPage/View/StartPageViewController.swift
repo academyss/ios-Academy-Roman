@@ -113,11 +113,11 @@ class StartPageViewController: SttKeyboardViewController<StartPagePresenter>, St
     func changeLogo() {
         if self.loginInputBox.isEdited || self.passwordInputBox.isEdited {
             UIView.animate(withDuration: 2, animations: {
-                self.logoImageView.image = #imageLiteral(resourceName: "StartupSoftFullLogo")
+                self.logoImageView.image = UIImage(named: "StartupSoftFullLogo")
             }, completion: nil)
         } else {
             UIView.animate(withDuration: 2, animations: {
-                self.logoImageView.image = #imageLiteral(resourceName: "StartupSoftShortLogo")
+                self.logoImageView.image = UIImage(named: "StartupSoftShortLogo")
             })
         }
         

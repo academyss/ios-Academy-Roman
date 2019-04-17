@@ -12,8 +12,6 @@ import STT
 
 final class ApiDataProvider: ApiDataProviderType {
     
-    
-    
     private var _httpService: SttHttpServiceType!
     
     init (httpService: SttHttpServiceType) {
@@ -23,7 +21,7 @@ final class ApiDataProvider: ApiDataProviderType {
     // MARK: - ACCOUNT
     
     
-    func signIn(data: SignInApiModel) -> Observable<TokenApiModel> {
+    func getToken(data: SignInApiModel) -> Observable<TokenApiModel> {
         return _httpService.post(controller: ApiConroller.token,
                                  data: ["grant_type": "password",
                                           "username": data.email,
@@ -31,7 +29,7 @@ final class ApiDataProvider: ApiDataProviderType {
             .getResult()
     }
     
-    func getUsersByInput(input: String) -> Observable<[UserApiModel]> {
+    func getUsersByInput(input: String) -> Observable<[EmployeeApiModel]> {
         return _httpService.get(controller: ApiConroller.users("GetUsersByInput"), data: ["input": input], insertToken: true)
             .getResult()
     }
@@ -40,5 +38,6 @@ final class ApiDataProvider: ApiDataProviderType {
         return _httpService.get(controller: ApiConroller.users("GetUsersById"), data: ["UserId": userId], insertToken: true)
             .getResult()
     }
+    
     
 }

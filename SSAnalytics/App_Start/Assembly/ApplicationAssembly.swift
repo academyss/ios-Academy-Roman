@@ -29,7 +29,8 @@ final class ApplicationAssembly {
         SharedAsembly(),
         
         StartPageModuleAssembler(),
-        EmployeeListModuleAssembler()
+        EmployeeListModuleAssembler(),
+        MenuModuleAssembler()
         // There are other ModuleAssembler
         ])
     

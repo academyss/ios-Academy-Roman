@@ -93,8 +93,7 @@
 		507354C52255FD1100998237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507354712255FD1000998237 /* AppDelegate.swift */; };
 		52605E1163DEFE419D3FF8C2 /* Pods_SSAnalytics_SSAnalyticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779807B0E3D2D503F3DFFCAF /* Pods_SSAnalytics_SSAnalyticsTests.framework */; };
 		6C6C3190F1D5E8331028A272 /* Pods_SSAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED8297239D7CA178071780B /* Pods_SSAnalytics.framework */; };
-		94EF5FFC225CD78200516BB1 /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94EF5FFB225CD78200516BB1 /* MenuTableViewController.swift */; };
-		94F03CE2225F59BA00C6C1D0 /* UsersApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE1225F59BA00C6C1D0 /* UsersApiModel.swift */; };
+		94F03CE2225F59BA00C6C1D0 /* EmployeeApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE1225F59BA00C6C1D0 /* EmployeeApiModel.swift */; };
 		94F03CE4225F5A0400C6C1D0 /* UsersRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE3225F5A0400C6C1D0 /* UsersRepositoryType.swift */; };
 		94F03CE6225F5A1700C6C1D0 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE5225F5A1700C6C1D0 /* UsersRepository.swift */; };
 		94F03CE8225F6E1200C6C1D0 /* GetUsersByInputMaper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE7225F6E1200C6C1D0 /* GetUsersByInputMaper.swift */; };
@@ -102,6 +101,7 @@
 		94F15396225E433000691DA7 /* ValidatorFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F15395225E433000691DA7 /* ValidatorFactory.swift */; };
 		94F15398225E43E400691DA7 /* ValidatorFieldData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F15397225E43E400691DA7 /* ValidatorFieldData.swift */; };
 		94F1539B225E4FCF00691DA7 /* ValidationFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1539A225E4FCF00691DA7 /* ValidationFieldType.swift */; };
+		94F1E86A226621E700D96DBF /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1E869226621E700D96DBF /* MenuTableViewController.swift */; };
 		94F25CC422608B8E00A57665 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F25CC322608B8E00A57665 /* Application.storyboard */; };
 		94F4224D225783D500098818 /* EmployeeListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F42245225783D500098818 /* EmployeeListViewDelegate.swift */; };
 		94F4224E225783D500098818 /* EmployeeListModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F42246225783D500098818 /* EmployeeListModuleAssembler.swift */; };
@@ -113,6 +113,15 @@
 		94F42254225783D500098818 /* EmployeeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4224C225783D500098818 /* EmployeeListPresenter.swift */; };
 		94F5703A225B9FE600A48FA6 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F57039225B9FE600A48FA6 /* CachedImageView.swift */; };
 		94F5703C225BA26200A48FA6 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5703B225BA26200A48FA6 /* Image.swift */; };
+		94FD57522264A4FB006155E2 /* UserApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57512264A4FB006155E2 /* UserApiModel.swift */; };
+		94FD576D2264CCCA006155E2 /* MenuViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57652264CCCA006155E2 /* MenuViewDelegate.swift */; };
+		94FD576E2264CCCA006155E2 /* MenuModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57662264CCCA006155E2 /* MenuModuleAssembler.swift */; };
+		94FD576F2264CCCA006155E2 /* MenuRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57672264CCCA006155E2 /* MenuRouter.swift */; };
+		94FD57702264CCCA006155E2 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57682264CCCA006155E2 /* MenuViewController.swift */; };
+		94FD57712264CCCA006155E2 /* MenuInteractorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57692264CCCA006155E2 /* MenuInteractorType.swift */; };
+		94FD57722264CCCA006155E2 /* MenuRouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD576A2264CCCA006155E2 /* MenuRouterType.swift */; };
+		94FD57732264CCCA006155E2 /* MenuInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD576B2264CCCA006155E2 /* MenuInteractor.swift */; };
+		94FD57742264CCCA006155E2 /* MenuPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD576C2264CCCA006155E2 /* MenuPresenter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -220,8 +229,7 @@
 		507354712255FD1000998237 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		779807B0E3D2D503F3DFFCAF /* Pods_SSAnalytics_SSAnalyticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAnalytics_SSAnalyticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		825B874B32B9E634203C9F4A /* Pods-SSAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.release.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.release.xcconfig"; sourceTree = "<group>"; };
-		94EF5FFB225CD78200516BB1 /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
-		94F03CE1225F59BA00C6C1D0 /* UsersApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersApiModel.swift; sourceTree = "<group>"; };
+		94F03CE1225F59BA00C6C1D0 /* EmployeeApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeApiModel.swift; sourceTree = "<group>"; };
 		94F03CE3225F5A0400C6C1D0 /* UsersRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryType.swift; sourceTree = "<group>"; };
 		94F03CE5225F5A1700C6C1D0 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
 		94F03CE7225F6E1200C6C1D0 /* GetUsersByInputMaper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetUsersByInputMaper.swift; sourceTree = "<group>"; };
@@ -229,6 +237,7 @@
 		94F15395225E433000691DA7 /* ValidatorFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFactory.swift; sourceTree = "<group>"; };
 		94F15397225E43E400691DA7 /* ValidatorFieldData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidatorFieldData.swift; sourceTree = "<group>"; };
 		94F1539A225E4FCF00691DA7 /* ValidationFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationFieldType.swift; sourceTree = "<group>"; };
+		94F1E869226621E700D96DBF /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		94F25CC322608B8E00A57665 /* Application.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Application.storyboard; sourceTree = "<group>"; };
 		94F42245225783D500098818 /* EmployeeListViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewDelegate.swift; sourceTree = "<group>"; };
 		94F42246225783D500098818 /* EmployeeListModuleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListModuleAssembler.swift; sourceTree = "<group>"; };
@@ -240,6 +249,15 @@
 		94F4224C225783D500098818 /* EmployeeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListPresenter.swift; sourceTree = "<group>"; };
 		94F57039225B9FE600A48FA6 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 		94F5703B225BA26200A48FA6 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		94FD57512264A4FB006155E2 /* UserApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiModel.swift; sourceTree = "<group>"; };
+		94FD57652264CCCA006155E2 /* MenuViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewDelegate.swift; sourceTree = "<group>"; };
+		94FD57662264CCCA006155E2 /* MenuModuleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleAssembler.swift; sourceTree = "<group>"; };
+		94FD57672264CCCA006155E2 /* MenuRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouter.swift; sourceTree = "<group>"; };
+		94FD57682264CCCA006155E2 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		94FD57692264CCCA006155E2 /* MenuInteractorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractorType.swift; sourceTree = "<group>"; };
+		94FD576A2264CCCA006155E2 /* MenuRouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouterType.swift; sourceTree = "<group>"; };
+		94FD576B2264CCCA006155E2 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
+		94FD576C2264CCCA006155E2 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
 		B3F512D28292C3F8E4271A5E /* Pods-SSAnalytics.debug uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.debug uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.debug uat.xcconfig"; sourceTree = "<group>"; };
 		D9E9059AD76E7248C78862F3 /* Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig"; sourceTree = "<group>"; };
 		DED8297239D7CA178071780B /* Pods_SSAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -437,7 +455,8 @@
 			isa = PBXGroup;
 			children = (
 				507354052255FD1000998237 /* TokenApiModel.swift */,
-				94F03CE1225F59BA00C6C1D0 /* UsersApiModel.swift */,
+				94F03CE1225F59BA00C6C1D0 /* EmployeeApiModel.swift */,
+				94FD57512264A4FB006155E2 /* UserApiModel.swift */,
 			);
 			path = Response;
 			sourceTree = "<group>";
@@ -524,6 +543,7 @@
 		5073541D2255FD1000998237 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				94FD57642264CCB9006155E2 /* Menu */,
 				5073541E2255FD1000998237 /* Storyboards */,
 				507354212255FD1000998237 /* StartPage */,
 				94F422432257837100098818 /* EmployeeList */,
@@ -803,6 +823,50 @@
 			path = Implementation;
 			sourceTree = "<group>";
 		};
+		94F1E86422661D5100D96DBF /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				94FD57662264CCCA006155E2 /* MenuModuleAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		94F1E86522661D7C00D96DBF /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				94FD57692264CCCA006155E2 /* MenuInteractorType.swift */,
+				94FD576B2264CCCA006155E2 /* MenuInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		94F1E86622661D8700D96DBF /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				94FD576C2264CCCA006155E2 /* MenuPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		94F1E86722661D9800D96DBF /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94FD57652264CCCA006155E2 /* MenuViewDelegate.swift */,
+				94FD57682264CCCA006155E2 /* MenuViewController.swift */,
+				94F1E869226621E700D96DBF /* MenuTableViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		94F1E86822661DD700D96DBF /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				94FD57672264CCCA006155E2 /* MenuRouter.swift */,
+				94FD576A2264CCCA006155E2 /* MenuRouterType.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
 		94F422432257837100098818 /* EmployeeList */ = {
 			isa = PBXGroup;
 			children = (
@@ -836,7 +900,6 @@
 			children = (
 				94F42248225783D500098818 /* EmployeeListViewController.swift */,
 				94F42245225783D500098818 /* EmployeeListViewDelegate.swift */,
-				94EF5FFB225CD78200516BB1 /* MenuTableViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -868,6 +931,18 @@
 				94F1539A225E4FCF00691DA7 /* ValidationFieldType.swift */,
 			);
 			path = Helpers;
+			sourceTree = "<group>";
+		};
+		94FD57642264CCB9006155E2 /* Menu */ = {
+			isa = PBXGroup;
+			children = (
+				94F1E86422661D5100D96DBF /* Assembler */,
+				94F1E86822661DD700D96DBF /* Router */,
+				94F1E86522661D7C00D96DBF /* Interactor */,
+				94F1E86622661D8700D96DBF /* Presenter */,
+				94F1E86722661D9800D96DBF /* View */,
+			);
+			path = Menu;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1073,6 +1148,7 @@
 				507354942255FD1000998237 /* UITextViews.swift in Sources */,
 				507354902255FD1000998237 /* StartPageViewDelegate.swift in Sources */,
 				507354A82255FD1000998237 /* TextFieldAppearanceType.swift in Sources */,
+				94FD576E2264CCCA006155E2 /* MenuModuleAssembler.swift in Sources */,
 				94F42252225783D500098818 /* EmployeeListRouterType.swift in Sources */,
 				507354B62255FD1100998237 /* BaseAppearance.swift in Sources */,
 				507354B12255FD1100998237 /* LightSearchBarAppearance.swift in Sources */,
@@ -1085,16 +1161,17 @@
 				507354AB2255FD1000998237 /* LightColorAppearanceDecorator.swift in Sources */,
 				507354C22255FD1100998237 /* ApplicationAssembly.swift in Sources */,
 				507354962255FD1000998237 /* UISliders.swift in Sources */,
+				94FD57702264CCCA006155E2 /* MenuViewController.swift in Sources */,
 				507354862255FD1000998237 /* CellTableViewCellViewDelegate.swift in Sources */,
-				94EF5FFC225CD78200516BB1 /* MenuTableViewController.swift in Sources */,
 				507354952255FD1000998237 /* UISearchBars.swift in Sources */,
 				5073549D2255FD1000998237 /* ColorAppearanceDecoratorType.swift in Sources */,
-				94F03CE2225F59BA00C6C1D0 /* UsersApiModel.swift in Sources */,
+				94F03CE2225F59BA00C6C1D0 /* EmployeeApiModel.swift in Sources */,
 				94F15396225E433000691DA7 /* ValidatorFactory.swift in Sources */,
 				507354A72255FD1000998237 /* ButtonAppearanceType.swift in Sources */,
 				507354932255FD1000998237 /* UIViews.swift in Sources */,
 				507354752255FD1000998237 /* Storyboard.swift in Sources */,
 				507354972255FD1000998237 /* UINavigationBars.swift in Sources */,
+				94FD57722264CCCA006155E2 /* MenuRouterType.swift in Sources */,
 				507354C42255FD1100998237 /* AppDelegateExtensions.swift in Sources */,
 				507354AC2255FD1000998237 /* LightFontAppearanceDecorator.swift in Sources */,
 				507354B82255FD1100998237 /* LightAppearanceFactory.swift in Sources */,
@@ -1116,6 +1193,7 @@
 				507354B92255FD1100998237 /* AppereanceManager.swift in Sources */,
 				94F15398225E43E400691DA7 /* ValidatorFieldData.swift in Sources */,
 				507354B32255FD1100998237 /* LightComponentsAppearance.swift in Sources */,
+				94FD57732264CCCA006155E2 /* MenuInteractor.swift in Sources */,
 				94F42251225783D500098818 /* EmployeeListInteractorType.swift in Sources */,
 				94F5703A225B9FE600A48FA6 /* CachedImageView.swift in Sources */,
 				507354B02255FD1000998237 /* LightTextFieldAppearance.swift in Sources */,
@@ -1128,12 +1206,15 @@
 				507354842255FD1000998237 /* CellTableViewCellPresenter.swift in Sources */,
 				94F1539B225E4FCF00691DA7 /* ValidationFieldType.swift in Sources */,
 				507354A22255FD1000998237 /* LabelAppearanceType.swift in Sources */,
+				94FD576F2264CCCA006155E2 /* MenuRouter.swift in Sources */,
 				507354A92255FD1000998237 /* LightNavigationBarAppearance.swift in Sources */,
 				94F03CE4225F5A0400C6C1D0 /* UsersRepositoryType.swift in Sources */,
 				94F42250225783D500098818 /* EmployeeListViewController.swift in Sources */,
 				507354802255FD1000998237 /* SignInApiModel.swift in Sources */,
 				507354792255FD1000998237 /* KeyValueStorage.swift in Sources */,
+				94FD57742264CCCA006155E2 /* MenuPresenter.swift in Sources */,
 				5073547A2255FD1000998237 /* ApiDataProvider.swift in Sources */,
+				94FD576D2264CCCA006155E2 /* MenuViewDelegate.swift in Sources */,
 				94F4224D225783D500098818 /* EmployeeListViewDelegate.swift in Sources */,
 				507354A12255FD1000998237 /* AppearanceType.swift in Sources */,
 				5073547C2255FD1000998237 /* AccountRepositoryType.swift in Sources */,
@@ -1151,9 +1232,12 @@
 				5073547E2255FD1000998237 /* TokenApiModel.swift in Sources */,
 				5073548F2255FD1000998237 /* StartPageViewController.swift in Sources */,
 				507354A52255FD1000998237 /* TableViewAppearanceType.swift in Sources */,
+				94FD57712264CCCA006155E2 /* MenuInteractorType.swift in Sources */,
+				94F1E86A226621E700D96DBF /* MenuTableViewController.swift in Sources */,
 				507354922255FD1000998237 /* StartPageInteractorType.swift in Sources */,
 				5073547D2255FD1000998237 /* AccountRepository.swift in Sources */,
 				507354AA2255FD1000998237 /* LightViewAppearance.swift in Sources */,
+				94FD57522264A4FB006155E2 /* UserApiModel.swift in Sources */,
 				94F42254225783D500098818 /* EmployeeListPresenter.swift in Sources */,
 				507354AF2255FD1000998237 /* LightSliderAppearance.swift in Sources */,
 			);

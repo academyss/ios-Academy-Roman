@@ -29,6 +29,8 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         configureSideMenu()
     }
     
+    
+    
     var set: SttBindingSet<EmployeeListViewController>!
     
     override func bind() {
@@ -36,8 +38,7 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         employees = CellTableViewSource(tableView: employeesTableView, collection: presenter.employeesCollection)
         
         set = SttBindingSet(parent: self)
-        set.bind(String.self).forProperty({ $0.searchBar.text = $1; print($0); print($1) }).to(presenter.searchString)
-        
+        set.bind(String.self).forProperty({ $0.searchBar.text = $1 }).to(presenter.searchString)
         set.apply()
     }
     
@@ -64,10 +65,9 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     }
     
     private func configureSideMenu() {
-    
         SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
         SideMenuManager.default.menuWidth = view.bounds.width * 0.8
-        
+        SideMenuManager.default.menuDismissOnPush = true
     }
     
     private func configureNavigationBar() {
@@ -84,6 +84,7 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     
+
     @objc func showSearchBar() {
         self.navigationItem.leftBarButtonItem = nil
         self.navigationItem.rightBarButtonItem = nil
@@ -91,8 +92,4 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         navigationItem.titleView = searchBar
         searchBar.becomeFirstResponder()
     }
-    
-   
-    
-    
 }

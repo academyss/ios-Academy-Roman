@@ -11,6 +11,5 @@ import STT
 
 protocol KeyValueStorageType {
     
-     var token: SttStorage<TokenApiModel> { get }
-    
+    var token: SttStorage<TokenApiModel> { get }
 }

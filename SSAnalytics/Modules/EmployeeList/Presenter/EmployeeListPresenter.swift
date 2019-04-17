@@ -48,6 +48,6 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate> {
                 self.employeesCollection.removeAll()
                 self.employeesCollection.append(contentsOf: users)
             }).disposed(by: disposeBag)
-    }
+    }    
     
 }

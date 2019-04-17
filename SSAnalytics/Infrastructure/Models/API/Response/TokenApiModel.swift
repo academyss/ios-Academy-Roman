@@ -10,8 +10,10 @@ import Foundation
 
 struct TokenApiModel: Codable {
     let token: String
+    let userId: String
     
     enum CodingKeys: String, CodingKey {
         case token = "access_token"
+        case userId = "id"
     }
 }

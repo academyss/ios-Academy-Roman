@@ -12,5 +12,5 @@ import RxSwift
 protocol AccountRepositoryType {
     
     func getToken(data: SignInApiModel) -> Observable<TokenApiModel>
-    
+    func logOut()
 }

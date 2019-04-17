@@ -11,4 +11,5 @@ import RxSwift
 
 protocol EmployeeListInteractorType {
     func getUsersByInput(input: String) -> Observable<[CellTableViewCellPresenter]>
+    func getUsersById(userId: String) -> Observable<UserApiModel>
 }

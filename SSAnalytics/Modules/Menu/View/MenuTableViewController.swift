@@ -14,9 +14,8 @@ class MenuTableViewController: UITableViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
         router = SttRouter(transitionHandler: self)
-        tableView.tableFooterView = UIView()
+        initialSetup()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
@@ -24,7 +23,12 @@ class MenuTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        if let cell = tableView.cellForRow(at: indexPath) {
+            cell.contentView.backgroundColor = UIColor(named: "DarkGray")
+        }
         switch indexPath.row {
+        case 0:
+            dismiss(animated: true, completion: nil)
         case 6:
             router.navigateWithId(storyboard: Storyboard.start, to: StartPagePresenter.self, parametr: nil, typeNavigation: .push, animate: true)
             

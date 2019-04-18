@@ -27,15 +27,22 @@ final class CellTableViewSource: SttTableViewSource<CellTableViewCellPresenter> 
         return UISwipeActionsConfiguration(actions: [call])
     }
     
+    override func tableView(_ tableView: UITableView, leadingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
+        let call = callAction(at: indexPath)
+        return UISwipeActionsConfiguration(actions: [call])
+    }
+    
     func callAction(at indexPath: IndexPath) -> UIContextualAction {
         
         let employee = collection[indexPath.row]
+        print(employee.phone.value)
         let action = UIContextualAction(style: .normal, title: "Call") { (action, view, completion) in
-            print(employee)
-            completion(true)
+            if let url = URL(string: "tel://\(employee.phone)"), UIApplication.shared.canOpenURL(url) {
+                UIApplication.shared.open(url)
+            }
         }
         action.image = UIImage(named: "CallIcon")
-        action.backgroundColor = UIColor(named: "InputBoxActiveColor")
+        action.backgroundColor = UIColor(named: "Blue")
         
         return action
     }

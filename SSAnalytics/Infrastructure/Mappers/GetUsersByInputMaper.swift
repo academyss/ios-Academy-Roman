@@ -14,7 +14,8 @@ extension EmployeeApiModel {
     func convertToViewModel() -> CellTableViewCellPresenter {
         return CellTableViewCellPresenter(avatarImage: self.imageUrl,
                                           name: self.name,
-                                          job: self.roles.joined(separator: ","))
+                                          job: self.roles.joined(separator: ", "),
+                                          phone: self.phoneNumber)
     }
 }
 

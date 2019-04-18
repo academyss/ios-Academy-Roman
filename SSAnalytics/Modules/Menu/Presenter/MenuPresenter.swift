@@ -34,7 +34,6 @@ final class MenuPresenter: SttPresenter<MenuViewDelegate> {
     }
     
     func onStart() {
-        
         _interactor.getCurrentUserInfo().useWork(getUser)
             .subscribe(onNext: { [unowned self] user in
                 self.userName.value = user.data.name

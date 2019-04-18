@@ -18,15 +18,19 @@ class MenuViewController: SttViewController<MenuPresenter>, MenuViewDelegate {
     override func viewDidLoad() {
         super.hideNavigationBar = true
         super.viewDidLoad()
-        
+        initialSetup()
     }
     
     var set: SttBindingSet<MenuViewController>!
     override func bind() {
         set = SttBindingSet(parent: self)
+        
         set.bind(nameLabel).to(presenter.userName)
         set.bind(avatarImageView).to(presenter.avatarImage)
+        
         set.apply()
     }
+    
+    
 	// MARK: - implementation of MenuViewDelegate
 }

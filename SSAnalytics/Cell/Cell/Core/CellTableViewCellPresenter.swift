@@ -16,12 +16,14 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     let avatarImage: Dynamic<Image>
     let name: Dynamic<String>
     let job: Dynamic<String>
+    let phone: Dynamic<String>
     
-    init(avatarImage: String?, name: String, job: String) {
+    init(avatarImage: String?, name: String, job: String, phone: String) {
         
         self.avatarImage = Dynamic(Image(data: nil, url: avatarImage))
         self.name = Dynamic(name)
         self.job = Dynamic(job)
+        self.phone = Dynamic(phone)
         
         super.init(notificationError: nil)
     }

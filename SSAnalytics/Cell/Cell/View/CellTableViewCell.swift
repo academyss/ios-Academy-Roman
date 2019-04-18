@@ -21,6 +21,7 @@ class CellTableViewCell: SttTableViewCell<CellTableViewCellPresenter>, CellTable
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        avatarImageView.placeholderType = .avatar
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
     }
     

@@ -39,7 +39,11 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         
         set = SttBindingSet(parent: self)
         set.bind(String.self).forProperty({ $0.searchBar.text = $1 }).to(presenter.searchString)
+        
         set.apply()
+        
+        presenter.download.useIndicator(view: employeesTableView)
+            .disposed(by: presenter.listenerDisposableBag)
     }
     
     func initialSetup() {
@@ -64,32 +68,5 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         }
     }
     
-    private func configureSideMenu() {
-        SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
-        SideMenuManager.default.menuWidth = view.bounds.width * 0.8
-        SideMenuManager.default.menuDismissOnPush = true
-    }
     
-    private func configureNavigationBar() {
-        self.navigationItem.leftBarButtonItem = menuBarButton
-        self.navigationItem.rightBarButtonItem = searchBarButton
-        self.navigationItem.titleView = nil
-    }
-    
-    private func configureTableView() {
-        employeesTableView.tableFooterView = UIView()
-    }
-    
-    @objc func showEmployeeMenu() {
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
-    }
-    
-
-    @objc func showSearchBar() {
-        self.navigationItem.leftBarButtonItem = nil
-        self.navigationItem.rightBarButtonItem = nil
-        self.searchBar.showsCancelButton = true
-        navigationItem.titleView = searchBar
-        searchBar.becomeFirstResponder()
-    }
 }

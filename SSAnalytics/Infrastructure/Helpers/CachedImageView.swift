@@ -55,7 +55,7 @@ extension SttBindingSet {
 
 
 
-extension UIImageView {
+extension CachedImageView {
     
     func loadImage(url: String?, placeholder: String?) {
         
@@ -63,9 +63,17 @@ extension UIImageView {
             self.sd_setImage(with: URL(string: _url), placeholderImage: UIImage(named: "placeholder"), completed: { (image: UIImage?, error: Error?, cacheType: SDImageCacheType, imageURL: URL?) in
                 
                 self.image = image
+                
                 if error != nil {
                     SttLog.error(message: "\(error!)", key: "SDWEBIMAGELOADER")
-                    self.image = UIImage(named: "placeholder")
+                    if self.placeholderType == .avatar
+                    {
+                        self.image = UIImage(named: "noUserAvatar")
+                    }
+                    else
+                    {
+                        self.image = UIImage(named: "placeholder")
+                    }
                 }
             })
         }

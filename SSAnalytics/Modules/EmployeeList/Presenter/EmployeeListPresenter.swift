@@ -42,8 +42,9 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate> {
     }
     
     func onDownload() {
-        _interactor.getUsersByInput(input: searchString.value ?? "").useWork(download)
-            .delaySubscription(1, scheduler: ConcurrentDispatchQueueScheduler(qos: .background))
+        _interactor.getUsersByInput(input: searchString.value ?? "")
+            .useWork(download)
+            .delaySubscription(1, scheduler: MainScheduler.instance)
             .subscribe(onNext: { [unowned self] users in
                 self.employeesCollection.removeAll()
                 self.employeesCollection.append(contentsOf: users)

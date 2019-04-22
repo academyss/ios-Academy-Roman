@@ -14,8 +14,11 @@ final class MenuPresenter: SttPresenter<MenuViewDelegate> {
     
     private let _router: MenuRouterType
     private let _interactor: MenuInteractorType
-    private(set) lazy var getUser = SttCommand(delegate: self, handler: { $0.onStart() })
+    
     let disposeBag = DisposeBag()
+    
+    private(set) lazy var getUser = SttCommand(delegate: self, handler: { $0.onStart() })
+   
     var userName: Dynamic<String> = Dynamic("")
     var avatarImage: Dynamic<Image> = Dynamic(Image(data: nil, url: nil))
     

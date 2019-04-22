@@ -22,7 +22,7 @@ final class StartPageInteractor: StartPageInteractorType {
     
     func getToken(email: String, password: String) -> Observable<TokenApiModel> {
         return _accountsRepository.getToken(data: SignInApiModel(email: email, password: password))
-            .useError(service: _notificationErrorService)
+            .useError(service: _notificationErrorService, ignoreBadRequest: false, customMessage: "Error")
     }
     
     func logOut() {

@@ -12,15 +12,14 @@ import STT
 
 final class CellTableViewSource: SttTableViewSource<CellTableViewCellPresenter> {
     
-    
-	convenience init(tableView: UITableView, collection: SttObservableCollection<CellTableViewCellPresenter>) {
+    convenience init(tableView: UITableView, collection: SttObservableCollection<CellTableViewCellPresenter>) {
         
         self.init(tableView: tableView,
                   cellIdentifiers: [SttIdentifiers(identifers: CellTableViewCell.reusableIdentifier)],
                   collection: collection)
     }
     
-   
+    
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let call = callAction(at: indexPath)
         
@@ -43,7 +42,6 @@ final class CellTableViewSource: SttTableViewSource<CellTableViewCellPresenter> 
         }
         action.image = UIImage(named: "CallIcon")
         action.backgroundColor = UIColor(named: "Blue")
-        
         return action
     }
 }

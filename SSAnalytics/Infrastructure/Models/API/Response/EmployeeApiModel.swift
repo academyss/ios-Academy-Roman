@@ -16,20 +16,22 @@ struct EmployeeApiModel: Decodable {
     var firstName: String
     var lastName: String
     var phoneNumber: String
+    var email: String
     var skype: String?
-    
+    var roles: [String]
+
     var name: String {
         get {
             return firstName + " " + lastName
         }
     }
-    var roles: [String]
     
     enum CodingKeys: String, CodingKey {
         case id
-        case imageUrl = "croppedAvatarUrl"
+        case imageUrl = "avatarUrl"
         case firstName
         case lastName
+        case email
         case roles
         case phoneNumber
         case skype
@@ -39,14 +41,14 @@ struct EmployeeApiModel: Decodable {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         self.id = try container.decode(String.self, forKey: .id)
-        self.imageUrl = "https://qassanalytics.blob.core.windows.net"
+        self.imageUrl = "https://prodssanalytics.blob.core.windows.net"
         self.imageUrl += try container.decode(String.self, forKey: .imageUrl)
         self.firstName = try container.decode(String.self, forKey: .firstName)
         self.lastName = try container.decode(String.self, forKey: .lastName)
         self.phoneNumber = try container.decode(String.self, forKey: .phoneNumber)
         self.skype = try container.decode(String?.self, forKey: .skype)
         self.roles = try container.decode([String].self, forKey: .roles)
-        
+        self.email = try container.decode(String.self, forKey: .email)
     }
     
     

@@ -9,5 +9,6 @@
 import Foundation
 
 protocol CellTableViewCellDelegate: AnyObject {
-    
+    func navigate(user: EmployeeApiModel)
+    func updateTableView()
 }

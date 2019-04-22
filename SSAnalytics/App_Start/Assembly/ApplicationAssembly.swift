@@ -30,7 +30,9 @@ final class ApplicationAssembly {
         
         StartPageModuleAssembler(),
         EmployeeListModuleAssembler(),
-        MenuModuleAssembler()
+        MenuModuleAssembler(),
+        ProfileInfoModuleAssembler(),
+        WorkLogModuleAssembler()
         // There are other ModuleAssembler
         ])
     

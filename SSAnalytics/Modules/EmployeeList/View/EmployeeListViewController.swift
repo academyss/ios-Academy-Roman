@@ -46,27 +46,9 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
             .disposed(by: presenter.listenerDisposableBag)
     }
     
-    func initialSetup() {
-        self.title = "Employees"
-        self.navigationItem.hidesBackButton = true
-        self.menuBarButton = UIBarButtonItem(image: UIImage(named: "MenuIcon")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showEmployeeMenu))
-        self.searchBarButton = UIBarButtonItem(image: UIImage(named: "SearchIcon")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showSearchBar))
-
-        self.searchBar = UISearchBar()
-        self.searchBarHandler = SttHanlderSearchBar()
-        searchBar.delegate = searchBarHandler
-        self.searchBarHandler.addTarget(type: .textDidChange, delegate: self) { (v, sb) in
-            v.presenter.searchString.value = sb.text
-        }
-        self.searchBarHandler.addTarget(type: .searchButtonClicked, delegate: self) { (view, sb) in
-            sb.endEditing(true)
-        }
-        self.searchBarHandler.addTarget(type: .cancelClicked, delegate: self) { (view, sb) in
-            sb.text = ""
-            view.presenter.searchString.value = ""
-            self.configureNavigationBar()
-        }
+    func updateTableView() {
+        employeesTableView.beginUpdates()
+        employeesTableView.endUpdates()
     }
-    
     
 }

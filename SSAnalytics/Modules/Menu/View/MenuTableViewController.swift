@@ -29,6 +29,8 @@ class MenuTableViewController: UITableViewController {
         switch indexPath.row {
         case 0:
             dismiss(animated: true, completion: nil)
+        case 1:
+            router.navigateWithId(storyboard: Storyboard.application, to: WorkLogPresenter.self, parametr: nil, typeNavigation: .push, animate: true)
         case 6:
             router.navigateWithId(storyboard: Storyboard.start, to: StartPagePresenter.self, parametr: nil, typeNavigation: .push, animate: true)
             

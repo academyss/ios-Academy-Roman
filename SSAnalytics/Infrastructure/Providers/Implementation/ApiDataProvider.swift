@@ -30,12 +30,14 @@ final class ApiDataProvider: ApiDataProviderType {
     }
     
     func getUsersByInput(input: String) -> Observable<[EmployeeApiModel]> {
-        return _httpService.get(controller: ApiConroller.users("GetUsersByInput"), data: ["input": input], insertToken: true)
+        return _httpService.get(controller: ApiConroller.users("GetUsersByInput"),
+                                data: ["input": input], insertToken: true)
             .getResult()
     }
     
     func getUsersById(userId: String) -> Observable<UserApiModel> {
-        return _httpService.get(controller: ApiConroller.users("GetUsersById"), data: ["UserId": userId], insertToken: true)
+        return _httpService.get(controller: ApiConroller.users("GetUsersById"),
+                                data: ["UserId": userId], insertToken: true)
             .getResult()
     }
     

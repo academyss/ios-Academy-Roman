@@ -32,7 +32,9 @@ final class ApplicationAssembly {
         EmployeeListModuleAssembler(),
         MenuModuleAssembler(),
         ProfileInfoModuleAssembler(),
-        WorkLogModuleAssembler()
+        WorkLogModuleAssembler(),
+        WorkLogStatisticModuleAssembler(),
+        WorkLogLogTimeModuleAssembler()
         // There are other ModuleAssembler
         ])
     
@@ -81,6 +83,10 @@ final class SharedAsembly: Assembly {
             UsersRepository(apiDataProvider: r.resolve(ApiDataProviderType.self)!,
                             keyValueStorageProvider: r.resolve(KeyValueStorageType.self)! )}
             .inObjectScope(.container)
+        container.register(WorkLogRepositoryType.self) { r in
+            WorkLogRepository(apiDataProvider: r.resolve(ApiDataProviderType.self)!,
+                                        keyValueStorageProvider: r.resolve(KeyValueStorageType.self)!)
+        }
         // Repositories registration
     }
     

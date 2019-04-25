@@ -14,13 +14,13 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     weak var parent: CellTableViewCellDelegate?
     var user: EmployeeApiModel
     
-    var avatarImage: Dynamic<Image>
-    var name: Dynamic<String>
-    var job: Dynamic<String>
-    var phone: Dynamic<String>
-    var skype: Dynamic<String?>
+    let avatarImage: Dynamic<Image>
+    let name: Dynamic<String>
+    let job: Dynamic<String>
+    let phone: Dynamic<String>
+    let skype: Dynamic<String?>
     
-    var isSelected: Dynamic<Bool>
+    let isSelected: Dynamic<Bool>
     
     private(set) lazy var showProfile = SttCommand(delegate: self, handler: { $0.onProfileShow() })
     private(set) lazy var select = SttCommand(delegate: self, handler: { $0.onSelect() })

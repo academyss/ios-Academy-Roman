@@ -14,6 +14,7 @@ enum ApiConroller: ApiControllerType {
     case token
     case users(String)
     case workLog(String)
+    case project(String)
     
     var route: String {
         get {
@@ -22,7 +23,8 @@ enum ApiConroller: ApiControllerType {
             switch self {
             case .token: result = "token"
             case .users(let method): result = "users/\(method)"
-            case .workLog(let method): result = ""
+            case .workLog(let method): result = "workLog/\(method)"
+            case .project(let method): result = "project/\(method)"
             }
             
             return result

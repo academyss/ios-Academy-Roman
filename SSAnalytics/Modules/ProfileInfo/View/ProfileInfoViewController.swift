@@ -14,8 +14,8 @@ class ProfileInfoViewController: SttViewController<ProfileInfoPresenter>, Profil
     
     @IBOutlet weak var avatarImageView: CachedImageView!
     @IBOutlet weak var nameLabel: UILabel!
-    
     @IBOutlet weak var rolesLabel: UILabel!
+    
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var skypeLabel: UILabel!
@@ -44,6 +44,7 @@ class ProfileInfoViewController: SttViewController<ProfileInfoPresenter>, Profil
     func initialSetup() {
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
         avatarImageView.placeholderType = .avatar
+        rolesLabel.textColor = UIColor(named: "LightGray")
     }
 
 	// MARK: - implementation of ProfileInfoViewDelegate

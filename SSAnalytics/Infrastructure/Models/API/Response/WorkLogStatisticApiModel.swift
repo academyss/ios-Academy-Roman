@@ -10,9 +10,11 @@ import Foundation
 
 
 struct WorkLogStatisticApiModel: Codable {
-    var approved: Double
-    var rejected: Double
-    var pending: Double
-    var loggedTime: Double
+    
+    var approved: Int
+    var rejected: Int
+    var pending: Int
+    var loggedTime: Int
     var totalSalary: Double
+
 }

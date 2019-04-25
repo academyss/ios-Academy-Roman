@@ -9,10 +9,12 @@
 import Foundation
 import STT
 
-final class WorkLogPresenter: SttPresenter<WorkLogViewDelegate> {
-    
+ final class WorkLogPresenter: SttPresenter<WorkLogViewDelegate> {
+       
     private let _router: WorkLogRouterType
     private let _interactor: WorkLogInteractorType
+    
+    let segment = Dynamic<Int>(0)
     
     init(view: SttViewable, notificationService: SttNotificationErrorServiceType, router: WorkLogRouterType,
          interactor: WorkLogInteractorType) {

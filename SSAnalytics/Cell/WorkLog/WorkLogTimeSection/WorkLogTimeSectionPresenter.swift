@@ -14,10 +14,10 @@ class WorkLogTimeViewSectionPresenter: SttPresenter<SttViewable> {
     weak var parent: WorkLogTimeSectionDelegate!
     
     let day = Dynamic<String>("")
-    let spendedTime = Dynamic<String>("")
+    let spendedTime = Dynamic<Int>(0)
 
     
-    init (day: String, spendedTime: String ) {
+    init (day: String, spendedTime: Int ) {
         
         self.day.value = day
         self.spendedTime.value = spendedTime

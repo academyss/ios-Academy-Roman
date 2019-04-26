@@ -40,8 +40,8 @@ class WorkLogTimeSectionView: UIView, SttViewable {
         
         set = SttBindingSet(parent: self)
         
-        set.bind(dayLabel).to(presenter.day)
-        set.bind(spendedTimeLabel).to(presenter.spendedTime)
+        set.bind(dayLabel).to(presenter.day).withConverter(DateConverter.self)
+        set.bind(spendedTimeLabel).to(presenter.spendedTime).withConverter(TimeFromSecondsConverter.self)
         
         set.apply()        
     }
@@ -75,11 +75,11 @@ class WorkLogTimeSectionView: UIView, SttViewable {
         
         contentView.addSubview(dayLabel)
         
-        dayLabel.edgesToSuperview(insets: .top(15) + .left(20) + .bottom(5), relation: ConstraintRelation.equal, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
+        dayLabel.edgesToSuperview(insets: .top(15) + .left(20), relation: ConstraintRelation.equal, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
         dayLabel.edgesToSuperview(insets: .right(20), relation: ConstraintRelation.equalOrGreater, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
         contentView.addSubview(spendedTimeLabel)
         spendedTimeLabel.edges(to: dayLabel, insets: .left(20), relation: ConstraintRelation.equalOrGreater, priority: LayoutPriority(rawValue: 1000), isActive: true)
-        spendedTimeLabel.edgesToSuperview(excluding: LayoutEdge.left, insets: .top(15) + .bottom(5), relation: .equal, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
+        spendedTimeLabel.edgesToSuperview(excluding: LayoutEdge.left, insets: .top(15), relation: .equal, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
 //        spendedTimeLabel.edgesToSuperview(insets: .top(15) + .right(20) + .bottom(5), relation: ConstraintRelation.equal, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
 
         

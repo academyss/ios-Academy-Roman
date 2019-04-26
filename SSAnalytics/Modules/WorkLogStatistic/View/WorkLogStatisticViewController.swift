@@ -41,15 +41,15 @@ class WorkLogStatisticViewController: SttViewController<WorkLogStatisticPresente
     override func bind() {
         set = SttBindingSet(parent: self)
         
-        set.bind(approvedPriceLabel).to(presenter.totalSalary)
-        set.bind(logTimePriceLabel).to(presenter.totalSalary)
-        set.bind(pendingPriceLabel).to(presenter.totalSalary)
-        set.bind(rejectedPriceLabel).to(presenter.rejectedSalary)
+        set.bind(approvedPriceLabel).to(presenter.totalSalary).withConverter(SalaryConverter.self)
+        set.bind(logTimePriceLabel).to(presenter.totalSalary).withConverter(SalaryConverter.self)
+        set.bind(pendingPriceLabel).to(presenter.totalSalary).withConverter(SalaryConverter.self)
+        set.bind(rejectedPriceLabel).to(presenter.rejectedSalary).withConverter(SalaryConverter.self)
         
-        set.bind(approvedHoursLabel).to(presenter.approved)
-        set.bind(logTimeHoursLabel).to(presenter.logTime)
-        set.bind(pendingHoursLabel).to(presenter.pending)
-        set.bind(rejectedHoursLabel).to(presenter.rejected)        
+        set.bind(approvedHoursLabel).to(presenter.approved).withConverter(TimeFromSecondsConverter.self)
+        set.bind(logTimeHoursLabel).to(presenter.logTime).withConverter(TimeFromSecondsConverter.self)
+        set.bind(pendingHoursLabel).to(presenter.pending).withConverter(TimeFromSecondsConverter.self)
+        set.bind(rejectedHoursLabel).to(presenter.rejected).withConverter(TimeFromSecondsConverter.self)
         
         set.apply()        
     }

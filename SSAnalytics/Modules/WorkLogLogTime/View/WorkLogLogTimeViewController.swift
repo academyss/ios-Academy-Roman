@@ -29,8 +29,11 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
     }
     
     func updateTableView() {
-        tableView.beginUpdates()
-        tableView.endUpdates()
+        
+        UIView.transition(with: tableView,
+                          duration: 0.2,
+                          options: .transitionCrossDissolve,
+                          animations: { self.tableView.reloadData() })
     }
     
     // MARK: - implementation of WorkLogLogTimeViewDelegate

@@ -27,7 +27,6 @@ class WorkLogViewController: SttViewController<WorkLogPresenter>, WorkLogViewDel
         let vcStats = storyboard!.instantiateViewController(withIdentifier: "WorkLogStatistic")
         let vcLogTime = storyboard!.instantiateViewController(withIdentifier: "WorkLogLogTime")
         
-        navigationController?.navigationBar.tintColor = .black
         viewPager.setItem(view: vcStats, title: "Summary")
         viewPager.setItem(view: vcLogTime, title: "Log Time")
         viewPager.titleTextColor = .black

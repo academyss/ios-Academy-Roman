@@ -37,23 +37,9 @@ final class WorkLogLogTimePresenter: SttPresenter<WorkLogLogTimeViewDelegate>, W
         download.execute()
     }
     
-//    override func viewAppeared() {
-//        itemsCollection.append((SttObservableCollection([WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk"),WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk"),WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk"),WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk")]), WorkLogTimeViewSectionPresenter(day: "fjdafjdkfja", spendedTime: "fjadkfjakdjfk")))
-//        itemsCollection.append((SttObservableCollection([WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk")]), WorkLogTimeViewSectionPresenter(day: "fjdafjdkfja", spendedTime: "fjadkfjakdjfk")))
-//        itemsCollection.append((SttObservableCollection([WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk")]), WorkLogTimeViewSectionPresenter(day: "fjdafjdkfja", spendedTime: "fjadkfjakdjfk")))
-//        itemsCollection.append((SttObservableCollection([WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk")]), WorkLogTimeViewSectionPresenter(day: "fjdafjdkfja", spendedTime: "fjadkfjakdjfk")))
-//        itemsCollection.append((SttObservableCollection([WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk")]), WorkLogTimeViewSectionPresenter(day: "fjdafjdkfja", spendedTime: "fjadkfjakdjfk")))
-//        itemsCollection.append((SttObservableCollection([WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk")]), WorkLogTimeViewSectionPresenter(day: "fjdafjdkfja", spendedTime: "fjadkfjakdjfk")))
-//        itemsCollection.append((SttObservableCollection([WorkLogTimeTableViewCellPresenter(projectName: "jfjadsjfkdsk", spendedTime: "fjjdajfj", describtion: "fjajdfka", startTime: "fgjadjgfja", status: "gadjskjk")]), WorkLogTimeViewSectionPresenter(day: "fjdafjdkfja", spendedTime: "fjadkfjakdjfk")))
-//        itemsCollection.forEach { (item) in
-//            item.0.forEach({ $0.parent = self })
-//        }
-//
-//    }
-
     func onDownload() {
         _interactor.getWorkLogDiary(data: WorkLogDiaryRequestApiModel(startDate: "2019-02-18", endDate: "2019-04-30", projectsId: [], workLogStatuses: []))
-            .subscribe(onNext: { items in
+            .subscribe(onNext: { [unowned self] items in
                 self.itemsCollection.append(contentsOf: items)
                 self.itemsCollection.forEach({ $0.0.forEach({ $0.parent = self})})
             }).disposed(by: disposeBag)

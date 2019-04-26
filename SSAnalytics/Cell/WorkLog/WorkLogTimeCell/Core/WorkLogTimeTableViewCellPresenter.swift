@@ -14,16 +14,16 @@ final class WorkLogTimeTableViewCellPresenter: SttPresenter<WorkLogTimeTableView
     weak var parent: WorkLogTimeTableViewCellDelegate!
     
     let projectName = Dynamic<String>("")
-    let spendedTime = Dynamic<String>("")
+    let spendedTime = Dynamic<Int>(0)
     let describtion = Dynamic<String>("")
     let startTime = Dynamic<String>("")
     let status = Dynamic<String>("")
     
-    let isSelected = Dynamic<Bool>(true)
+    let isSelected = Dynamic<Bool>(false)
     
     private(set) lazy var select = SttCommand(delegate: self, handler: { $0.onSelect() })
     
-    init(projectName: String, spendedTime: String, describtion: String, startTime: String, status: String) {
+    init(projectName: String, spendedTime: Int, describtion: String, startTime: String, status: String) {
         
         self.projectName.value = projectName
         self.spendedTime.value = spendedTime

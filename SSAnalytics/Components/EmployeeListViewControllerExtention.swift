@@ -14,6 +14,7 @@ extension EmployeeListViewController {
     
     func initialSetup() {
         self.title = "Employees"
+        navigationController?.navigationBar.tintColor = .black
         self.navigationItem.hidesBackButton = true
         self.menuBarButton = UIBarButtonItem(image: UIImage(named: "MenuIcon")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showEmployeeMenu))
         self.searchBarButton = UIBarButtonItem(image: UIImage(named: "SearchIcon")!.withRenderingMode(.alwaysOriginal), style: .plain, target: self, action: #selector(showSearchBar))

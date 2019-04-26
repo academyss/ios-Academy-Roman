@@ -20,11 +20,12 @@ final class WorkLogTimeTableViewSource: SttTableViewSourceWithSection<WorkLogTim
     }
     
     override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return 70
+        return 60
     }
     
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = WorkLogTimeSectionView()
+        view.backgroundColor = UIColor(named: "SectionBackground" )
         view.presenter = collection[section].1
         return view
     }

@@ -12,6 +12,6 @@ import RxSwift
 protocol WorkLogRepositoryType {
     
     func getWorkLogStatistics(date: String) -> Observable<WorkLogStatisticApiModel>
-    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<WorkLogDiaryResponseApiModel>
+    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<[WorkLogDiaryResponseApiModel]>
     
 }

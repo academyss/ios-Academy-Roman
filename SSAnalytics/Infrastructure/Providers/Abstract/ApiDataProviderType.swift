@@ -16,7 +16,7 @@ protocol ApiDataProviderType {
     func getUsersByInput(input: String) -> Observable<[EmployeeApiModel]>
     func getUsersById(userId: String) -> Observable<UserApiModel>
     func getWorkLogStatistics(date: String) -> Observable<WorkLogStatisticApiModel>
-    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<WorkLogDiaryResponseApiModel>
+    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<[WorkLogDiaryResponseApiModel]>
     func getMyProjects(projectName: String) -> Observable<ProjectApiModel>
     
 }

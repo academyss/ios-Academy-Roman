@@ -8,7 +8,8 @@
 
 import Foundation
 import RxSwift
+import STT
 
 protocol WorkLogLogTimeInteractorType {
-    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<WorkLogDiaryResponseApiModel>
+    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<[(SttObservableCollection<WorkLogTimeTableViewCellPresenter>, WorkLogTimeViewSectionPresenter)]>
 }

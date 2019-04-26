@@ -55,8 +55,7 @@ class WorkLogTimeSectionView: UIView, SttViewable {
     
     private func initContentView() {
         
-        contentView = UIView()
-        
+        contentView = UIView(frame: CGRect(x: 0, y: 0, width: bounds.width, height: 30))
         addSubview(contentView)
         
         contentView.edgesToSuperview()
@@ -66,20 +65,24 @@ class WorkLogTimeSectionView: UIView, SttViewable {
     
     private func initLabels() {
         
-        dayLabel = UILabel(frame: CGRect(x: 20, y: 20, width: 150, height: 20))
-        spendedTimeLabel = UILabel(frame: CGRect(x: -20, y: 20, width: 150, height: 20))
+        dayLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
+        spendedTimeLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 0, height: 0))
         
         dayLabel.translatesAutoresizingMaskIntoConstraints = false
         spendedTimeLabel.translatesAutoresizingMaskIntoConstraints = false
+        dayLabel.textColor = UIColor(named: "Blue")
+        spendedTimeLabel.textColor = UIColor(named: "Blue")
         
         contentView.addSubview(dayLabel)
-        contentView.addSubview(spendedTimeLabel)
         
-        dayLabel.height(18)
-        spendedTimeLabel.height(18)
-        dayLabel.edgesToSuperview(insets: .left(20) + .top(20) + .bottom(20))
-        spendedTimeLabel.edgesToSuperview(insets: .right(20) + .top(20) + .bottom(20))
-        dayLabel.edges(to: spendedTimeLabel, excluding: .trailing, insets: .right(10), relation: .equalOrGreater)
+        dayLabel.edgesToSuperview(insets: .top(15) + .left(20) + .bottom(5), relation: ConstraintRelation.equal, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
+        dayLabel.edgesToSuperview(insets: .right(20), relation: ConstraintRelation.equalOrGreater, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
+        contentView.addSubview(spendedTimeLabel)
+        spendedTimeLabel.edges(to: dayLabel, insets: .left(20), relation: ConstraintRelation.equalOrGreater, priority: LayoutPriority(rawValue: 1000), isActive: true)
+        spendedTimeLabel.edgesToSuperview(excluding: LayoutEdge.left, insets: .top(15) + .bottom(5), relation: .equal, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
+//        spendedTimeLabel.edgesToSuperview(insets: .top(15) + .right(20) + .bottom(5), relation: ConstraintRelation.equal, priority: LayoutPriority(rawValue: 1000), isActive: true, usingSafeArea: true)
+
+        
     }
     
     

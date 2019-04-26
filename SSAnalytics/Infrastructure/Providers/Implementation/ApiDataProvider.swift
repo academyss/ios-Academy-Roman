@@ -49,7 +49,7 @@ final class ApiDataProvider: ApiDataProviderType {
         .getResult()
     }
     
-    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<WorkLogDiaryResponseApiModel> {
+    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<[WorkLogDiaryResponseApiModel]> {
         return _httpService.get(controller: ApiConroller.workLog("workLogDiary"),
                                 data: ["startDate" : data.startDate,
                                        "endDate" : data.endDate,

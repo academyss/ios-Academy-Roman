@@ -35,6 +35,7 @@ final class WorkLogTimeTableViewCellPresenter: SttPresenter<WorkLogTimeTableView
     }
     
     func onSelect() {
+        print(isSelected.value)
         isSelected.value.toggle()
         parent.updateTableView()
     }

@@ -98,7 +98,7 @@
 		94C1855E22706DBC00BE009C /* WorkLogTimeTableViewCellViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1855922706DBC00BE009C /* WorkLogTimeTableViewCellViewDelegate.swift */; };
 		94C1855F22706DBC00BE009C /* WorkLogTimeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1855A22706DBC00BE009C /* WorkLogTimeTableViewCell.swift */; };
 		94C1856022706DBC00BE009C /* WorkLogTimeTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1855B22706DBC00BE009C /* WorkLogTimeTableViewSource.swift */; };
-		94C1856422706E1D00BE009C /* WorkLogTimeCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C1856322706E1D00BE009C /* WorkLogTimeCell.xib */; };
+		94C1856422706E1D00BE009C /* WorkLogTimeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94C1856322706E1D00BE009C /* WorkLogTimeTableViewCell.xib */; };
 		94C185662270781A00BE009C /* WorkLogDiaryRequestApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C185652270781A00BE009C /* WorkLogDiaryRequestApiModel.swift */; };
 		94C1856822707B3300BE009C /* WorkLogDiaryResponseApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1856722707B3300BE009C /* WorkLogDiaryResponseApiModel.swift */; };
 		94C1856A22708F5700BE009C /* ProjectApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1856922708F5700BE009C /* ProjectApiModel.swift */; };
@@ -106,6 +106,7 @@
 		94C1856F227092FE00BE009C /* WorkLogTimeSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1856E227092FE00BE009C /* WorkLogTimeSectionView.swift */; };
 		94C185712270932500BE009C /* WorkLogTimeDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C185702270932500BE009C /* WorkLogTimeDelegate.swift */; };
 		94C185752271BC8B00BE009C /* MonthYearPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C185742271BC8B00BE009C /* MonthYearPickerView.swift */; };
+		94C185B12273165900BE009C /* WorkLogTimeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C185B02273165900BE009C /* WorkLogTimeCell.swift */; };
 		94F03CE2225F59BA00C6C1D0 /* EmployeeApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE1225F59BA00C6C1D0 /* EmployeeApiModel.swift */; };
 		94F03CE4225F5A0400C6C1D0 /* UsersRepositoryType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE3225F5A0400C6C1D0 /* UsersRepositoryType.swift */; };
 		94F03CE6225F5A1700C6C1D0 /* UsersRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F03CE5225F5A1700C6C1D0 /* UsersRepository.swift */; };
@@ -286,7 +287,7 @@
 		94C1855922706DBC00BE009C /* WorkLogTimeTableViewCellViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeTableViewCellViewDelegate.swift; sourceTree = "<group>"; };
 		94C1855A22706DBC00BE009C /* WorkLogTimeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeTableViewCell.swift; sourceTree = "<group>"; };
 		94C1855B22706DBC00BE009C /* WorkLogTimeTableViewSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeTableViewSource.swift; sourceTree = "<group>"; };
-		94C1856322706E1D00BE009C /* WorkLogTimeCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkLogTimeCell.xib; sourceTree = "<group>"; };
+		94C1856322706E1D00BE009C /* WorkLogTimeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = WorkLogTimeTableViewCell.xib; sourceTree = "<group>"; };
 		94C185652270781A00BE009C /* WorkLogDiaryRequestApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogDiaryRequestApiModel.swift; sourceTree = "<group>"; };
 		94C1856722707B3300BE009C /* WorkLogDiaryResponseApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogDiaryResponseApiModel.swift; sourceTree = "<group>"; };
 		94C1856922708F5700BE009C /* ProjectApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectApiModel.swift; sourceTree = "<group>"; };
@@ -294,6 +295,7 @@
 		94C1856E227092FE00BE009C /* WorkLogTimeSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeSectionView.swift; sourceTree = "<group>"; };
 		94C185702270932500BE009C /* WorkLogTimeDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeDelegate.swift; sourceTree = "<group>"; };
 		94C185742271BC8B00BE009C /* MonthYearPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MonthYearPickerView.swift; path = ../Infrastructure/Helpers/MonthYearPickerView.swift; sourceTree = "<group>"; };
+		94C185B02273165900BE009C /* WorkLogTimeCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeCell.swift; sourceTree = "<group>"; };
 		94F03CE1225F59BA00C6C1D0 /* EmployeeApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeApiModel.swift; sourceTree = "<group>"; };
 		94F03CE3225F5A0400C6C1D0 /* UsersRepositoryType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepositoryType.swift; sourceTree = "<group>"; };
 		94F03CE5225F5A1700C6C1D0 /* UsersRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UsersRepository.swift; sourceTree = "<group>"; };
@@ -593,6 +595,7 @@
 			children = (
 				5073540B2255FD1000998237 /* AccountMappers.swift */,
 				94F03CE7225F6E1200C6C1D0 /* GetUsersByInputMaper.swift */,
+				94C185B02273165900BE009C /* WorkLogTimeCell.swift */,
 			);
 			path = Mappers;
 			sourceTree = "<group>";
@@ -609,8 +612,7 @@
 		5073540F2255FD1000998237 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				94C1856B227092A400BE009C /* WorkLogTimeSection */,
-				94C1855622706D3900BE009C /* WorkLogTimeCell */,
+				94C185B4227335CC00BE009C /* WorkLog */,
 				507354102255FD1000998237 /* Cell */,
 			);
 			path = Cell;
@@ -938,8 +940,7 @@
 			children = (
 				94C1855922706DBC00BE009C /* WorkLogTimeTableViewCellViewDelegate.swift */,
 				94C1855A22706DBC00BE009C /* WorkLogTimeTableViewCell.swift */,
-				94C1855B22706DBC00BE009C /* WorkLogTimeTableViewSource.swift */,
-				94C1856322706E1D00BE009C /* WorkLogTimeCell.xib */,
+				94C1856322706E1D00BE009C /* WorkLogTimeTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -952,6 +953,16 @@
 				94C185702270932500BE009C /* WorkLogTimeDelegate.swift */,
 			);
 			path = WorkLogTimeSection;
+			sourceTree = "<group>";
+		};
+		94C185B4227335CC00BE009C /* WorkLog */ = {
+			isa = PBXGroup;
+			children = (
+				94C1855622706D3900BE009C /* WorkLogTimeCell */,
+				94C1855B22706DBC00BE009C /* WorkLogTimeTableViewSource.swift */,
+				94C1856B227092A400BE009C /* WorkLogTimeSection */,
+			);
+			path = WorkLog;
 			sourceTree = "<group>";
 		};
 		94F0428A2268777400AAF0A9 /* Components */ = {
@@ -1426,7 +1437,7 @@
 				5073548C2255FD1000998237 /* Start.storyboard in Resources */,
 				507354BB2255FD1100998237 /* Assets.xcassets in Resources */,
 				507354BF2255FD1100998237 /* Development.xcconfig in Resources */,
-				94C1856422706E1D00BE009C /* WorkLogTimeCell.xib in Resources */,
+				94C1856422706E1D00BE009C /* WorkLogTimeTableViewCell.xib in Resources */,
 				507354BE2255FD1100998237 /* UAT.xcconfig in Resources */,
 				507354C02255FD1100998237 /* PROD.xcconfig in Resources */,
 				94F25CC422608B8E00A57665 /* Application.storyboard in Resources */,
@@ -1650,6 +1661,7 @@
 				94F42253225783D500098818 /* EmployeeListInteractor.swift in Sources */,
 				5073549B2255FD1000998237 /* TextViewAppearanceType.swift in Sources */,
 				94C1856A22708F5700BE009C /* ProjectApiModel.swift in Sources */,
+				94C185B12273165900BE009C /* WorkLogTimeCell.swift in Sources */,
 				507354A32255FD1000998237 /* NavigationBarAppearanceType.swift in Sources */,
 				94F042B8226DAC6F00AAF0A9 /* ProfileInfoViewDelegate.swift in Sources */,
 				507354A02255FD1000998237 /* ViewAppearanceType.swift in Sources */,

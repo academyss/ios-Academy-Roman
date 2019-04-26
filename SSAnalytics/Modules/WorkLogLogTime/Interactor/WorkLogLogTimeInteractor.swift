@@ -20,8 +20,9 @@ final class WorkLogLogTimeInteractor: WorkLogLogTimeInteractorType {
         _notificationErrorService = notificationErrorService
     }
     
-    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<WorkLogDiaryResponseApiModel> {
+    func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<[(SttObservableCollection<WorkLogTimeTableViewCellPresenter>, WorkLogTimeViewSectionPresenter)]> {
         return _workLogRepository.getWorkLogDiary(data: data)
             .useError(service: _notificationErrorService)
+            .map({ $0.convertToViewModel() })
     }
 }

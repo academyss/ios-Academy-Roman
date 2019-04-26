@@ -47,7 +47,7 @@ class CellTableViewCell: SttTableViewCell<CellTableViewCellPresenter>, CellTable
         set.bind(nameLabel).to(presenter.name)
         set.bind(jobLabel).to(presenter.job)
         
-        set.bind(Bool.self).forProperty({ $0.commandsView.isHidden = $1 })
+        set.bind(Bool.self).forProperty({ $0.commandsView.isHidden = !$1 })
             .to(presenter.isSelected)
         set.bind(tap()).to(presenter.select)
         

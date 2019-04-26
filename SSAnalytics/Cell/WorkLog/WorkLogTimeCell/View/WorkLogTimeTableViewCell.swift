@@ -21,6 +21,7 @@ class WorkLogTimeTableViewCell: SttTableViewCell<WorkLogTimeTableViewCellPresent
     @IBOutlet weak var describtionLabel: UILabel!
     @IBOutlet weak var startTimeLabel: UILabel!
     @IBOutlet weak var statusLabel: UILabel!
+//    @IBOutlet weak var height: NSLayoutConstraint!
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -34,12 +35,12 @@ class WorkLogTimeTableViewCell: SttTableViewCell<WorkLogTimeTableViewCellPresent
         set = SttBindingSet(parent: self)
         
         set.bind(projectNameLabel).to(presenter.projectName)
-        set.bind(spendedTimeLabel).to(presenter.spendedTime)
+        set.bind(spendedTimeLabel).to(presenter.spendedTime).withConverter(TimeFromSecondsConverter.self)
         set.bind(describtionLabel).to(presenter.describtion)
-        set.bind(startTimeLabel).to(presenter.startTime)
+        set.bind(startTimeLabel).to(presenter.startTime)//.withConverter(StartTimeConverter.self) TODo: fix converter
         set.bind(statusLabel).to(presenter.status)
         
-        set.bind(Bool.self).forProperty({ $0.detailsView.isHidden = $1 })
+        set.bind(Bool.self).forProperty({ $0.detailsView.isHidden = !$1 })
             .to(presenter.isSelected)
         set.bind(tap()).to(presenter.select)
 

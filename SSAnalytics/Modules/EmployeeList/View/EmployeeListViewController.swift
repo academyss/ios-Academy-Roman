@@ -47,8 +47,11 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     }
     
     func updateTableView() {
-        employeesTableView.beginUpdates()
-        employeesTableView.endUpdates()
+        
+        UIView.transition(with: employeesTableView,
+                          duration: 0.45,
+                          options: .transitionCrossDissolve,
+                          animations: { self.employeesTableView.reloadData() })
     }
     
 }

@@ -37,7 +37,7 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
         self.phone = Dynamic(employee.phoneNumber)
         self.skype = Dynamic(employee.skype)
         
-        self.isSelected = Dynamic(true)
+        self.isSelected = Dynamic(false)
         
         super.init(notificationError: nil)
         

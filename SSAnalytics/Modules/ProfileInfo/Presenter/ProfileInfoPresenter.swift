@@ -11,22 +11,25 @@ import STT
 
 final class ProfileInfoPresenter: SttPresenterWithParametr<ProfileInfoViewDelegate, EmployeeApiModel> {
     
-
+    
     private let _router: ProfileInfoRouterType
     private let _interactor: ProfileInfoInteractorType
     
-    var avatar: Dynamic<Image>!
-    var name: Dynamic<String>!
-    var roles: Dynamic<String?>!
-    var email: Dynamic<String>!
-    var phone: Dynamic<String>!
-    var skype: Dynamic<String?>!
+    let avatar = Dynamic<Image>(Image(data: nil, url: nil))
+    let name = Dynamic<String>("")
+    let roles = Dynamic<String?>("")
+    let email = Dynamic<String>("")
+    let phone = Dynamic<String>("")
+    let skype = Dynamic<String?>("")
+    
+    private(set) lazy var call = SttCommand(delegate: self, handler: { $0.onCall() })
+    private(set) lazy var sendEmail = SttCommand(delegate: self, handler: { $0.onEmail() })
     
     init(view: SttViewable, notificationService: SttNotificationErrorServiceType, router: ProfileInfoRouterType,
          interactor: ProfileInfoInteractorType) {
         
         _router = router
-		_interactor = interactor
+        _interactor = interactor
         
         super.init(notificationError: notificationService)
         super.injectView(delegate: view)
@@ -35,13 +38,28 @@ final class ProfileInfoPresenter: SttPresenterWithParametr<ProfileInfoViewDelega
     override func prepare(parametr: Any?) {
         
         if let userModel: EmployeeApiModel = parametr as? EmployeeApiModel {
-            self.avatar = Dynamic(Image(data: nil, url: userModel.imageUrl))
-            self.name = Dynamic(userModel.name)
-            self.roles = Dynamic(userModel.roles.joined(separator: ", "))
-            self.email = Dynamic(userModel.email)
-            self.phone = Dynamic(userModel.phoneNumber)
-            self.skype = userModel.skype != nil ? Dynamic(userModel.skype) : Dynamic("No skype")
+            self.avatar.value = Image(data: nil, url: userModel.imageUrl)
+            self.name.value = userModel.name
+            self.roles.value = userModel.roles.joined(separator: ", ")
+            self.email.value = userModel.email
+            self.phone.value = userModel.phoneNumber
+            self.skype.value = userModel.skype != nil ? userModel.skype : "No skype"
         }
-        
+    }
+    
+    func onCall() {
+        guard let number = URL(string: "tel://" + phone.value) else { return }
+        UIApplication.shared.open(number)
+    }
+    
+    func onEmail() {
+        let email = self.email.value
+        if let url = URL(string: "mailto:\(email)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
 }

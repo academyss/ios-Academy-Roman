@@ -13,20 +13,35 @@ import STT
 class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, WorkLogLogTimeViewDelegate {
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var noDataLabel: UILabel!
     
     var source: WorkLogTimeTableViewSource!
     
+    
     override func viewDidLoad() {
+        self.useErrorLabel = false
         super.viewDidLoad()
-        tableView.tableFooterView = UIView()
+        tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 1))
     }
     
     var set: SttBindingSet<WorkLogLogTimeViewController>!
     override func bind() {
         set = SttBindingSet(parent: self)
+        
         source = WorkLogTimeTableViewSource(tableView: tableView, collection: presenter.itemsCollection)
+        
+        set.bind(Bool.self).forProperty({ $0.noDataLabel.isHidden = !$1 }).to(presenter.isEmpty)
+        
         set.apply()
+        
+        presenter.download.useIndicator(view: tableView).disposed(by: presenter.listenerDisposableBag)
+        presenter.download.useWork(handler: { [weak self] (status) in
+            self?.noDataLabel.isHidden = status
+        }).disposed(by: presenter.listenerDisposableBag)
     }
+    
+    
+    // MARK: - implementation of WorkLogLogTimeViewDelegate
     
     func updateTableView() {
         
@@ -36,5 +51,7 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
                           animations: { self.tableView.reloadData() })
     }
     
-    // MARK: - implementation of WorkLogLogTimeViewDelegate
+    func passParameterToPage(param: WorkLogDiaryRequestApiModel) {
+        presenter.filterObject.value = param
+    }
 }

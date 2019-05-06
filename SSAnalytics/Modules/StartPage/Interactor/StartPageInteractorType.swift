@@ -10,6 +10,6 @@ import Foundation
 import RxSwift
 
 protocol StartPageInteractorType {
-    func getToken(email: String, password: String) -> Observable<TokenApiModel>
+    func getToken(email: String, password: String) -> Observable<Void>
     func logOut()
 }

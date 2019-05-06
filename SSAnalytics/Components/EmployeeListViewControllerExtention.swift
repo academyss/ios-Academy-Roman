@@ -48,11 +48,14 @@ extension EmployeeListViewController {
     }
     
     func configureTableView() {
-        employeesTableView.tableFooterView = UIView()
+        employeesTableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: employeesTableView.bounds.width, height: 1))
         employeesTableView.keyboardDismissMode = UIScrollView.KeyboardDismissMode.onDrag
     }
     
     @objc func showEmployeeMenu() {
+//        if !SideMenuManager.defaultManager.menuLeftNavigationController!.isBeingDismissed {
+//            SideMenuManager.defaultManager.menuLeftNavigationController?.dismiss(animated: false, completion: nil)
+//        }
         present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
     }
     

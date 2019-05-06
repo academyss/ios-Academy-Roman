@@ -11,11 +11,11 @@ import UIKit
 
 #warning("move to library")
 
-protocol test {
+protocol PageChanging {
     func onPageChanged()
 }
 
-extension UIViewController: test {
+extension UIViewController: PageChanging {
     @objc func onPageChanged() {
         print("pageChage")
     }
@@ -233,5 +233,13 @@ public class SttViewPagerHeader: UIView, UIScrollViewDelegate {
         selectedSegment = page
         
         redrawUnderline()
+    }
+    
+    public func goToPage(page: Int) {
+        if page < segmentControl.numberOfSegments{
+            segmentControl.selectedSegmentIndex = page
+            selectedSegment = page
+            redrawUnderline()
+        }
     }
 }

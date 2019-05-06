@@ -156,6 +156,8 @@
 		94F1539B225E4FCF00691DA7 /* ValidationFieldType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1539A225E4FCF00691DA7 /* ValidationFieldType.swift */; };
 		94F1E86A226621E700D96DBF /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F1E869226621E700D96DBF /* MenuTableViewController.swift */; };
 		94F25CC422608B8E00A57665 /* Application.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 94F25CC322608B8E00A57665 /* Application.storyboard */; };
+		94F34A96228076C50036A1CA /* WorkLogStatisticsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F34A95228076C50036A1CA /* WorkLogStatisticsViewControllerExtension.swift */; };
+		94F34A982280776B0036A1CA /* WorkLogFilterViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F34A972280776B0036A1CA /* WorkLogFilterViewControllerExtension.swift */; };
 		94F4224D225783D500098818 /* EmployeeListViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F42245225783D500098818 /* EmployeeListViewDelegate.swift */; };
 		94F4224E225783D500098818 /* EmployeeListModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F42246225783D500098818 /* EmployeeListModuleAssembler.swift */; };
 		94F4224F225783D500098818 /* EmployeeListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F42247225783D500098818 /* EmployeeListRouter.swift */; };
@@ -166,6 +168,37 @@
 		94F42254225783D500098818 /* EmployeeListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F4224C225783D500098818 /* EmployeeListPresenter.swift */; };
 		94F5703A225B9FE600A48FA6 /* CachedImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F57039225B9FE600A48FA6 /* CachedImageView.swift */; };
 		94F5703C225BA26200A48FA6 /* Image.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94F5703B225BA26200A48FA6 /* Image.swift */; };
+		94FB810F22784D2800BA5D5D /* WorkLogFilterViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB810722784D2800BA5D5D /* WorkLogFilterViewDelegate.swift */; };
+		94FB811022784D2800BA5D5D /* WorkLogFilterModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB810822784D2800BA5D5D /* WorkLogFilterModuleAssembler.swift */; };
+		94FB811122784D2800BA5D5D /* WorkLogFilterRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB810922784D2800BA5D5D /* WorkLogFilterRouter.swift */; };
+		94FB811222784D2800BA5D5D /* WorkLogFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB810A22784D2800BA5D5D /* WorkLogFilterViewController.swift */; };
+		94FB811322784D2800BA5D5D /* WorkLogFilterInteractorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB810B22784D2800BA5D5D /* WorkLogFilterInteractorType.swift */; };
+		94FB811422784D2800BA5D5D /* WorkLogFilterRouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB810C22784D2800BA5D5D /* WorkLogFilterRouterType.swift */; };
+		94FB811522784D2800BA5D5D /* WorkLogFilterInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB810D22784D2800BA5D5D /* WorkLogFilterInteractor.swift */; };
+		94FB811622784D2800BA5D5D /* WorkLogFilterPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB810E22784D2800BA5D5D /* WorkLogFilterPresenter.swift */; };
+		94FB8122227873FA00BA5D5D /* ProjectCollectionViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB811D227873FA00BA5D5D /* ProjectCollectionViewSource.swift */; };
+		94FB8123227873FA00BA5D5D /* ProjectCollectionViewCellViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB811E227873FA00BA5D5D /* ProjectCollectionViewCellViewDelegate.swift */; };
+		94FB8124227873FA00BA5D5D /* ProjectCollectionViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB811F227873FA00BA5D5D /* ProjectCollectionViewCellPresenter.swift */; };
+		94FB8125227873FA00BA5D5D /* ProjectCollectionViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB8120227873FA00BA5D5D /* ProjectCollectionViewCellDelegate.swift */; };
+		94FB8126227873FA00BA5D5D /* ProjectCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB8121227873FA00BA5D5D /* ProjectCollectionViewCell.swift */; };
+		94FB81282278742700BA5D5D /* ProjectCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94FB81272278742700BA5D5D /* ProjectCollectionViewCell.xib */; };
+		94FB813222787E5A00BA5D5D /* ProjectsViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB812A22787E5A00BA5D5D /* ProjectsViewDelegate.swift */; };
+		94FB813322787E5A00BA5D5D /* ProjectsModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB812B22787E5A00BA5D5D /* ProjectsModuleAssembler.swift */; };
+		94FB813422787E5A00BA5D5D /* ProjectsRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB812C22787E5A00BA5D5D /* ProjectsRouter.swift */; };
+		94FB813522787E5A00BA5D5D /* ProjectsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB812D22787E5A00BA5D5D /* ProjectsViewController.swift */; };
+		94FB813622787E5A00BA5D5D /* ProjectsInteractorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB812E22787E5A00BA5D5D /* ProjectsInteractorType.swift */; };
+		94FB813722787E5A00BA5D5D /* ProjectsRouterType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB812F22787E5A00BA5D5D /* ProjectsRouterType.swift */; };
+		94FB813822787E5A00BA5D5D /* ProjectsInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB813022787E5A00BA5D5D /* ProjectsInteractor.swift */; };
+		94FB813922787E5A00BA5D5D /* ProjectsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB813122787E5A00BA5D5D /* ProjectsPresenter.swift */; };
+		94FB814022787EDC00BA5D5D /* ProjectTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB813B22787EDC00BA5D5D /* ProjectTableViewCellDelegate.swift */; };
+		94FB814122787EDC00BA5D5D /* ProjectTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB813C22787EDC00BA5D5D /* ProjectTableViewCellPresenter.swift */; };
+		94FB814222787EDC00BA5D5D /* ProjectTableViewCellViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB813D22787EDC00BA5D5D /* ProjectTableViewCellViewDelegate.swift */; };
+		94FB814322787EDC00BA5D5D /* ProjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB813E22787EDC00BA5D5D /* ProjectTableViewCell.swift */; };
+		94FB814422787EDC00BA5D5D /* ProjectTableViewSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB813F22787EDC00BA5D5D /* ProjectTableViewSource.swift */; };
+		94FB814622787EFD00BA5D5D /* ProjectTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 94FB814522787EFD00BA5D5D /* ProjectTableViewCell.xib */; };
+		94FB8151227C7D0200BA5D5D /* ProfileInfoViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB8150227C7D0200BA5D5D /* ProfileInfoViewControllerExtension.swift */; };
+		94FB8153227C7DA000BA5D5D /* ProjectsViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB8152227C7DA000BA5D5D /* ProjectsViewControllerExtension.swift */; };
+		94FB8155227C7E4200BA5D5D /* WorkLogViewControllerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FB8154227C7E4200BA5D5D /* WorkLogViewControllerExtension.swift */; };
 		94FD57522264A4FB006155E2 /* UserApiModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57512264A4FB006155E2 /* UserApiModel.swift */; };
 		94FD576D2264CCCA006155E2 /* MenuViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57652264CCCA006155E2 /* MenuViewDelegate.swift */; };
 		94FD576E2264CCCA006155E2 /* MenuModuleAssembler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94FD57662264CCCA006155E2 /* MenuModuleAssembler.swift */; };
@@ -345,6 +378,8 @@
 		94F1539A225E4FCF00691DA7 /* ValidationFieldType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidationFieldType.swift; sourceTree = "<group>"; };
 		94F1E869226621E700D96DBF /* MenuTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
 		94F25CC322608B8E00A57665 /* Application.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Application.storyboard; sourceTree = "<group>"; };
+		94F34A95228076C50036A1CA /* WorkLogStatisticsViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogStatisticsViewControllerExtension.swift; sourceTree = "<group>"; };
+		94F34A972280776B0036A1CA /* WorkLogFilterViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterViewControllerExtension.swift; sourceTree = "<group>"; };
 		94F42245225783D500098818 /* EmployeeListViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListViewDelegate.swift; sourceTree = "<group>"; };
 		94F42246225783D500098818 /* EmployeeListModuleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListModuleAssembler.swift; sourceTree = "<group>"; };
 		94F42247225783D500098818 /* EmployeeListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListRouter.swift; sourceTree = "<group>"; };
@@ -355,6 +390,37 @@
 		94F4224C225783D500098818 /* EmployeeListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EmployeeListPresenter.swift; sourceTree = "<group>"; };
 		94F57039225B9FE600A48FA6 /* CachedImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CachedImageView.swift; sourceTree = "<group>"; };
 		94F5703B225BA26200A48FA6 /* Image.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Image.swift; sourceTree = "<group>"; };
+		94FB810722784D2800BA5D5D /* WorkLogFilterViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterViewDelegate.swift; sourceTree = "<group>"; };
+		94FB810822784D2800BA5D5D /* WorkLogFilterModuleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterModuleAssembler.swift; sourceTree = "<group>"; };
+		94FB810922784D2800BA5D5D /* WorkLogFilterRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterRouter.swift; sourceTree = "<group>"; };
+		94FB810A22784D2800BA5D5D /* WorkLogFilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterViewController.swift; sourceTree = "<group>"; };
+		94FB810B22784D2800BA5D5D /* WorkLogFilterInteractorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterInteractorType.swift; sourceTree = "<group>"; };
+		94FB810C22784D2800BA5D5D /* WorkLogFilterRouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterRouterType.swift; sourceTree = "<group>"; };
+		94FB810D22784D2800BA5D5D /* WorkLogFilterInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterInteractor.swift; sourceTree = "<group>"; };
+		94FB810E22784D2800BA5D5D /* WorkLogFilterPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogFilterPresenter.swift; sourceTree = "<group>"; };
+		94FB811D227873FA00BA5D5D /* ProjectCollectionViewSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewSource.swift; sourceTree = "<group>"; };
+		94FB811E227873FA00BA5D5D /* ProjectCollectionViewCellViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCellViewDelegate.swift; sourceTree = "<group>"; };
+		94FB811F227873FA00BA5D5D /* ProjectCollectionViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCellPresenter.swift; sourceTree = "<group>"; };
+		94FB8120227873FA00BA5D5D /* ProjectCollectionViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCellDelegate.swift; sourceTree = "<group>"; };
+		94FB8121227873FA00BA5D5D /* ProjectCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectCollectionViewCell.swift; sourceTree = "<group>"; };
+		94FB81272278742700BA5D5D /* ProjectCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectCollectionViewCell.xib; sourceTree = "<group>"; };
+		94FB812A22787E5A00BA5D5D /* ProjectsViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewDelegate.swift; sourceTree = "<group>"; };
+		94FB812B22787E5A00BA5D5D /* ProjectsModuleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsModuleAssembler.swift; sourceTree = "<group>"; };
+		94FB812C22787E5A00BA5D5D /* ProjectsRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsRouter.swift; sourceTree = "<group>"; };
+		94FB812D22787E5A00BA5D5D /* ProjectsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewController.swift; sourceTree = "<group>"; };
+		94FB812E22787E5A00BA5D5D /* ProjectsInteractorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsInteractorType.swift; sourceTree = "<group>"; };
+		94FB812F22787E5A00BA5D5D /* ProjectsRouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsRouterType.swift; sourceTree = "<group>"; };
+		94FB813022787E5A00BA5D5D /* ProjectsInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsInteractor.swift; sourceTree = "<group>"; };
+		94FB813122787E5A00BA5D5D /* ProjectsPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsPresenter.swift; sourceTree = "<group>"; };
+		94FB813B22787EDC00BA5D5D /* ProjectTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCellDelegate.swift; sourceTree = "<group>"; };
+		94FB813C22787EDC00BA5D5D /* ProjectTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCellPresenter.swift; sourceTree = "<group>"; };
+		94FB813D22787EDC00BA5D5D /* ProjectTableViewCellViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCellViewDelegate.swift; sourceTree = "<group>"; };
+		94FB813E22787EDC00BA5D5D /* ProjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewCell.swift; sourceTree = "<group>"; };
+		94FB813F22787EDC00BA5D5D /* ProjectTableViewSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectTableViewSource.swift; sourceTree = "<group>"; };
+		94FB814522787EFD00BA5D5D /* ProjectTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ProjectTableViewCell.xib; sourceTree = "<group>"; };
+		94FB8150227C7D0200BA5D5D /* ProfileInfoViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileInfoViewControllerExtension.swift; sourceTree = "<group>"; };
+		94FB8152227C7DA000BA5D5D /* ProjectsViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewControllerExtension.swift; sourceTree = "<group>"; };
+		94FB8154227C7E4200BA5D5D /* WorkLogViewControllerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogViewControllerExtension.swift; sourceTree = "<group>"; };
 		94FD57512264A4FB006155E2 /* UserApiModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserApiModel.swift; sourceTree = "<group>"; };
 		94FD57652264CCCA006155E2 /* MenuViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewDelegate.swift; sourceTree = "<group>"; };
 		94FD57662264CCCA006155E2 /* MenuModuleAssembler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuModuleAssembler.swift; sourceTree = "<group>"; };
@@ -612,8 +678,10 @@
 		5073540F2255FD1000998237 /* Cell */ = {
 			isa = PBXGroup;
 			children = (
-				94C185B4227335CC00BE009C /* WorkLog */,
 				507354102255FD1000998237 /* Cell */,
+				94FB811C227873C100BA5D5D /* CollectionViewCell */,
+				94FB813A22787EC300BA5D5D /* Project */,
+				94C185B4227335CC00BE009C /* WorkLog */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -658,14 +726,16 @@
 		5073541D2255FD1000998237 /* Modules */ = {
 			isa = PBXGroup;
 			children = (
+				94F422432257837100098818 /* EmployeeList */,
+				94FD57642264CCB9006155E2 /* Menu */,
+				94F042AF226DAC5000AAF0A9 /* ProfileInfo */,
+				94FB812922787E1D00BA5D5D /* Projects */,
+				507354212255FD1000998237 /* StartPage */,
+				5073541E2255FD1000998237 /* Storyboards */,
+				94F042C8226E098200AAF0A9 /* WorkLog */,
+				94FB810622784CFD00BA5D5D /* WorkLogFilter */,
 				94F042F6226E16D400AAF0A9 /* WorkLogLogTime */,
 				94F042E0226E164B00AAF0A9 /* WorkLogStatistic */,
-				94F042C8226E098200AAF0A9 /* WorkLog */,
-				94F042AF226DAC5000AAF0A9 /* ProfileInfo */,
-				94FD57642264CCB9006155E2 /* Menu */,
-				5073541E2255FD1000998237 /* Storyboards */,
-				507354212255FD1000998237 /* StartPage */,
-				94F422432257837100098818 /* EmployeeList */,
 			);
 			path = Modules;
 			sourceTree = "<group>";
@@ -968,10 +1038,15 @@
 		94F0428A2268777400AAF0A9 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				94F0428B226877D200AAF0A9 /* StartPageViewControllerExtension.swift */,
 				94F0428D226877F600AAF0A9 /* EmployeeListViewControllerExtention.swift */,
 				94F0428F2268781500AAF0A9 /* MenuViewControllerExtension.swift */,
 				94C185742271BC8B00BE009C /* MonthYearPickerView.swift */,
+				94FB8150227C7D0200BA5D5D /* ProfileInfoViewControllerExtension.swift */,
+				94FB8152227C7DA000BA5D5D /* ProjectsViewControllerExtension.swift */,
+				94F0428B226877D200AAF0A9 /* StartPageViewControllerExtension.swift */,
+				94FB8154227C7E4200BA5D5D /* WorkLogViewControllerExtension.swift */,
+				94F34A95228076C50036A1CA /* WorkLogStatisticsViewControllerExtension.swift */,
+				94F34A972280776B0036A1CA /* WorkLogFilterViewControllerExtension.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -1332,6 +1407,174 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
+		94FB810622784CFD00BA5D5D /* WorkLogFilter */ = {
+			isa = PBXGroup;
+			children = (
+				94FB811B22784D5100BA5D5D /* Assembler */,
+				94FB811A22784D4900BA5D5D /* Router */,
+				94FB811922784D3F00BA5D5D /* Interactor */,
+				94FB811822784D3700BA5D5D /* Presenter */,
+				94FB811722784D3000BA5D5D /* View */,
+			);
+			path = WorkLogFilter;
+			sourceTree = "<group>";
+		};
+		94FB811722784D3000BA5D5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94FB810722784D2800BA5D5D /* WorkLogFilterViewDelegate.swift */,
+				94FB810A22784D2800BA5D5D /* WorkLogFilterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		94FB811822784D3700BA5D5D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				94FB810E22784D2800BA5D5D /* WorkLogFilterPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		94FB811922784D3F00BA5D5D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				94FB810B22784D2800BA5D5D /* WorkLogFilterInteractorType.swift */,
+				94FB810D22784D2800BA5D5D /* WorkLogFilterInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		94FB811A22784D4900BA5D5D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				94FB810922784D2800BA5D5D /* WorkLogFilterRouter.swift */,
+				94FB810C22784D2800BA5D5D /* WorkLogFilterRouterType.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		94FB811B22784D5100BA5D5D /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				94FB810822784D2800BA5D5D /* WorkLogFilterModuleAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		94FB811C227873C100BA5D5D /* CollectionViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				94FB814D227C7BC800BA5D5D /* Core */,
+				94FB814C227C7BC300BA5D5D /* View */,
+			);
+			path = CollectionViewCell;
+			sourceTree = "<group>";
+		};
+		94FB812922787E1D00BA5D5D /* Projects */ = {
+			isa = PBXGroup;
+			children = (
+				94FB814B2278896F00BA5D5D /* Assembler */,
+				94FB814A2278896800BA5D5D /* Router */,
+				94FB81492278896000BA5D5D /* Interactor */,
+				94FB81482278895B00BA5D5D /* Presenter */,
+				94FB81472278895400BA5D5D /* View */,
+			);
+			path = Projects;
+			sourceTree = "<group>";
+		};
+		94FB813A22787EC300BA5D5D /* Project */ = {
+			isa = PBXGroup;
+			children = (
+				94FB814F227C7BD800BA5D5D /* Core */,
+				94FB814E227C7BD300BA5D5D /* View */,
+			);
+			path = Project;
+			sourceTree = "<group>";
+		};
+		94FB81472278895400BA5D5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94FB812A22787E5A00BA5D5D /* ProjectsViewDelegate.swift */,
+				94FB812D22787E5A00BA5D5D /* ProjectsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		94FB81482278895B00BA5D5D /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				94FB813122787E5A00BA5D5D /* ProjectsPresenter.swift */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		94FB81492278896000BA5D5D /* Interactor */ = {
+			isa = PBXGroup;
+			children = (
+				94FB812E22787E5A00BA5D5D /* ProjectsInteractorType.swift */,
+				94FB813022787E5A00BA5D5D /* ProjectsInteractor.swift */,
+			);
+			path = Interactor;
+			sourceTree = "<group>";
+		};
+		94FB814A2278896800BA5D5D /* Router */ = {
+			isa = PBXGroup;
+			children = (
+				94FB812F22787E5A00BA5D5D /* ProjectsRouterType.swift */,
+				94FB812C22787E5A00BA5D5D /* ProjectsRouter.swift */,
+			);
+			path = Router;
+			sourceTree = "<group>";
+		};
+		94FB814B2278896F00BA5D5D /* Assembler */ = {
+			isa = PBXGroup;
+			children = (
+				94FB812B22787E5A00BA5D5D /* ProjectsModuleAssembler.swift */,
+			);
+			path = Assembler;
+			sourceTree = "<group>";
+		};
+		94FB814C227C7BC300BA5D5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94FB8121227873FA00BA5D5D /* ProjectCollectionViewCell.swift */,
+				94FB811D227873FA00BA5D5D /* ProjectCollectionViewSource.swift */,
+				94FB811E227873FA00BA5D5D /* ProjectCollectionViewCellViewDelegate.swift */,
+				94FB81272278742700BA5D5D /* ProjectCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		94FB814D227C7BC800BA5D5D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				94FB8120227873FA00BA5D5D /* ProjectCollectionViewCellDelegate.swift */,
+				94FB811F227873FA00BA5D5D /* ProjectCollectionViewCellPresenter.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		94FB814E227C7BD300BA5D5D /* View */ = {
+			isa = PBXGroup;
+			children = (
+				94FB813D22787EDC00BA5D5D /* ProjectTableViewCellViewDelegate.swift */,
+				94FB813E22787EDC00BA5D5D /* ProjectTableViewCell.swift */,
+				94FB813F22787EDC00BA5D5D /* ProjectTableViewSource.swift */,
+				94FB814522787EFD00BA5D5D /* ProjectTableViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		94FB814F227C7BD800BA5D5D /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				94FB813B22787EDC00BA5D5D /* ProjectTableViewCellDelegate.swift */,
+				94FB813C22787EDC00BA5D5D /* ProjectTableViewCellPresenter.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
 		94FD57642264CCB9006155E2 /* Menu */ = {
 			isa = PBXGroup;
 			children = (
@@ -1434,11 +1677,13 @@
 				507354892255FD1000998237 /* CellTableViewCell.xib in Resources */,
 				507354C32255FD1100998237 /* LaunchScreen.storyboard in Resources */,
 				507354BC2255FD1100998237 /* Images.xcassets in Resources */,
+				94FB814622787EFD00BA5D5D /* ProjectTableViewCell.xib in Resources */,
 				5073548C2255FD1000998237 /* Start.storyboard in Resources */,
 				507354BB2255FD1100998237 /* Assets.xcassets in Resources */,
 				507354BF2255FD1100998237 /* Development.xcconfig in Resources */,
 				94C1856422706E1D00BE009C /* WorkLogTimeTableViewCell.xib in Resources */,
 				507354BE2255FD1100998237 /* UAT.xcconfig in Resources */,
+				94FB81282278742700BA5D5D /* ProjectCollectionViewCell.xib in Resources */,
 				507354C02255FD1100998237 /* PROD.xcconfig in Resources */,
 				94F25CC422608B8E00A57665 /* Application.storyboard in Resources */,
 			);
@@ -1544,17 +1789,20 @@
 				94F042BD226DAC6F00AAF0A9 /* ProfileInfoRouterType.swift in Sources */,
 				5073549A2255FD1000998237 /* UIButtons.swift in Sources */,
 				5073548D2255FD1000998237 /* StartPageModuleAssembler.swift in Sources */,
+				94FB811422784D2800BA5D5D /* WorkLogFilterRouterType.swift in Sources */,
 				5073548B2255FD1000998237 /* Extension.swift in Sources */,
 				94C1856822707B3300BE009C /* WorkLogDiaryResponseApiModel.swift in Sources */,
 				94F15394225E430B00691DA7 /* ValidatorFactoryType.swift in Sources */,
 				5073549E2255FD1000998237 /* FontAppearanceDecoratorType.swift in Sources */,
 				5073549C2255FD1000998237 /* FontRelativeSize.swift in Sources */,
 				94F042EB226E167500AAF0A9 /* WorkLogStatisticRouter.swift in Sources */,
+				94FB813222787E5A00BA5D5D /* ProjectsViewDelegate.swift in Sources */,
 				507354942255FD1000998237 /* UITextViews.swift in Sources */,
 				94F042D5226E0B8D00AAF0A9 /* WorkLogInteractorType.swift in Sources */,
 				94F042BC226DAC6F00AAF0A9 /* ProfileInfoInteractorType.swift in Sources */,
 				94F042D2226E0B8D00AAF0A9 /* WorkLogModuleAssembler.swift in Sources */,
 				507354902255FD1000998237 /* StartPageViewDelegate.swift in Sources */,
+				94FB8155227C7E4200BA5D5D /* WorkLogViewControllerExtension.swift in Sources */,
 				507354A82255FD1000998237 /* TextFieldAppearanceType.swift in Sources */,
 				94C1856022706DBC00BE009C /* WorkLogTimeTableViewSource.swift in Sources */,
 				94FD576E2264CCCA006155E2 /* MenuModuleAssembler.swift in Sources */,
@@ -1563,16 +1811,26 @@
 				507354B62255FD1100998237 /* BaseAppearance.swift in Sources */,
 				507354B12255FD1100998237 /* LightSearchBarAppearance.swift in Sources */,
 				507354742255FD1000998237 /* PlistKey.swift in Sources */,
+				94F34A96228076C50036A1CA /* WorkLogStatisticsViewControllerExtension.swift in Sources */,
+				94FB8153227C7DA000BA5D5D /* ProjectsViewControllerExtension.swift in Sources */,
 				94C1855D22706DBC00BE009C /* WorkLogTimeTableViewCellPresenter.swift in Sources */,
 				507354812255FD1000998237 /* AccountMappers.swift in Sources */,
 				507354772255FD1000998237 /* ApiDataProviderType.swift in Sources */,
+				94FB814222787EDC00BA5D5D /* ProjectTableViewCellViewDelegate.swift in Sources */,
 				507354AE2255FD1000998237 /* LightLabelAppearance.swift in Sources */,
+				94FB814322787EDC00BA5D5D /* ProjectTableViewCell.swift in Sources */,
+				94FB811322784D2800BA5D5D /* WorkLogFilterInteractorType.swift in Sources */,
 				507354B42255FD1100998237 /* LightButtonAppearance.swift in Sources */,
+				94FB811222784D2800BA5D5D /* WorkLogFilterViewController.swift in Sources */,
 				507354912255FD1000998237 /* StartPageInteractor.swift in Sources */,
 				507354AB2255FD1000998237 /* LightColorAppearanceDecorator.swift in Sources */,
 				94F042C7226DD26300AAF0A9 /* WorkLogStatisticApiModel.swift in Sources */,
+				94FB813722787E5A00BA5D5D /* ProjectsRouterType.swift in Sources */,
 				507354C22255FD1100998237 /* ApplicationAssembly.swift in Sources */,
+				94FB8151227C7D0200BA5D5D /* ProfileInfoViewControllerExtension.swift in Sources */,
 				507354962255FD1000998237 /* UISliders.swift in Sources */,
+				94FB813322787E5A00BA5D5D /* ProjectsModuleAssembler.swift in Sources */,
+				94FB814022787EDC00BA5D5D /* ProjectTableViewCellDelegate.swift in Sources */,
 				94FD57702264CCCA006155E2 /* MenuViewController.swift in Sources */,
 				94F042EA226E167500AAF0A9 /* WorkLogStatisticModuleAssembler.swift in Sources */,
 				94C185752271BC8B00BE009C /* MonthYearPickerView.swift in Sources */,
@@ -1591,17 +1849,20 @@
 				507354972255FD1000998237 /* UINavigationBars.swift in Sources */,
 				94FD57722264CCCA006155E2 /* MenuRouterType.swift in Sources */,
 				507354C42255FD1100998237 /* AppDelegateExtensions.swift in Sources */,
+				94FB813822787E5A00BA5D5D /* ProjectsInteractor.swift in Sources */,
 				94C1855F22706DBC00BE009C /* WorkLogTimeTableViewCell.swift in Sources */,
 				507354AC2255FD1000998237 /* LightFontAppearanceDecorator.swift in Sources */,
 				507354B82255FD1100998237 /* LightAppearanceFactory.swift in Sources */,
 				94F03CE6225F5A1700C6C1D0 /* UsersRepository.swift in Sources */,
 				94F042D3226E0B8D00AAF0A9 /* WorkLogRouter.swift in Sources */,
+				94FB813422787E5A00BA5D5D /* ProjectsRouter.swift in Sources */,
 				94F042BF226DAC6F00AAF0A9 /* ProfileInfoPresenter.swift in Sources */,
 				507354852255FD1000998237 /* CellTableViewCellDelegate.swift in Sources */,
 				94F042FF226E170900AAF0A9 /* WorkLogLogTimeViewDelegate.swift in Sources */,
 				5073548E2255FD1000998237 /* StartPagePresenter.swift in Sources */,
 				507354AD2255FD1000998237 /* LightTextViewAppearance.swift in Sources */,
 				507354872255FD1000998237 /* CellTableViewCell.swift in Sources */,
+				94FB810F22784D2800BA5D5D /* WorkLogFilterViewDelegate.swift in Sources */,
 				94F042EE226E167500AAF0A9 /* WorkLogStatisticRouterType.swift in Sources */,
 				5073547B2255FD1000998237 /* BaseRepository.swift in Sources */,
 				507354C52255FD1100998237 /* AppDelegate.swift in Sources */,
@@ -1613,10 +1874,12 @@
 				94C1855C22706DBC00BE009C /* WorkLogTimeTableViewCellDelegate.swift in Sources */,
 				94F042D7226E0B8D00AAF0A9 /* WorkLogInteractor.swift in Sources */,
 				5073547F2255FD1000998237 /* BaseResult.swift in Sources */,
+				94FB811022784D2800BA5D5D /* WorkLogFilterModuleAssembler.swift in Sources */,
 				94F042F0226E167500AAF0A9 /* WorkLogStatisticPresenter.swift in Sources */,
 				94F0428E226877F600AAF0A9 /* EmployeeListViewControllerExtention.swift in Sources */,
 				507354982255FD1000998237 /* UITableViews.swift in Sources */,
 				507354822255FD1000998237 /* SttRouter.swift in Sources */,
+				94FB813522787E5A00BA5D5D /* ProjectsViewController.swift in Sources */,
 				507354BD2255FD1100998237 /* Converter.swift in Sources */,
 				507354B92255FD1100998237 /* AppereanceManager.swift in Sources */,
 				94F15398225E43E400691DA7 /* ValidatorFieldData.swift in Sources */,
@@ -1628,9 +1891,11 @@
 				94F42251225783D500098818 /* EmployeeListInteractorType.swift in Sources */,
 				94F5703A225B9FE600A48FA6 /* CachedImageView.swift in Sources */,
 				507354B02255FD1000998237 /* LightTextFieldAppearance.swift in Sources */,
+				94FB811522784D2800BA5D5D /* WorkLogFilterInteractor.swift in Sources */,
 				507354782255FD1000998237 /* KeyValueStorageType.swift in Sources */,
 				94F5703C225BA26200A48FA6 /* Image.swift in Sources */,
 				94F0430D226F4C6600AAF0A9 /* WorkLogRepositoryType.swift in Sources */,
+				94FB814422787EDC00BA5D5D /* ProjectTableViewSource.swift in Sources */,
 				94F04305226E170900AAF0A9 /* WorkLogLogTimeInteractor.swift in Sources */,
 				507354732255FD1000998237 /* Constants.swift in Sources */,
 				507354B72255FD1100998237 /* AppearanceFactoryType.swift in Sources */,
@@ -1641,28 +1906,37 @@
 				94F1539B225E4FCF00691DA7 /* ValidationFieldType.swift in Sources */,
 				507354A22255FD1000998237 /* LabelAppearanceType.swift in Sources */,
 				94F042EF226E167500AAF0A9 /* WorkLogStatisticInteractor.swift in Sources */,
+				94FB811122784D2800BA5D5D /* WorkLogFilterRouter.swift in Sources */,
 				94FD576F2264CCCA006155E2 /* MenuRouter.swift in Sources */,
 				94F0428C226877D200AAF0A9 /* StartPageViewControllerExtension.swift in Sources */,
 				507354A92255FD1000998237 /* LightNavigationBarAppearance.swift in Sources */,
 				94F042ED226E167500AAF0A9 /* WorkLogStatisticInteractorType.swift in Sources */,
 				94F03CE4225F5A0400C6C1D0 /* UsersRepositoryType.swift in Sources */,
 				94F42250225783D500098818 /* EmployeeListViewController.swift in Sources */,
+				94FB8123227873FA00BA5D5D /* ProjectCollectionViewCellViewDelegate.swift in Sources */,
 				507354802255FD1000998237 /* SignInApiModel.swift in Sources */,
 				94F042BE226DAC6F00AAF0A9 /* ProfileInfoInteractor.swift in Sources */,
+				94F34A982280776B0036A1CA /* WorkLogFilterViewControllerExtension.swift in Sources */,
 				94F042D1226E0B8D00AAF0A9 /* WorkLogViewDelegate.swift in Sources */,
 				507354792255FD1000998237 /* KeyValueStorage.swift in Sources */,
 				94FD57742264CCCA006155E2 /* MenuPresenter.swift in Sources */,
+				94FB8124227873FA00BA5D5D /* ProjectCollectionViewCellPresenter.swift in Sources */,
 				5073547A2255FD1000998237 /* ApiDataProvider.swift in Sources */,
 				94FD576D2264CCCA006155E2 /* MenuViewDelegate.swift in Sources */,
+				94FB813922787E5A00BA5D5D /* ProjectsPresenter.swift in Sources */,
 				94F042D8226E0B8D00AAF0A9 /* WorkLogPresenter.swift in Sources */,
 				94F4224D225783D500098818 /* EmployeeListViewDelegate.swift in Sources */,
 				507354A12255FD1000998237 /* AppearanceType.swift in Sources */,
 				5073547C2255FD1000998237 /* AccountRepositoryType.swift in Sources */,
 				94F42253225783D500098818 /* EmployeeListInteractor.swift in Sources */,
+				94FB813622787E5A00BA5D5D /* ProjectsInteractorType.swift in Sources */,
+				94FB811622784D2800BA5D5D /* WorkLogFilterPresenter.swift in Sources */,
 				5073549B2255FD1000998237 /* TextViewAppearanceType.swift in Sources */,
 				94C1856A22708F5700BE009C /* ProjectApiModel.swift in Sources */,
 				94C185B12273165900BE009C /* WorkLogTimeCell.swift in Sources */,
 				507354A32255FD1000998237 /* NavigationBarAppearanceType.swift in Sources */,
+				94FB8126227873FA00BA5D5D /* ProjectCollectionViewCell.swift in Sources */,
+				94FB814122787EDC00BA5D5D /* ProjectTableViewCellPresenter.swift in Sources */,
 				94F042B8226DAC6F00AAF0A9 /* ProfileInfoViewDelegate.swift in Sources */,
 				507354A02255FD1000998237 /* ViewAppearanceType.swift in Sources */,
 				507354882255FD1000998237 /* CellTableViewSource.swift in Sources */,
@@ -1686,11 +1960,13 @@
 				94F042EC226E167500AAF0A9 /* WorkLogStatisticViewController.swift in Sources */,
 				94F1E86A226621E700D96DBF /* MenuTableViewController.swift in Sources */,
 				507354922255FD1000998237 /* StartPageInteractorType.swift in Sources */,
+				94FB8122227873FA00BA5D5D /* ProjectCollectionViewSource.swift in Sources */,
 				5073547D2255FD1000998237 /* AccountRepository.swift in Sources */,
 				507354AA2255FD1000998237 /* LightViewAppearance.swift in Sources */,
 				94FD57522264A4FB006155E2 /* UserApiModel.swift in Sources */,
 				94F042D4226E0B8D00AAF0A9 /* WorkLogViewController.swift in Sources */,
 				94F42254225783D500098818 /* EmployeeListPresenter.swift in Sources */,
+				94FB8125227873FA00BA5D5D /* ProjectCollectionViewCellDelegate.swift in Sources */,
 				507354AF2255FD1000998237 /* LightSliderAppearance.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

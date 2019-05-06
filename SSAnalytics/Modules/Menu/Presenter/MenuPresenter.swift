@@ -18,7 +18,7 @@ final class MenuPresenter: SttPresenter<MenuViewDelegate> {
     let disposeBag = DisposeBag()
     
     private(set) lazy var getUser = SttCommand(delegate: self, handler: { $0.onStart() })
-   
+    
     var userName: Dynamic<String> = Dynamic("")
     var avatarImage: Dynamic<Image> = Dynamic(Image(data: nil, url: nil))
     
@@ -32,8 +32,14 @@ final class MenuPresenter: SttPresenter<MenuViewDelegate> {
         super.injectView(delegate: view)
     }
     
-    override func viewAppearing() {
-        getUser.execute()
+    
+    private var firstStart = true
+    override func viewAppeared() {
+        super.viewAppeared()
+        if firstStart {
+            firstStart = false
+            getUser.execute()
+        }
     }
     
     func onStart() {
@@ -41,6 +47,12 @@ final class MenuPresenter: SttPresenter<MenuViewDelegate> {
             .subscribe(onNext: { [unowned self] user in
                 self.userName.value = user.data.name
                 self.avatarImage.value = Image(data: nil, url: user.data.imageUrl)
+                }, onError: { [unowned self] error in
+                    if let err = error as? SttBaseError {
+                        self.delegate?.sendError(error: err)
+                    }
+                    self.firstStart = true
             }).disposed(by: disposeBag)
     }
 }
+

@@ -13,5 +13,5 @@ protocol WorkLogRepositoryType {
     
     func getWorkLogStatistics(date: String) -> Observable<WorkLogStatisticApiModel>
     func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<[WorkLogDiaryResponseApiModel]>
-    
+    func getMyProjects(projectName: String) -> Observable<[ProjectApiModel]>
 }

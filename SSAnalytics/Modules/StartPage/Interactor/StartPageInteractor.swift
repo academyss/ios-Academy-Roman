@@ -13,16 +13,17 @@ import STT
 final class StartPageInteractor: StartPageInteractorType {
     
     private let _accountsRepository: AccountRepositoryType
-    private let _notificationErrorService: SttNotificationErrorServiceType
+    public let _notificationErrorService: SttNotificationErrorServiceType
     
     init(accountsRepository: AccountRepositoryType, notificationErrorService: SttNotificationErrorServiceType) {
         _accountsRepository = accountsRepository
         _notificationErrorService = notificationErrorService
     }
     
-    func getToken(email: String, password: String) -> Observable<TokenApiModel> {
+    func getToken(email: String, password: String) -> Observable<Void> {
         return _accountsRepository.getToken(data: SignInApiModel(email: email, password: password))
-            .useError(service: _notificationErrorService, ignoreBadRequest: false, customMessage: "Error")
+            .useError(service: _notificationErrorService, ignoreBadRequest: true, customMessage: "The user name or password is incorrect")
+            .toVoidObservable()
     }
     
     func logOut() {

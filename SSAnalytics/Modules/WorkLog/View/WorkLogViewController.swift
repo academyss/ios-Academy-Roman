@@ -16,32 +16,13 @@ class WorkLogViewController: SttViewController<WorkLogPresenter>, WorkLogViewDel
     @IBOutlet weak var scrollView: UIScrollView!
     
     var filterBarButton: UIBarButtonItem!
-
+    var paramTest: WorkLogLogTimeViewDelegate!
     
-	override func viewDidLoad() {
+    override func viewDidLoad() {
+        self.useErrorLabel = false
         super.viewDidLoad()
-        
-        viewPager.parent = self
-        viewPager.scrollView = scrollView
-
-        let vcStats = storyboard!.instantiateViewController(withIdentifier: "WorkLogStatistic")
-        let vcLogTime = storyboard!.instantiateViewController(withIdentifier: "WorkLogLogTime")
-        
-        viewPager.setItem(view: vcStats, title: "Summary")
-        viewPager.setItem(view: vcLogTime, title: "Log Time")
-        viewPager.titleTextColor = .black
-        viewPager.underlineCarretCollor = .blue
-        
-        self.title = "Work log"
         initialSetup()
-	}
-    
-    
-    func initialSetup() {
-        self.filterBarButton = UIBarButtonItem(image: UIImage(named: "Filter"), style: .plain, target: self, action: #selector(showFilterPage))
     }
-    
-    
     
     override func onPageChanged() {
         if viewPager.selectedSegment == 1 {
@@ -53,8 +34,13 @@ class WorkLogViewController: SttViewController<WorkLogPresenter>, WorkLogViewDel
     
     
     @objc func showFilterPage() {
-        
+        presenter.showFilter.execute()
     }
-
-	// MARK: - implementation of WorkLogViewDelegate
+    
+    func goToLogTime(param: WorkLogDiaryRequestApiModel) {
+        viewPager.goToPage(page: 1)
+        paramTest.passParameterToPage(param: param)
+    }
+    
+    // MARK: - implementation of WorkLogViewDelegate
 }

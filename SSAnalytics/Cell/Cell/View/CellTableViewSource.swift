@@ -36,12 +36,13 @@ final class CellTableViewSource: SttTableViewSource<CellTableViewCellPresenter> 
         let employee = collection[indexPath.row]
         print(employee.phone.value)
         let action = UIContextualAction(style: .normal, title: "Call") { (action, view, completion) in
-            if let url = URL(string: "tel://\(employee.phone)"), UIApplication.shared.canOpenURL(url) {
-                UIApplication.shared.open(url)
-            }
+            guard let number = URL(string: "tel://" + employee.phone.value) else { return }
+            UIApplication.shared.open(number)
+            completion(true)
         }
         action.image = UIImage(named: "CallIcon")
         action.backgroundColor = UIColor(named: "Blue")
         return action
     }
+    
 }

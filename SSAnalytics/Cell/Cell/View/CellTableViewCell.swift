@@ -31,11 +31,7 @@ class CellTableViewCell: SttTableViewCell<CellTableViewCellPresenter>, CellTable
         avatarImageView.placeholderType = .avatar
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
     }
-    
-    override func prepareForReuse() {
-        super.prepareForReuse()
-    }
-    
+        
     
     var set: SttBindingSet<CellTableViewCell>!
     override func prepareBind() {
@@ -54,7 +50,7 @@ class CellTableViewCell: SttTableViewCell<CellTableViewCellPresenter>, CellTable
         set.bind(showProfileButton).to(presenter.showProfile)
         set.bind(makeCallButton).to(presenter.call)
         set.bind(sendMailButton).to(presenter.sendEmail)
-        
+        set.bind(avatarImageView.tap()).to(presenter.showProfile)
         
         set.apply()
     }

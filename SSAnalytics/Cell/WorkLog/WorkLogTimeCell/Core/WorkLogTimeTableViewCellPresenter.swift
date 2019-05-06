@@ -17,13 +17,13 @@ final class WorkLogTimeTableViewCellPresenter: SttPresenter<WorkLogTimeTableView
     let spendedTime = Dynamic<Int>(0)
     let describtion = Dynamic<String>("")
     let startTime = Dynamic<String>("")
-    let status = Dynamic<String>("")
+    let status = Dynamic<WorkLogStatuses>(WorkLogStatuses.pending)
     
     let isSelected = Dynamic<Bool>(false)
     
     private(set) lazy var select = SttCommand(delegate: self, handler: { $0.onSelect() })
     
-    init(projectName: String, spendedTime: Int, describtion: String, startTime: String, status: String) {
+    init(projectName: String, spendedTime: Int, describtion: String, startTime: String, status: WorkLogStatuses) {
         
         self.projectName.value = projectName
         self.spendedTime.value = spendedTime
@@ -35,7 +35,6 @@ final class WorkLogTimeTableViewCellPresenter: SttPresenter<WorkLogTimeTableView
     }
     
     func onSelect() {
-        print(isSelected.value)
         isSelected.value.toggle()
         parent.updateTableView()
     }

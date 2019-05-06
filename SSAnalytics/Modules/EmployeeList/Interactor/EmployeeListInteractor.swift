@@ -23,8 +23,8 @@ final class EmployeeListInteractor: EmployeeListInteractorType {
     
     func getUsersByInput(input: String) -> Observable<[CellTableViewCellPresenter]> {
         return _usersRepository.getUsersByInput(input: input)
-            .useError(service: _notificationErrorService)
             .map({ $0.convertToViewModel() })
+            .useError(service: _notificationErrorService)
     }
     
     func getUsersById(userId: String) -> Observable<UserApiModel> {

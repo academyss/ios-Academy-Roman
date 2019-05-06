@@ -12,19 +12,17 @@ import RxSwift
 
 final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellTableViewCellDelegate {
     
-    
-    
     private let _router: EmployeeListRouterType
     private let _interactor: EmployeeListInteractorType
     
+    var employeesCollection = SttObservableCollection<CellTableViewCellPresenter>()
+    
+    let isEmpty = Dynamic(true)
+    let disposeBag = DisposeBag()
+    let searchString: Dynamic<String?> = Dynamic("")
+    
     private(set) lazy var download: SttCommand = SttCommand(delegate: self, handler: { $0.onDownload() })
     
-    var employeesCollection = SttObservableCollection<CellTableViewCellPresenter>()
-    let disposeBag = DisposeBag()
-    
-    var searchString: Dynamic<String?> = Dynamic("")
-    
-   
     
     init(view: SttViewable, notificationService: SttNotificationErrorServiceType, router: EmployeeListRouterType,
          interactor: EmployeeListInteractorType) {
@@ -42,21 +40,40 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
         
         if firstStart {
             firstStart = false
+            
             searchString.bind { [unowned self] _ in
                 self.download.execute()
             }
+            
+            self.employeesCollection.observableObject
+                .useWork(download)
+                .subscribe(onNext: { [unowned self] _ in
+                    self.isEmpty.value = self.employeesCollection.isEmpty
+                }).disposed(by: disposeBag)
         }
         
+        if employeesCollection.isEmpty {
+            self.download.execute()
+        }        
+    }
+    
+    override func viewAppearing() {
+        super.viewAppearing()
+        deselectAll()
     }
     
     func onDownload() {
+        self.employeesCollection.removeAll()
         _interactor.getUsersByInput(input: searchString.value ?? "")
-            .useWork(download)
             .delaySubscription(1, scheduler: MainScheduler.instance)
+            .useWork(download)
             .subscribe(onNext: { [unowned self] users in
-                self.employeesCollection.removeAll()
                 self.employeesCollection.append(contentsOf: users)
                 self.employeesCollection.forEach({ $0.parent = self })
+                }, onError: { [unowned self] error in
+                    if let err = error as? SttBaseError {
+                        self.delegate?.sendError(error: err)
+                    }
             }).disposed(by: disposeBag)
     }
     
@@ -66,5 +83,10 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
     
     func updateTableView() {
         delegate?.updateTableView()
+    }
+    
+    func deselectAll() {
+        employeesCollection.forEach({ $0.isSelected.value = false })
+        updateTableView()
     }
 }

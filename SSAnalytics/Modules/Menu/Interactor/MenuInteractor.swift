@@ -22,7 +22,6 @@ final class MenuInteractor: MenuInteractorType {
     
     func getCurrentUserInfo() -> Observable<UserApiModel> {
         return _usersRepository.getUsersById(userId: nil)
-            .useError(service: _notificationErrorService)
     }
     
     

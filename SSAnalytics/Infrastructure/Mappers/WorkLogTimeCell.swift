@@ -11,7 +11,7 @@ import STT
 
 extension LogItem {
     func convertLogItem() -> WorkLogTimeTableViewCellPresenter {
-        return WorkLogTimeTableViewCellPresenter(projectName: self.projectName, spendedTime: self.timeSpentSeconds, describtion: self.describtion, startTime: self.startTime, status: String(self.status.getJsonString()))
+        return WorkLogTimeTableViewCellPresenter(projectName: self.projectName, spendedTime: self.timeSpentSeconds, describtion: self.describtion, startTime: self.startTime, status: self.status)
     }
 }
 
@@ -35,6 +35,18 @@ extension WorkLogDiaryResponseApiModel {
 extension Array where Element == WorkLogDiaryResponseApiModel {
     
     func convertToViewModel() -> [(SttObservableCollection<WorkLogTimeTableViewCellPresenter>, WorkLogTimeViewSectionPresenter)] {
+        return self.map({ $0.convertToViewModel() })
+    }
+}
+
+extension ProjectApiModel {
+    func convertToViewModel() -> ProjectTableViewCellPresenter {
+        return ProjectTableViewCellPresenter(id: id, name: projectName)
+    }
+}
+
+extension Array where Element == ProjectApiModel {
+    func convertToViewModel() -> [ProjectTableViewCellPresenter] {
         return self.map({ $0.convertToViewModel() })
     }
 }

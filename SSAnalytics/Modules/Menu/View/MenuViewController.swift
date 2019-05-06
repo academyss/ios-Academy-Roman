@@ -17,8 +17,15 @@ class MenuViewController: SttViewController<MenuPresenter>, MenuViewDelegate {
     
     override func viewDidLoad() {
         super.hideNavigationBar = true
+        self.useErrorLabel = false
         super.viewDidLoad()
         initialSetup()
+    }
+    
+    var firstStart = true
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+
     }
     
     var set: SttBindingSet<MenuViewController>!
@@ -29,6 +36,8 @@ class MenuViewController: SttViewController<MenuPresenter>, MenuViewDelegate {
         set.bind(avatarImageView).to(presenter.avatarImage)
         
         set.apply()
+        
+        presenter.getUser.useIndicator(view: avatarImageView).disposed(by: presenter.listenerDisposableBag)
     }
     
     

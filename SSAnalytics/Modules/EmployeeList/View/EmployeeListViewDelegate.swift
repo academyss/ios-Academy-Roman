@@ -10,6 +10,5 @@ import Foundation
 import STT
 
 protocol EmployeeListViewDelegate: SttViewControlable {
-  func updateTableView()
-  
+    func updateTableView()
 }

@@ -19,7 +19,7 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     let job: Dynamic<String>
     let phone: Dynamic<String>
     let skype: Dynamic<String?>
-    
+    let email: Dynamic<String>
     let isSelected: Dynamic<Bool>
     
     private(set) lazy var showProfile = SttCommand(delegate: self, handler: { $0.onProfileShow() })
@@ -36,6 +36,7 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
         self.job = Dynamic(employee.roles.joined(separator: ", "))
         self.phone = Dynamic(employee.phoneNumber)
         self.skype = Dynamic(employee.skype)
+        self.email = Dynamic(employee.email)
         
         self.isSelected = Dynamic(false)
         
@@ -54,10 +55,19 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     }
     
     func onCall() {
-        print("make call")
+        guard let number = URL(string: "tel://" + phone.value) else { return }
+        UIApplication.shared.open(number)
+        parent?.updateTableView()
     }
     
     func onEmail() {
-        print("send email")
+        let email = self.email.value
+        if let url = URL(string: "mailto:\(email)") {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url)
+            } else {
+                UIApplication.shared.openURL(url)
+            }
+        }
     }
 }

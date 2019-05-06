@@ -12,16 +12,16 @@ import STT
 
 final class ProfileInfoModuleAssembler: Assembly {
     
-	//Module assembly
+    //Module assembly
     func assemble(container: Container) {
         container.register(ProfileInfoRouterType.self) { (r, vc: ProfileInfoViewController) in ProfileInfoRouter(transitionHandler: vc) }
         
-		container.register(ProfileInfoInteractorType.self,
+        container.register(ProfileInfoInteractorType.self,
                            factory: { (r) in ProfileInfoInteractor() })
-
+        
         container.register(ProfileInfoPresenter.self) { (r, vc: ProfileInfoViewController) in
             ProfileInfoPresenter(view: vc, notificationService: r.resolve(SttNotificationErrorServiceType.self)!,
-                                   router: r.resolve(ProfileInfoRouterType.self, argument: vc)!, interactor: r.resolve(ProfileInfoInteractorType.self)!)
+                                 router: r.resolve(ProfileInfoRouterType.self, argument: vc)!, interactor: r.resolve(ProfileInfoInteractorType.self)!)
         }
         container.storyboardInitCompleted(ProfileInfoViewController.self) { r, viewController in
             viewController.presenter = r.resolve(ProfileInfoPresenter.self, argument: viewController)!

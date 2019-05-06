@@ -18,4 +18,7 @@ final class WorkLogRepository: BaseRepository, WorkLogRepositoryType {
     func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<[WorkLogDiaryResponseApiModel]> {
         return _apiDataProvider.getWorkLogDiary(data: data)
     }
+    func getMyProjects(projectName: String) -> Observable<[ProjectApiModel]> {
+        return _apiDataProvider.getMyProjects(projectName: projectName)
+    }
 }

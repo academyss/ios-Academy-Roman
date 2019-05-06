@@ -2,15 +2,15 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireNetworkActivityLogger (2.4.0):
     - Alamofire (~> 4.8)
-  - AppCenter (1.14.0):
-    - AppCenter/Analytics (= 1.14.0)
-    - AppCenter/Crashes (= 1.14.0)
-  - AppCenter/Analytics (1.14.0):
+  - AppCenter (2.0.1):
+    - AppCenter/Analytics (= 2.0.1)
+    - AppCenter/Crashes (= 2.0.1)
+  - AppCenter/Analytics (2.0.1):
     - AppCenter/Core
-  - AppCenter/Core (1.14.0)
-  - AppCenter/Crashes (1.14.0):
+  - AppCenter/Core (2.0.1)
+  - AppCenter/Crashes (2.0.1):
     - AppCenter/Core
-  - Cuckoo (0.12.1)
+  - Cuckoo (0.13.0)
   - KeychainSwift (10.0.0)
   - LightRoute (2.1.20)
   - RxAlamofire (4.4.1):
@@ -86,8 +86,8 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireNetworkActivityLogger: 6d3398c692d2c5d83b0c58793537860aca1e383d
-  AppCenter: 02c5efe08d3bbab5421ae41d5f7aa7238906b817
-  Cuckoo: 2f10364798baa4b0d4aacabfa475249cf29977bc
+  AppCenter: 6a5ff2fd007b53431259fdd74f91eb3d0dfea3d1
+  Cuckoo: 3112ee8b01d84e21bde500a45f9992ac81d80006
   KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
   LightRoute: aa65803a1d984be3be83651b433699077bfe6ab3
   RxAlamofire: ed65f451f5a9a59419b0b9e705043dc01410edd9

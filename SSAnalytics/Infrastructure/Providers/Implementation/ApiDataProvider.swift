@@ -27,7 +27,7 @@ final class ApiDataProvider: ApiDataProviderType {
         return _httpService.post(controller: ApiConroller.token,
                                  data: ["grant_type" : "password",
                                           "username" : data.email,
-                                          "password" : data.password], insertToken: false)
+                                          "password" : data.password])
             .getResult()
     }
     
@@ -54,11 +54,11 @@ final class ApiDataProvider: ApiDataProviderType {
                                 data: ["startDate" : data.startDate,
                                        "endDate" : data.endDate,
                                        "projectsId" : data.projectsId,
-                                       "workLogStatuses" : data.workLogStatuses], insertToken: true)
+                                       "workLogStatuses" : data.workLogStatuses.map( { $0.rawValue })], insertToken: true)
         .getResult()
     }
     
-    func getMyProjects(projectName: String) -> Observable<ProjectApiModel> {
+    func getMyProjects(projectName: String) -> Observable<[ProjectApiModel]> {
         return _httpService.get(controller: ApiConroller.project("myProjects"),
                                 data: ["projectName": projectName], insertToken: true)
         .getResult()

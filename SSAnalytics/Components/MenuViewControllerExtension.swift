@@ -14,6 +14,7 @@ extension MenuViewController {
     func initialSetup() {
         avatarImageView.placeholderType = .avatar
         avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
+        
     }
     
 }

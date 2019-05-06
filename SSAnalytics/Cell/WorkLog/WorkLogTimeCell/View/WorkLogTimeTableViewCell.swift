@@ -37,8 +37,8 @@ class WorkLogTimeTableViewCell: SttTableViewCell<WorkLogTimeTableViewCellPresent
         set.bind(projectNameLabel).to(presenter.projectName)
         set.bind(spendedTimeLabel).to(presenter.spendedTime).withConverter(TimeFromSecondsConverter.self)
         set.bind(describtionLabel).to(presenter.describtion)
-        set.bind(startTimeLabel).to(presenter.startTime)//.withConverter(StartTimeConverter.self) TODo: fix converter
-        set.bind(statusLabel).to(presenter.status)
+        set.bind(startTimeLabel).to(presenter.startTime).withConverter(StartTimeConverter.self)
+        set.bind(statusLabel).to(presenter.status).withConverter(WorkLogStatusConverter.self)
         
         set.bind(Bool.self).forProperty({ $0.detailsView.isHidden = !$1 })
             .to(presenter.isSelected)

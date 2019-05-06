@@ -21,6 +21,7 @@ class StartPageViewController: SttKeyboardViewController<StartPagePresenter>, St
     private var passwordHandlerValidator: SttTextFieldHandlerValidator!
     
     override func viewDidLoad() {
+        self.useErrorLabel = false
         super.hideNavigationBar = true
         super.viewDidLoad()
         setupInputBoxes()
@@ -67,6 +68,10 @@ class StartPageViewController: SttKeyboardViewController<StartPagePresenter>, St
         passwordInputBox.textFieldHandler.addTarget(type: .shouldReturn, delegate: self) { (v, _) in v.view.endEditing(true) }
         
         set.apply()
+        presenter.loginCommand.useIndicator(view: loginButton).disposed(by: presenter.listenerDisposableBag)
+        presenter.loginCommand.useWork(start: { self.loginButton.setTitle("", for: .normal) }, end: { self.loginButton.setTitle("Login", for: .normal) })
+            .disposed(by: presenter.listenerDisposableBag)
+        
     }
     
     func changeLogo() {
@@ -79,9 +84,6 @@ class StartPageViewController: SttKeyboardViewController<StartPagePresenter>, St
                 self.logoImageView.image = UIImage(named: "StartupSoftShortLogo")
             })
         }
-        
     }
-    
- 
     
 }

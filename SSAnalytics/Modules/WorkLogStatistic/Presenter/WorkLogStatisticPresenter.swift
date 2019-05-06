@@ -15,8 +15,6 @@ final class WorkLogStatisticPresenter: SttPresenter<WorkLogStatisticViewDelegate
     private let _router: WorkLogStatisticRouterType
     private let _interactor: WorkLogStatisticInteractorType
     
-    private(set) lazy var getSummary = SttComandWithParametr(delegate: self, handler: { $0.onGetStats(dateString: $1) })
-    
     let approved = Dynamic<Int>(0)
     let logTime = Dynamic<Int>(0)
     let pending = Dynamic<Int>(0)
@@ -25,6 +23,9 @@ final class WorkLogStatisticPresenter: SttPresenter<WorkLogStatisticViewDelegate
     let rejectedSalary = Dynamic<Double>(0)
        
     let disposeBag = DisposeBag()
+    
+    private(set) lazy var getSummary = SttComandWithParametr(delegate: self, handler: { $0.onGetStats(dateString: $1) })
+
     
     init(view: SttViewable, notificationService: SttNotificationErrorServiceType, router: WorkLogStatisticRouterType,
          interactor: WorkLogStatisticInteractorType) {
@@ -48,7 +49,11 @@ final class WorkLogStatisticPresenter: SttPresenter<WorkLogStatisticViewDelegate
                 self.rejected.value = value.rejected
                 self.totalSalary.value = value.totalSalary
             
-        }).disposed(by: disposeBag)
+                }, onError: { [unowned self] error in
+                    if let err = error as? SttBaseError {
+                        self.delegate?.sendError(error: err)
+                    }                    
+            }).disposed(by: disposeBag)
         
     }  
     

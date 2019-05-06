@@ -17,10 +17,7 @@ class TimeFromSecondsConverter: SttConverter<Int, String> {
         let minutes = (value - hours * 3600) / 60
         
         return "\(hours)h \(minutes)m"
-    }
-    
-    
-    
+    }    
 }
 
 class SalaryConverter: SttConverter<Double, String> {
@@ -42,7 +39,7 @@ class DateConverter: SttConverter<String, String> {
             result += dateFormatter.string(from: date)
             return result
         }
-        return ""
+        return value
         
     }
     
@@ -51,14 +48,44 @@ class DateConverter: SttConverter<String, String> {
 class StartTimeConverter: SttConverter<String,String> {
     override func convert(value: String, parametr: Any?) -> String {
         let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.sssZZZ"
+        dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ss.SSSZ"
         if let date = dateFormatter.date(from: value) {
-            dateFormatter.dateFormat = "hh:mm:ss"
-            var time = dateFormatter.string(from: date)
-            print(time)
-            return time
-        } 
-        return ""
+            return getTimeFromDate(date: date)
+        } else {
+            dateFormatter.dateFormat = "yyyy-MM-dd'T'HH:mm:ssZ"
+            if let date = dateFormatter.date(from: value) {
+                return getTimeFromDate(date: date)
+            }
+        }
+        return value
+    }
+    
+    func getTimeFromDate(date: Date) ->  String {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "hh:mm:ss"
+        let time = dateFormatter.string(from: date)
+        return time
+    }
+}
+
+class DateForDatePickerConverter: SttConverter<Date, String?> {
+    override func convert(value: Date, parametr: Any?) -> String? {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "dd/MM/yyyy"
+        return dateFormatter.string(from: value)
+    }
+}
+
+class WorkLogStatusConverter: SttConverter<WorkLogStatuses, String> {
+    override func convert(value: WorkLogStatuses, parametr: Any?) -> String {
+        switch value {
+        case .approved:
+            return "Approved"
+        case .pending:
+            return "Pending"
+        case .rejected:
+            return "Rejected"
+        }
     }
 }
 

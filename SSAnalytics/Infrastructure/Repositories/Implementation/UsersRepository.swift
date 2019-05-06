@@ -8,7 +8,7 @@
 
 import Foundation
 import RxSwift
-
+import STT
 
 final class UsersRepository: BaseRepository, UsersRepositoryType {
     
@@ -23,12 +23,8 @@ final class UsersRepository: BaseRepository, UsersRepositoryType {
         if _keyValueStorageProvider.token.isExists() {
             return _apiDataProvider.getUsersById(userId: _keyValueStorageProvider.token.get().userId)
         } else {
-            return Observable.error(MyError.tokenNotExist)
+            return Observable.error(SttBaseError.unkown("Token not exist"))
         }
     }
     
-}
-
-enum MyError: Error {
-    case tokenNotExist
 }

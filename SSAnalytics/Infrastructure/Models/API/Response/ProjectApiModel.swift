@@ -10,4 +10,5 @@ import Foundation
 
 struct ProjectApiModel: Codable {
     var id: String
+    var projectName: String
 }

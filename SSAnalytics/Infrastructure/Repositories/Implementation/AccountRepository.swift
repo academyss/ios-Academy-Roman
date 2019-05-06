@@ -13,7 +13,7 @@ final class AccountRepository: BaseRepository, AccountRepositoryType {
    
     func getToken(data: SignInApiModel) -> Observable<TokenApiModel> {
         return _apiDataProvider.getToken(data: data)
-            .map({self._keyValueStorageProvider.token.put(item: $0); return $0 })
+            .map({ self._keyValueStorageProvider.token.put(item: $0); return $0 })
     }
     
     func logOut() {

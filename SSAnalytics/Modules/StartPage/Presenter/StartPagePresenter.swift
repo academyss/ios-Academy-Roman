@@ -23,7 +23,6 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
     private(set) lazy var loginCommand = SttCommand(delegate: self, handler: { $0.onLogin() }, handlerCanExecute: { $0.canSignUp })
     private(set) lazy var changeLogoCommand = SttCommand(delegate: self, handler: { $0.onLogo() })
     private(set) lazy var logOut = SttCommand(delegate: self, handler: { $0.onLogOut() })
-    
     private(set) lazy var validate = SttComandWithParametr(delegate: self, handler: { $0.onValidate($1) })
     
     let disposeBag = DisposeBag()
@@ -42,12 +41,16 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
     }
     
     override func viewAppeared() {
+        super.viewAppeared()
         self.logOut.execute()
     }      
     
     func onLogin() {
+        
         _interactor.getToken(email: email.rawValue.value!, password: password.rawValue.value!)
-            .subscribe(onNext: { _ in self._router.navigateWithSegue(to: EmployeeListPresenter.self, parametr: nil)
+            .useWork(loginCommand)
+            .subscribe(onNext: { [unowned self] _ in
+                self._router.navigateWithSegue(to: EmployeeListPresenter.self, parametr: nil)
             }).disposed(by: disposeBag)
     }
     
@@ -63,7 +66,6 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
             self.password.raiseError(password.rawValue.value)
         }        
         self.loginCommand.raiseCanExecute(parametr: nil)
-        
     }
     
     func onLogOut() {
@@ -71,3 +73,5 @@ final class StartPagePresenter: SttPresenter<StartPageViewDelegate> {
     }
     
 }
+
+

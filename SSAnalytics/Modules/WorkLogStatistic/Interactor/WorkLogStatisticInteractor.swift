@@ -22,7 +22,6 @@ final class WorkLogStatisticInteractor: WorkLogStatisticInteractorType {
     
     func getWorkLogStatistics(date: String) -> Observable<WorkLogStatisticApiModel> {
         return _workLogRepository.getWorkLogStatistics(date: date)
-            .useError(service: _notificationErrorService)
     }
     
 }

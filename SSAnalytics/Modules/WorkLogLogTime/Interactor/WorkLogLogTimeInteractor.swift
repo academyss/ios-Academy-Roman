@@ -22,7 +22,6 @@ final class WorkLogLogTimeInteractor: WorkLogLogTimeInteractorType {
     
     func getWorkLogDiary(data: WorkLogDiaryRequestApiModel) -> Observable<[(SttObservableCollection<WorkLogTimeTableViewCellPresenter>, WorkLogTimeViewSectionPresenter)]> {
         return _workLogRepository.getWorkLogDiary(data: data)
-            .useError(service: _notificationErrorService)
             .map({ $0.convertToViewModel() })
     }
 }

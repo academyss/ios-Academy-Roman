@@ -19,9 +19,13 @@ class ProfileInfoViewController: SttViewController<ProfileInfoPresenter>, Profil
     @IBOutlet weak var emailLabel: UILabel!
     @IBOutlet weak var phoneLabel: UILabel!
     @IBOutlet weak var skypeLabel: UILabel!
+  
     
+    @IBOutlet weak var callButton: UIButton!
+    @IBOutlet weak var emailButton: UIButton!
     
     override func viewDidLoad() {
+        self.useErrorLabel = false
         super.viewDidLoad()
         initialSetup()
 	}
@@ -36,15 +40,13 @@ class ProfileInfoViewController: SttViewController<ProfileInfoPresenter>, Profil
         set.bind(emailLabel).to(presenter.email)
         set.bind(phoneLabel).to(presenter.phone)
         set.bind(skypeLabel).to(presenter.skype)
+        
         set.bind(String.self).forProperty({ $0.title = $1}).to(presenter.name)
         
+        set.bind(emailButton).to(presenter.sendEmail)
+        set.bind(callButton).to(presenter.call)
+        
         set.apply()
-    }
-    
-    func initialSetup() {
-        avatarImageView.layer.cornerRadius = avatarImageView.bounds.width / 2
-        avatarImageView.placeholderType = .avatar
-        rolesLabel.textColor = UIColor(named: "LightGray")
     }
 
 	// MARK: - implementation of ProfileInfoViewDelegate

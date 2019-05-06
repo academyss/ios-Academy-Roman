@@ -34,7 +34,9 @@ final class ApplicationAssembly {
         ProfileInfoModuleAssembler(),
         WorkLogModuleAssembler(),
         WorkLogStatisticModuleAssembler(),
-        WorkLogLogTimeModuleAssembler()
+        WorkLogLogTimeModuleAssembler(),
+        WorkLogFilterModuleAssembler(),
+        ProjectsModuleAssembler()
         // There are other ModuleAssembler
         ])
     

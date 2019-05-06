@@ -10,5 +10,6 @@ import Foundation
 import STT
 
 protocol WorkLogLogTimeViewDelegate: SttViewControlable {
-        func updateTableView()
+    func updateTableView()
+    func passParameterToPage(param: WorkLogDiaryRequestApiModel)
 }

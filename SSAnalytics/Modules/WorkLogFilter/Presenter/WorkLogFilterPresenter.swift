@@ -57,20 +57,27 @@ final class WorkLogFilterPresenter: SttPresenterWithParametr<WorkLogFilterViewDe
             
             projects.observableObject
                 .subscribe(onNext: { [unowned self] _ in
-                    self.isEmpty.value = self.projects.isEmpty
+                    if self.projects.isEmpty {
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.3, execute: { self.isEmpty.value = true })
+                    } else {
+                        self.isEmpty.value = false
+                    }
                 }).disposed(by: disposeBag)
         }
         
     }
     override func prepare(parametr: @escaping WorkLogFilterPresenterClose) {
+        super.prepare(parametr: parametr)
         self.closeClosure = parametr
     }
     
     func onAddProjects(_ projects: [ProjectCollectionViewCellPresenter]){
+        self.projects.removeAll()
         self.projects.append(contentsOf: projects)
     }
     
     func onClear() {
+        isEmpty.value = false
         projects.removeAll()
     }
     

@@ -22,6 +22,16 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     var employees: CellTableViewSource!
     var searchBarHandler: SttHanlderSearchBar!
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(handleRefresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = UIColor.clear
+
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         self.useErrorLabel = false
         super.viewDidLoad()
@@ -29,6 +39,7 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         configureNavigationBar()
         configureTableView()
         configureSideMenu()
+        self.employeesTableView.addSubview(self.refreshControl)
     }
     
     
@@ -54,10 +65,19 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         presenter.download.useWork(handler: { [unowned self] (status) in
             self.noDataLabel.isHidden = status
         }).disposed(by: presenter.listenerDisposableBag)
+        
     }
     
     func updateTableView() {
         self.employeesTableView.reloadData()
+    }
+    
+    
+    
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.presenter.download.execute()
+        refreshControl.endRefreshing()
     }
     
 }

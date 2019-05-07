@@ -25,7 +25,11 @@ extension EmployeeListViewController {
         self.searchBarHandler.addTarget(type: .textDidChange, delegate: self) { (v, sb) in
             v.presenter.searchString.value = sb.text
         }
+        self.searchBarHandler.addTarget(type: .shouldBeginEditing, delegate: self, handler: { (v, sb) in
+            v.presenter.searchString.value = sb.text
+        })
         self.searchBarHandler.addTarget(type: .searchButtonClicked, delegate: self) { (view, sb) in
+            view.presenter.download.execute()
             sb.endEditing(true)
         }
         self.searchBarHandler.addTarget(type: .cancelClicked, delegate: self) { (view, sb) in

@@ -43,25 +43,27 @@ extension WorkLogFilterViewController {
         clearButton.layer.cornerRadius = 15
         clearButton.setBorder(color: .black, size: 1)
         
-        filterButton.layer.cornerRadius = 15
+        filterButton.layer.cornerRadius = filterButton.bounds.height / 2
         filterButton.tintColor = .white
         filterButton.backgroundColor = UIColor(named: "Blue")
         
-        cancelButton.layer.cornerRadius = 15
+        cancelButton.layer.cornerRadius = cancelButton.bounds.height / 2
         cancelButton.setBorder(color: .black, size: 1)
         
         projectsTextFieldHandler = SttHandlerTextField(projectsTextField)
+        
         projectsTextFieldHandler.addTarget(type: .didStartEditing, delegate: self, handler: { (self, textField) in
             
             let projectsController = UIStoryboard(name: "Application", bundle: nil).instantiateViewController(withIdentifier: "Projects") as! ProjectsViewController
             projectsController.del = self
+            projectsController.selectProjectsWhichWereSelected(projects: self.presenter.projects.map({ ProjectTableViewCellPresenter(id: $0.id.value, name: $0.name.value) }))
             projectsController.modalPresentationStyle = .popover
             projectsController.popoverPresentationController?.permittedArrowDirections = .up
             projectsController.popoverPresentationController?.sourceView = self.projectsTextField
             projectsController.popoverPresentationController?.delegate = self
             let myRect = self.projectsTextField.bounds
             projectsController.popoverPresentationController?.sourceRect = myRect
-            
+            self.presenter.projects.removeAll()
             self.present(projectsController,animated: true,completion: nil)
         })
         

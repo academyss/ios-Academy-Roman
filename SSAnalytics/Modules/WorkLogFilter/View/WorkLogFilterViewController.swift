@@ -64,7 +64,8 @@ class WorkLogFilterViewController: SttKeyboardViewController<WorkLogFilterPresen
             .withConverter(DateForDatePickerConverter.self)
         
         set.bind(filterButton).to(presenter.filter)
-        set.bind(Bool.self).forProperty({ $0.noDataLabel.isHidden = !$1 }).to(presenter.isEmpty)
+        set.bind(Bool.self).forProperty({ $0.noDataLabel.isHidden = !$1 })
+            .to(presenter.isEmpty)
         
         
         set.apply()
@@ -99,6 +100,5 @@ class WorkLogFilterViewController: SttKeyboardViewController<WorkLogFilterPresen
             fatalError()
         }
     }
-    
 }
 

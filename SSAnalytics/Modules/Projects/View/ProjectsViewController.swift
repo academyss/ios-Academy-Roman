@@ -44,7 +44,7 @@ class ProjectsViewController: SttViewController<ProjectsPresenter>, ProjectsView
     // MARK: - implementation of ProjectsViewDelegate
     func addProjectsToCollectionView() {
         if let parent = del as? WorkLogFilterViewController {
-            parent.presenter.clear.execute()
+//            parent.presenter.clear.execute()
             parent.addProjects(projects: presenter.projects.compactMap({ (project) in
                 if project.isSelected.value {
                     return .init(id: project.id.value, name: project.name.value)
@@ -55,4 +55,9 @@ class ProjectsViewController: SttViewController<ProjectsPresenter>, ProjectsView
             parent.projectsTextField.endEditing(true)
         }
     }
+    
+    func selectProjectsWhichWereSelected(projects: [ProjectTableViewCellPresenter]) {
+        presenter.selectedProjects.append(contentsOf: projects)
+    }
+    
 }

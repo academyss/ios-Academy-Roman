@@ -11,4 +11,5 @@ import STT
 
 protocol ProjectsViewDelegate: SttViewControlable {
     func addProjectsToCollectionView()
+    func selectProjectsWhichWereSelected(projects: [ProjectTableViewCellPresenter])
 }

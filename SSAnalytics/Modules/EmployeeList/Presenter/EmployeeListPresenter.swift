@@ -23,7 +23,6 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
     
     private(set) lazy var download: SttCommand = SttCommand(delegate: self, handler: { $0.onDownload() })
     
-    
     init(view: SttViewable, notificationService: SttNotificationErrorServiceType, router: EmployeeListRouterType,
          interactor: EmployeeListInteractorType) {
         
@@ -32,6 +31,7 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
         
         super.init(notificationError: notificationService)
         super.injectView(delegate: view)
+        searchString.addListener({ print($0) })
     }
     
     private var firstStart = true
@@ -65,7 +65,7 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
     func onDownload() {
         self.employeesCollection.removeAll()
         _interactor.getUsersByInput(input: searchString.value ?? "")
-            .delaySubscription(1, scheduler: MainScheduler.instance)
+            .delaySubscription(0.25, scheduler: MainScheduler.instance)
             .useWork(download)
             .subscribe(onNext: { [unowned self] users in
                 self.employeesCollection.append(contentsOf: users)

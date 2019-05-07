@@ -17,11 +17,21 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
     
     var source: WorkLogTimeTableViewSource!
     
+    lazy var refreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:
+            #selector(handleRefresh(_:)),
+                                 for: UIControl.Event.valueChanged)
+        refreshControl.tintColor = UIColor.clear
+        
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         self.useErrorLabel = false
         super.viewDidLoad()
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 1))
+        tableView.addSubview(refreshControl)
     }
     
     var set: SttBindingSet<WorkLogLogTimeViewController>!
@@ -53,5 +63,10 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
     
     func passParameterToPage(param: WorkLogDiaryRequestApiModel) {
         presenter.filterObject.value = param
+    }
+    
+    @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
+        self.presenter.download.execute()
+        refreshControl.endRefreshing()
     }
 }

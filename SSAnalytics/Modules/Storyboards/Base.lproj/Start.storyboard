@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="8Di-h8-rdf">
-    <device id="retina4_7" orientation="portrait">
+    <device id="retina6_1" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -15,37 +15,37 @@
             <objects>
                 <viewController storyboardIdentifier="StartPage" id="BYZ-38-t0r" customClass="StartPageViewController" customModule="SSAnalytics" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bod-xS-oKw">
-                                <rect key="frame" x="0.0" y="64" width="375" height="603"/>
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sx3-nt-GKl">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="588"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="818"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aX9-t7-noK" customClass="SttButton" customModule="STT">
-                                                <rect key="frame" x="35" y="521" width="305" height="52"/>
+                                                <rect key="frame" x="35" y="736" width="344" height="52"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="52" id="jCO-km-rEO"/>
                                                 </constraints>
                                                 <state key="normal" title="Login"/>
                                             </button>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="StartupSoftShortLogo" translatesAutoresizingMaskIntoConstraints="NO" id="P83-EB-wUL">
-                                                <rect key="frame" x="112.5" y="100" width="150" height="111"/>
+                                                <rect key="frame" x="132" y="80" width="150" height="111"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="111" id="JX9-kI-rIm"/>
                                                     <constraint firstAttribute="width" constant="150" id="bIB-fz-SCO"/>
                                                 </constraints>
                                             </imageView>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yrt-qb-h8w" customClass="SttInputBox" customModule="STT">
-                                                <rect key="frame" x="35" y="301" width="305" height="80"/>
+                                                <rect key="frame" x="35" y="281" width="344" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="H4v-oZ-INH"/>
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="a4x-bc-orS" customClass="SttInputBox" customModule="STT">
-                                                <rect key="frame" x="35" y="381" width="305" height="80"/>
+                                                <rect key="frame" x="35" y="361" width="344" height="80"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="80" id="Rck-0u-FVZ"/>
                                                 </constraints>
@@ -54,18 +54,18 @@
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <constraints>
                                             <constraint firstItem="a4x-bc-orS" firstAttribute="leading" secondItem="sx3-nt-GKl" secondAttribute="leading" constant="35" id="4hD-Xh-7Bb"/>
-                                            <constraint firstItem="aX9-t7-noK" firstAttribute="top" secondItem="a4x-bc-orS" secondAttribute="bottom" constant="60" id="E0m-aK-eni"/>
                                             <constraint firstAttribute="trailing" secondItem="yrt-qb-h8w" secondAttribute="trailing" constant="35" id="GsJ-se-Etz"/>
                                             <constraint firstAttribute="trailing" secondItem="aX9-t7-noK" secondAttribute="trailing" constant="35" id="LX7-NX-TIc"/>
                                             <constraint firstItem="yrt-qb-h8w" firstAttribute="leading" secondItem="sx3-nt-GKl" secondAttribute="leading" constant="35" id="NR1-C5-Unw"/>
                                             <constraint firstItem="a4x-bc-orS" firstAttribute="top" secondItem="yrt-qb-h8w" secondAttribute="bottom" id="Qh5-uM-F7b"/>
                                             <constraint firstAttribute="trailing" secondItem="a4x-bc-orS" secondAttribute="trailing" constant="35" id="arr-tc-N9H"/>
-                                            <constraint firstAttribute="bottom" secondItem="aX9-t7-noK" secondAttribute="bottom" constant="15" id="bex-qf-L98"/>
-                                            <constraint firstItem="P83-EB-wUL" firstAttribute="top" secondItem="sx3-nt-GKl" secondAttribute="top" constant="100" id="jpF-71-4II"/>
+                                            <constraint firstAttribute="bottom" secondItem="aX9-t7-noK" secondAttribute="bottom" constant="30" id="bex-qf-L98"/>
+                                            <constraint firstItem="P83-EB-wUL" firstAttribute="top" secondItem="sx3-nt-GKl" secondAttribute="top" constant="80" id="jpF-71-4II"/>
                                             <constraint firstItem="P83-EB-wUL" firstAttribute="centerX" secondItem="sx3-nt-GKl" secondAttribute="centerX" id="oQ4-oo-OYe"/>
                                             <constraint firstItem="aX9-t7-noK" firstAttribute="leading" secondItem="sx3-nt-GKl" secondAttribute="leading" constant="35" id="pRU-1Z-dA3"/>
                                             <constraint firstItem="yrt-qb-h8w" firstAttribute="top" secondItem="P83-EB-wUL" secondAttribute="bottom" constant="90" id="sWf-YJ-XSD"/>
                                             <constraint firstAttribute="trailing" secondItem="yrt-qb-h8w" secondAttribute="trailing" constant="35" id="t8B-b4-Qf4"/>
+                                            <constraint firstItem="aX9-t7-noK" firstAttribute="top" relation="greaterThanOrEqual" secondItem="a4x-bc-orS" secondAttribute="bottom" constant="50" id="xO6-eA-LBY"/>
                                         </constraints>
                                     </view>
                                 </subviews>
@@ -83,7 +83,7 @@
                             <constraint firstItem="bod-xS-oKw" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="ZET-gU-hIu"/>
                             <constraint firstItem="sx3-nt-GKl" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="Ze4-Fb-0FZ"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="bod-xS-oKw" secondAttribute="bottom" id="dmx-kF-oST"/>
-                            <constraint firstItem="sx3-nt-GKl" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" priority="250" id="fyu-pN-DYf"/>
+                            <constraint firstItem="sx3-nt-GKl" firstAttribute="height" secondItem="bod-xS-oKw" secondAttribute="height" priority="250" id="fyu-pN-DYf"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="bod-xS-oKw" secondAttribute="trailing" id="gWk-Bo-Qdd"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -112,10 +112,9 @@
         <!--Navigation Controller-->
         <scene sceneID="hhu-bH-Aqy">
             <objects>
-                <navigationController storyboardIdentifier="start" automaticallyAdjustsScrollViewInsets="NO" id="8Di-h8-rdf" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="start" automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="8Di-h8-rdf" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nVD-ha-OeR">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

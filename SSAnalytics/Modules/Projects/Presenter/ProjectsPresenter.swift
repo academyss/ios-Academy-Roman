@@ -16,6 +16,7 @@ final class ProjectsPresenter: SttPresenter<ProjectsViewDelegate> {
     private let _interactor: ProjectsInteractorType
     
     var projects = SttObservableCollection<ProjectTableViewCellPresenter>()
+    var selectedProjects = SttObservableCollection<ProjectTableViewCellPresenter>()
     
     private(set) lazy var getData = SttComandWithParametr(delegate: self, handler: { $0.onGetData($1) })
     private(set) lazy var done = SttCommand(delegate: self, handler: { $0.onDone() })
@@ -50,6 +51,7 @@ final class ProjectsPresenter: SttPresenter<ProjectsViewDelegate> {
     override func viewAppearing() {
         super.viewAppearing()
         getData.execute(parametr: "")
+        
     }
     
     
@@ -61,6 +63,11 @@ final class ProjectsPresenter: SttPresenter<ProjectsViewDelegate> {
         _interactor.getMyProjects(projectName: projectName)
             .subscribe(onNext: { [unowned self] projects in
                 self.projects.append(contentsOf: projects)
+                self.projects.forEach({ project in
+                    if self.selectedProjects.contains(where: { $0.id.value == project.id.value }) {
+                        project.isSelected.value = true
+                    }
+                })
                 }, onError: { [unowned self] error in
                     if let err = error as? SttBaseError {
                         self.delegate?.sendError(error: err)

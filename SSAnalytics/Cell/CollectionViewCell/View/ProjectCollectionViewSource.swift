@@ -22,5 +22,8 @@ final class ProjectCollectionViewSource: SttCollectionViewSource<ProjectCollecti
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         return CGSize(width: ((collection[indexPath.row].name.value) as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 18)!]).width + 13 + 30, height: 35)
     }
+    
+    
+    
 
 }

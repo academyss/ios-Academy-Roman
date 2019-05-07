@@ -59,7 +59,7 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
     
     override func viewAppearing() {
         super.viewAppearing()
-        deselectAll()
+//        deselectAll()
     }
     
     func onDownload() {

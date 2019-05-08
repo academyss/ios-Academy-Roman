@@ -17,8 +17,7 @@ final class CellTableViewSource: SttTableViewSource<CellTableViewCellPresenter> 
         self.init(tableView: tableView,
                   cellIdentifiers: [SttIdentifiers(identifers: CellTableViewCell.reusableIdentifier)],
                   collection: collection)
-    }
-    
+    }    
     
     override func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         let call = callAction(at: indexPath)

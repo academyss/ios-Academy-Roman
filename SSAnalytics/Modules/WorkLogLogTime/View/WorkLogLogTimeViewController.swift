@@ -14,6 +14,7 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var noDataLabel: UILabel!
+    @IBOutlet weak var emptyView: UIView!
     
     var source: WorkLogTimeTableViewSource!
     
@@ -40,13 +41,13 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
         
         source = WorkLogTimeTableViewSource(tableView: tableView, collection: presenter.itemsCollection)
         
-        set.bind(Bool.self).forProperty({ $0.noDataLabel.isHidden = !$1 }).to(presenter.isEmpty)
+        set.bind(Bool.self).forProperty({ $0.emptyView.isHidden = !$1 }).to(presenter.isEmpty)
         
         set.apply()
         
         presenter.download.useIndicator(view: tableView).disposed(by: presenter.listenerDisposableBag)
         presenter.download.useWork(handler: { [weak self] (status) in
-            self?.noDataLabel.isHidden = status
+            self?.emptyView.isHidden = status
         }).disposed(by: presenter.listenerDisposableBag)
     }
     
@@ -55,10 +56,26 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
     
     func updateTableView() {
         
-        UIView.transition(with: tableView,
-                          duration: 0.2,
-                          options: .transitionCrossDissolve,
-                          animations: { self.tableView.reloadData() })
+        self.tableView.reloadData()
+        var selectedSection = presenter.itemsCollection.index { (item) in
+            if item.0.contains(where: { $0.isSelected.value == true }) {
+                return true
+            }
+            return false
+        }
+        var selectedRow: Int?
+        if let sSection = selectedSection {
+            selectedRow = presenter.itemsCollection[sSection].0.index(where: { $0.isSelected.value == true })
+        }
+        
+        if let row = selectedRow, let section = selectedSection {
+            let indexPath = IndexPath(row: row, section: section)
+            guard let cell = tableView.cellForRow(at: indexPath) else { return }
+            
+            if tableView.visibleCells.last == cell {
+                self.tableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
+        }
     }
     
     func passParameterToPage(param: WorkLogDiaryRequestApiModel) {

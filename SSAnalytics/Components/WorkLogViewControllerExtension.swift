@@ -13,7 +13,7 @@ extension WorkLogViewController {
         self.filterBarButton = UIBarButtonItem(image: UIImage(named: "Filter"), style: .plain, target: self, action: #selector(showFilterPage))
         viewPager.parent = self
         viewPager.scrollView = scrollView
-        
+        viewPager.backgroundColor = UIColor.clear
         let vcStats = storyboard!.instantiateViewController(withIdentifier: "WorkLogStatistic")
         let vcLogTime = storyboard!.instantiateViewController(withIdentifier: "WorkLogLogTime") as! WorkLogLogTimeViewController
         

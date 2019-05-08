@@ -236,7 +236,7 @@ public class SttViewPagerHeader: UIView, UIScrollViewDelegate {
     }
     
     public func goToPage(page: Int) {
-        if page < segmentControl.numberOfSegments{
+        if page < segmentControl.numberOfSegments {
             segmentControl.selectedSegmentIndex = page
             selectedSegment = page
             redrawUnderline()

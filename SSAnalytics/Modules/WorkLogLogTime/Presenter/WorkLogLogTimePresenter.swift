@@ -10,8 +10,7 @@ import Foundation
 import STT
 import RxSwift
 
-final class WorkLogLogTimePresenter: SttPresenter<WorkLogLogTimeViewDelegate>, WorkLogTimeTableViewCellDelegate {
-    
+final class WorkLogLogTimePresenter: SttPresenter<WorkLogLogTimeViewDelegate>, WorkLogTimeTableViewCellDelegate {    
     
     private let _router: WorkLogLogTimeRouterType
     private let _interactor: WorkLogLogTimeInteractorType
@@ -77,5 +76,13 @@ final class WorkLogLogTimePresenter: SttPresenter<WorkLogLogTimeViewDelegate>, W
     func updateTableView() {
         delegate?.updateTableView()
     }
-    
+    func deselectAll(id: String) {
+        itemsCollection.forEach({ item in
+            item.0.forEach( { i in
+                if i.id.value != id {
+                    i.isSelected.value = false
+                }
+            })
+        })
+    }
 }

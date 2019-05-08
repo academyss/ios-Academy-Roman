@@ -12,8 +12,8 @@ extension ProjectsViewController {
     func initialSetup() {
         tableView.tableFooterView = UIView(frame: CGRect(x: 0, y: 0, width: tableView.bounds.width, height: 1))
         
-        doneButton.layer.cornerRadius = 15
-        doneButton.layer.borderColor = UIColor.black.cgColor
-        doneButton.layer.borderWidth = 2
+        doneButton.layer.cornerRadius = doneButton.bounds.height / 2
+        doneButton.backgroundColor = UIColor(named: "Blue")
+        doneButton.titleLabel?.textColor = UIColor.white
     }
 }

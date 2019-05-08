@@ -10,4 +10,5 @@ import Foundation
 
 protocol WorkLogTimeTableViewCellDelegate: AnyObject {
     func updateTableView()
+    func deselectAll(id: String)
 }

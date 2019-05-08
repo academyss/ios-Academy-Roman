@@ -15,6 +15,7 @@ struct WorkLogDiaryResponseApiModel: Codable {
 }
 
 struct LogItem: Codable {
+    var id: String
     var projectName: String
     var timeSpentSeconds: Int
     var describtion: String
@@ -22,6 +23,7 @@ struct LogItem: Codable {
     var status: WorkLogStatuses
     
     enum CodingKeys: String, CodingKey {
+        case id
         case projectName
         case timeSpentSeconds
         case describtion = "issueSummary"

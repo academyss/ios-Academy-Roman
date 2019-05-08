@@ -40,6 +40,9 @@ class ProfileInfoViewController: SttViewController<ProfileInfoPresenter>, Profil
         set.bind(emailLabel).to(presenter.email)
         set.bind(phoneLabel).to(presenter.phone)
         set.bind(skypeLabel).to(presenter.skype)
+         
+        set.bind(phoneLabel.tap()).to(presenter.call)
+        set.bind(emailLabel.tap()).to(presenter.sendEmail)
         
         set.bind(String.self).forProperty({ $0.title = $1}).to(presenter.name)
         

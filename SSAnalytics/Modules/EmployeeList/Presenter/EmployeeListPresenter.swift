@@ -31,7 +31,6 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
         
         super.init(notificationError: notificationService)
         super.injectView(delegate: view)
-        searchString.addListener({ print($0) })
     }
     
     private var firstStart = true
@@ -57,11 +56,6 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
         }        
     }
     
-    override func viewAppearing() {
-        super.viewAppearing()
-//        deselectAll()
-    }
-    
     func onDownload() {
         self.employeesCollection.removeAll()
         _interactor.getUsersByInput(input: searchString.value ?? "")
@@ -85,8 +79,11 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
         delegate?.updateTableView()
     }
     
-    func deselectAll() {
-        employeesCollection.forEach({ $0.isSelected.value = false })
-        updateTableView()
+    func deselectAll(employeeId: String) {
+        employeesCollection.forEach({ employee in
+            if employee.id.value != employeeId {
+                employee.isSelected.value = false
+            }
+        })
     }
 }

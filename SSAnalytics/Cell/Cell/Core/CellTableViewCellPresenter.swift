@@ -14,6 +14,7 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     weak var parent: CellTableViewCellDelegate?
     var user: EmployeeApiModel
     
+    let id: Dynamic<String>
     let avatarImage: Dynamic<Image>
     let name: Dynamic<String>
     let job: Dynamic<String>
@@ -37,6 +38,7 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
         self.phone = Dynamic(employee.phoneNumber)
         self.skype = Dynamic(employee.skype)
         self.email = Dynamic(employee.email)
+        self.id = Dynamic(employee.id)
         
         self.isSelected = Dynamic(false)
         
@@ -45,6 +47,7 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     }
     
     func onSelect() {
+        parent?.deselectAll(employeeId: id.value)
         print(isSelected.value)
         isSelected.value.toggle()
         parent?.updateTableView()

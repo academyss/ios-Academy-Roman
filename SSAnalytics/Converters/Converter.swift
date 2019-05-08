@@ -72,7 +72,8 @@ class DateForDatePickerConverter: SttConverter<Date, String?> {
     override func convert(value: Date, parametr: Any?) -> String? {
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "dd/MM/yyyy"
-        return dateFormatter.string(from: value)
+        let result = dateFormatter.string(from: value)
+        return result
     }
 }
 

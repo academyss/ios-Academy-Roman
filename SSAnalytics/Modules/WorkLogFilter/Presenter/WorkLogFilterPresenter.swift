@@ -77,7 +77,6 @@ final class WorkLogFilterPresenter: SttPresenterWithParametr<WorkLogFilterViewDe
     }
     
     func onClear() {
-        isEmpty.value = false
         projects.removeAll()
     }
     

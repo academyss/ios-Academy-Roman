@@ -28,7 +28,7 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
             #selector(handleRefresh(_:)),
                                  for: UIControl.Event.valueChanged)
         refreshControl.tintColor = UIColor.clear
-
+        
         return refreshControl
     }()
     
@@ -40,6 +40,7 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         configureTableView()
         configureSideMenu()
         self.employeesTableView.addSubview(self.refreshControl)
+        UIView.appearance().isExclusiveTouch = true
     }
     
     
@@ -70,10 +71,16 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     
     func updateTableView() {
         self.employeesTableView.reloadData()
+        let selectedRow = presenter.employeesCollection.index(where: { $0.isSelected.value == true })
+        if let row = selectedRow {
+            let indexPath = IndexPath(row: row, section: 0)
+            guard let cell = employeesTableView.cellForRow(at: indexPath) else { return }
+            
+            if employeesTableView.visibleCells.last == cell {
+                self.employeesTableView.scrollToRow(at: indexPath, at: .bottom, animated: true)
+            }
+        }
     }
-    
-    
-    
     
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.presenter.download.execute()

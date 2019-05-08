@@ -11,7 +11,7 @@ import STT
 
 extension LogItem {
     func convertLogItem() -> WorkLogTimeTableViewCellPresenter {
-        return WorkLogTimeTableViewCellPresenter(projectName: self.projectName, spendedTime: self.timeSpentSeconds, describtion: self.describtion, startTime: self.startTime, status: self.status)
+        return WorkLogTimeTableViewCellPresenter(id: self.id, projectName: self.projectName, spendedTime: self.timeSpentSeconds, describtion: self.describtion, startTime: self.startTime, status: self.status)
     }
 }
 

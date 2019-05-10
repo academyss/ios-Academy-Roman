@@ -54,6 +54,7 @@ final class CellTableViewCellPresenter: SttPresenter<CellTableViewCellViewDelega
     }
     
     func onProfileShow() {
+        parent?.endSearch()
         parent?.navigate(user: self.user)
     }
     

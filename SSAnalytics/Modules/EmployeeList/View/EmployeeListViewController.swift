@@ -22,16 +22,6 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
     var employees: CellTableViewSource!
     var searchBarHandler: SttHanlderSearchBar!
     
-    lazy var refreshControl: UIRefreshControl = {
-        let refreshControl = UIRefreshControl()
-        refreshControl.addTarget(self, action:
-            #selector(handleRefresh(_:)),
-                                 for: UIControl.Event.valueChanged)
-        refreshControl.tintColor = UIColor.clear
-        
-        return refreshControl
-    }()
-    
     override func viewDidLoad() {
         self.useErrorLabel = false
         super.viewDidLoad()
@@ -39,7 +29,6 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         configureNavigationBar()
         configureTableView()
         configureSideMenu()
-        self.employeesTableView.addSubview(self.refreshControl)
         UIView.appearance().isExclusiveTouch = true
     }
     
@@ -62,7 +51,12 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         
         presenter.download.useIndicator(view: employeesTableView)
             .disposed(by: presenter.listenerDisposableBag)
+        presenter.refresh.useRefresh(scrollView: employeesTableView)
+            .disposable.disposed(by: presenter.listenerDisposableBag)
         
+        presenter.refresh.useWork(handler: { [unowned self] (status) in
+            self.noDataLabel.isHidden = status
+        }).disposed(by: presenter.listenerDisposableBag)
         presenter.download.useWork(handler: { [unowned self] (status) in
             self.noDataLabel.isHidden = status
         }).disposed(by: presenter.listenerDisposableBag)
@@ -82,9 +76,15 @@ class EmployeeListViewController: SttViewController<EmployeeListPresenter>, Empl
         }
     }
     
+    func endSearch() {
+        searchBar.endEditing(true)
+    }
+    
     @objc func handleRefresh(_ refreshControl: UIRefreshControl) {
         self.presenter.download.execute()
         refreshControl.endRefreshing()
     }
+    
+    
     
 }

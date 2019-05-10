@@ -11,4 +11,5 @@ import STT
 
 protocol EmployeeListViewDelegate: SttViewControlable {
     func updateTableView()
+    func endSearch()
 }

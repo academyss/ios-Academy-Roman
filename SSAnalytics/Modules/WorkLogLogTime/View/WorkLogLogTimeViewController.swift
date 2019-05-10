@@ -49,6 +49,13 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
         presenter.download.useWork(handler: { [weak self] (status) in
             self?.emptyView.isHidden = status
         }).disposed(by: presenter.listenerDisposableBag)
+        
+        presenter.refresh.useWork(handler: { [weak self] (status) in
+            self?.emptyView.isHidden = status
+        }).disposed(by: presenter.listenerDisposableBag)
+        presenter.refresh.useRefresh(scrollView: tableView)
+            .disposable.disposed(by: presenter.listenerDisposableBag)
+        
     }
     
     
@@ -57,7 +64,7 @@ class WorkLogLogTimeViewController: SttViewController<WorkLogLogTimePresenter>, 
     func updateTableView() {
         
         self.tableView.reloadData()
-        var selectedSection = presenter.itemsCollection.index { (item) in
+        let selectedSection = presenter.itemsCollection.index { (item) in
             if item.0.contains(where: { $0.isSelected.value == true }) {
                 return true
             }

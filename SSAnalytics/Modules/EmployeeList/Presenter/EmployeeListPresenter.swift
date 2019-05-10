@@ -22,6 +22,7 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
     let searchString: Dynamic<String?> = Dynamic("")
     
     private(set) lazy var download: SttCommand = SttCommand(delegate: self, handler: { $0.onDownload() })
+    private(set) lazy var refresh = SttCommand(delegate: self, handler: { $0.onRefresh() })
     
     init(view: SttViewable, notificationService: SttNotificationErrorServiceType, router: EmployeeListRouterType,
          interactor: EmployeeListInteractorType) {
@@ -71,6 +72,20 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
             }).disposed(by: disposeBag)
     }
     
+    func onRefresh() {
+        self.employeesCollection.removeAll()
+        _interactor.getUsersByInput(input: searchString.value ?? "")
+            .delaySubscription(0.25, scheduler: MainScheduler.instance)
+            .useWork(refresh)
+            .subscribe(onNext: { [unowned self] users in
+                self.employeesCollection.append(contentsOf: users)
+                self.employeesCollection.forEach({ $0.parent = self })
+                }, onError: { [unowned self] error in
+                    if let err = error as? SttBaseError {
+                        self.delegate?.sendError(error: err)
+                    }
+            }).disposed(by: disposeBag)
+    }
     func navigate(user: EmployeeApiModel) {
         _router.navigateWithId(to: ProfileInfoPresenter.self, parametr: user, typeNavigation: .push, animate: true)
     }
@@ -85,5 +100,9 @@ final class EmployeeListPresenter: SttPresenter<EmployeeListViewDelegate>, CellT
                 employee.isSelected.value = false
             }
         })
+    }
+    
+    func endSearch() {
+        delegate?.endSearch()
     }
 }

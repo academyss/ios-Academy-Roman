@@ -48,11 +48,13 @@ final class ProfileInfoPresenter: SttPresenterWithParametr<ProfileInfoViewDelega
     }
     
     func onCall() {
+        print("Call")
         guard let number = URL(string: "tel://" + phone.value) else { return }
         UIApplication.shared.open(number)
     }
     
     func onEmail() {
+        print("email")
         let email = self.email.value
         if let url = URL(string: "mailto:\(email)") {
             if #available(iOS 10.0, *) {

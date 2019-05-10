@@ -47,9 +47,11 @@ extension WorkLogStatisticViewController {
     }
     
     @objc func onToday() {
+        self.todayButton.backgroundColor = UIColor(named: "LightGray")
         monthYearPicker.year = currentYear
         monthYearPicker.month = currentMonth
         self.presenter.getSummary.execute(parametr: "\(monthYearPicker.year)-\(monthYearPicker.month)")
+        self.todayButton.backgroundColor = UIColor.white
     }
     
 }

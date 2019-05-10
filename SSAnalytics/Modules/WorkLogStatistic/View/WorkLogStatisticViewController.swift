@@ -54,10 +54,7 @@ class WorkLogStatisticViewController: SttViewController<WorkLogStatisticPresente
         set.bind(rejectedHoursLabel).to(presenter.rejected).withConverter(TimeFromSecondsConverter.self)
         
         set.apply()
-        presenter.getSummary
-            .useWork(start: {  self.todayButton.backgroundColor = UIColor(named: "LightGray") },
-                     end: { self.todayButton.backgroundColor = UIColor.white })
-            .disposed(by: presenter.listenerDisposableBag)
+        
     }
     
     

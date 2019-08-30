@@ -58,7 +58,7 @@ final class SharedAsembly: Assembly {
                            factory: { r in
                             SttHttpService(
                                 url: Environment.configuration(.serverUrl) + Environment.configuration(.versionAPI),
-                                timeout: Constants.timeout,
+                                timeout: .seconds(Constants.timeout),
                                 tokenGetter: { Observable<String>.just(Constants.tokenPrefix + r.resolve(KeyValueStorageType.self)!.token.get().token) })
         })
             .inObjectScope(.container)

@@ -32,7 +32,7 @@ final class CellTableViewSource: SttTableViewSource<CellTableViewCellPresenter> 
     
     func callAction(at indexPath: IndexPath) -> UIContextualAction {
         
-        let employee = collection[indexPath.row]
+        let employee = presenter(at: indexPath)
         print(employee.phone.value)
         let action = UIContextualAction(style: .normal, title: "Call") { (action, view, completion) in
             guard let number = URL(string: "tel://" + employee.phone.value) else { return }

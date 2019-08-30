@@ -9,6 +9,7 @@
 import Foundation
 import RxSwift
 import STT
+import Alamofire
 
 final class ApiDataProvider: ApiDataProviderType {
     
@@ -27,7 +28,7 @@ final class ApiDataProvider: ApiDataProviderType {
         return _httpService.post(controller: ApiConroller.token,
                                  data: ["grant_type" : "password",
                                           "username" : data.email,
-                                          "password" : data.password])
+                                          "password" : data.password], encoding: URLEncoding.httpBody)
             .getResult()
     }
     

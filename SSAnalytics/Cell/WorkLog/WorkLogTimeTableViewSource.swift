@@ -26,7 +26,7 @@ final class WorkLogTimeTableViewSource: SttTableViewSourceWithSection<WorkLogTim
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let view = WorkLogTimeSectionView()
         view.backgroundColor = UIColor(named: "SectionBackground" )
-        view.presenter = collection[section].1
+//        view.presenter = collection[section].1
         return view
     }
     

@@ -22,16 +22,16 @@ extension EmployeeListViewController {
         self.searchBar = UISearchBar()
         self.searchBarHandler = SttHanlderSearchBar()
         searchBar.delegate = searchBarHandler
-        self.searchBarHandler.addTarget(type: .textDidChange, delegate: self) { (v, sb) in
-            v.presenter.searchString.value = sb.text
-        }
-        self.searchBarHandler.addTarget(type: .shouldBeginEditing, delegate: self, handler: { (v, sb) in
-            v.presenter.searchString.value = sb.text
-        })
-        self.searchBarHandler.addTarget(type: .searchButtonClicked, delegate: self) { (view, sb) in
-            view.presenter.download.execute()
-            sb.endEditing(true)
-        }
+//        self.searchBarHandler.addTarget(type: .textDidChange, delegate: self) { (v, sb) in
+//            v.presenter.searchString.value = sb.text
+//        }
+//        self.searchBarHandler.addTarget(type: .shouldBeginEditing, delegate: self, handler: { (v, sb) in
+//            v.presenter.searchString.value = sb.text
+//        })
+//        self.searchBarHandler.addTarget(type: .searchButtonClicked, delegate: self) { (view, sb) in
+//            view.presenter.download.execute()
+//            sb.endEditing(true)
+//        }
         self.searchBarHandler.addTarget(type: .cancelClicked, delegate: self) { (view, sb) in
             sb.text = ""
             view.presenter.searchString.value = ""
@@ -40,9 +40,7 @@ extension EmployeeListViewController {
     }
     
     func configureSideMenu() {
-        SideMenuManager.default.menuLeftNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? UISideMenuNavigationController
-        SideMenuManager.default.menuWidth = view.bounds.width * 0.8
-        SideMenuManager.default.menuDismissOnPush = true
+        SideMenuManager.default.leftMenuNavigationController = storyboard!.instantiateViewController(withIdentifier: "LeftMenuNavigationController") as? SideMenuNavigationController
     }
     
     func configureNavigationBar() {
@@ -60,7 +58,7 @@ extension EmployeeListViewController {
 //        if !SideMenuManager.defaultManager.menuLeftNavigationController!.isBeingDismissed {
 //            SideMenuManager.defaultManager.menuLeftNavigationController?.dismiss(animated: false, completion: nil)
 //        }
-        present(SideMenuManager.default.menuLeftNavigationController!, animated: true, completion: nil)
+        present(SideMenuManager.default.leftMenuNavigationController!, animated: true, completion: nil)
     }
     
     

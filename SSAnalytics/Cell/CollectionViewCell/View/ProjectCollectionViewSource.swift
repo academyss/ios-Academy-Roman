@@ -10,7 +10,7 @@ import Foundation
 import UIKit
 import STT
 
-final class ProjectCollectionViewSource: SttCollectionViewSource<ProjectCollectionViewCellPresenter>, UICollectionViewDelegateFlowLayout {
+final class ProjectCollectionViewSource: SttCollectionViewSource<ProjectCollectionViewCellPresenter> {
     
 	convenience init(collectionView: UICollectionView, collection: SttObservableCollection<ProjectCollectionViewCellPresenter>) {
         
@@ -19,8 +19,8 @@ final class ProjectCollectionViewSource: SttCollectionViewSource<ProjectCollecti
                   collection: collection)
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: ((collection[indexPath.row].name.value) as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 18)!]).width + 13 + 30, height: 35)
+    override func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: ((presenter(at: indexPath).name.value) as NSString).size(withAttributes: [NSAttributedString.Key.font: UIFont(name: "Helvetica", size: 18)!]).width + 13 + 30, height: 35)
     }
     
     

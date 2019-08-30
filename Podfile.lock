@@ -2,54 +2,54 @@ PODS:
   - Alamofire (4.8.2)
   - AlamofireNetworkActivityLogger (2.4.0):
     - Alamofire (~> 4.8)
-  - AppCenter (2.0.1):
-    - AppCenter/Analytics (= 2.0.1)
-    - AppCenter/Crashes (= 2.0.1)
-  - AppCenter/Analytics (2.0.1):
+  - AppCenter (2.3.0):
+    - AppCenter/Analytics (= 2.3.0)
+    - AppCenter/Crashes (= 2.3.0)
+  - AppCenter/Analytics (2.3.0):
     - AppCenter/Core
-  - AppCenter/Core (2.0.1)
-  - AppCenter/Crashes (2.0.1):
+  - AppCenter/Core (2.3.0)
+  - AppCenter/Crashes (2.3.0):
     - AppCenter/Core
-  - Cuckoo (0.13.0)
-  - KeychainSwift (10.0.0)
+  - Cuckoo (1.1.1)
+  - KeychainSwift (16.0.1)
   - LightRoute (2.1.20)
-  - RxAlamofire (4.4.1):
-    - RxAlamofire/Core (= 4.4.1)
-  - RxAlamofire/Core (4.4.1):
+  - RxAlamofire (5.0.0):
+    - RxAlamofire/Core (= 5.0.0)
+  - RxAlamofire/Core (5.0.0):
     - Alamofire (~> 4.8)
-    - RxSwift (~> 4.5)
-  - RxBlocking (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - RxSwift (4.5.0)
-  - RxTest (4.5.0):
-    - RxSwift (>= 4.4.2, ~> 4.4)
-  - SDWebImage (4.4.6):
-    - SDWebImage/Core (= 4.4.6)
-  - SDWebImage/Core (4.4.6)
-  - SideMenu (5.0.3)
+    - RxSwift (~> 5.0)
+  - RxBlocking (5.0.0):
+    - RxSwift (~> 5)
+  - RxSwift (5.0.0)
+  - RxTest (5.0.0):
+    - RxSwift (~> 5)
+  - SDWebImage (4.4.7):
+    - SDWebImage/Core (= 4.4.7)
+  - SDWebImage/Core (4.4.7)
+  - SideMenu (6.2.4)
   - SINQ (0.7.0)
-  - STT (1.1.11):
-    - Alamofire (~> 4.7)
-    - KeychainSwift (~> 10.0)
+  - STT (2.2.8):
+    - Alamofire (~> 4.8.2)
+    - KeychainSwift (~> 16.0)
     - RxAlamofire
-    - RxSwift (~> 4.0)
+    - RxSwift (~> 5)
     - TinyConstraints
-  - Swinject (2.6.0)
+  - Swinject (2.6.2)
   - SwinjectStoryboard (2.2.0):
     - Swinject (~> 2.6)
-  - TinyConstraints (4.0.0)
+  - TinyConstraints (4.0.1)
 
 DEPENDENCIES:
-  - AlamofireNetworkActivityLogger (~> 2.3)
+  - AlamofireNetworkActivityLogger
   - AppCenter
   - Cuckoo
   - LightRoute (from `https://github.com/SpectralDragon/LightRoute.git`, tag `2.1.20`)
-  - RxBlocking (~> 4.0)
-  - RxTest (~> 4.0)
-  - SDWebImage (~> 4.0)
+  - RxBlocking
+  - RxTest
+  - SDWebImage (~> 4.4.7)
   - SideMenu
   - SINQ
-  - STT (from `../../STT/STT`)
+  - STT (~> 2.2.8)
   - Swinject
   - SwinjectStoryboard
 
@@ -67,6 +67,7 @@ SPEC REPOS:
     - SDWebImage
     - SideMenu
     - SINQ
+    - STT
     - Swinject
     - SwinjectStoryboard
     - TinyConstraints
@@ -75,8 +76,6 @@ EXTERNAL SOURCES:
   LightRoute:
     :git: https://github.com/SpectralDragon/LightRoute.git
     :tag: 2.1.20
-  STT:
-    :path: "../../STT/STT"
 
 CHECKOUT OPTIONS:
   LightRoute:
@@ -86,22 +85,22 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   Alamofire: ae5c501addb7afdbb13687d7f2f722c78734c2d3
   AlamofireNetworkActivityLogger: 6d3398c692d2c5d83b0c58793537860aca1e383d
-  AppCenter: 6a5ff2fd007b53431259fdd74f91eb3d0dfea3d1
-  Cuckoo: 3112ee8b01d84e21bde500a45f9992ac81d80006
-  KeychainSwift: f9f7910449a0c0fd2cabc889121530dd2c477c33
+  AppCenter: 9784d2fc998c9bd0b8fbaf4fb9ed69526d12ce1a
+  Cuckoo: 6193c50e46403cc9417aa98752671a2a5ae6f3a6
+  KeychainSwift: 4209611373ca4a098e09b1e547eebd87c544dcc4
   LightRoute: aa65803a1d984be3be83651b433699077bfe6ab3
-  RxAlamofire: ed65f451f5a9a59419b0b9e705043dc01410edd9
-  RxBlocking: 79413e4d916f44bb3e113c5b2cc059e36fe58910
-  RxSwift: f172070dfd1a93d70a9ab97a5a01166206e1c575
-  RxTest: 3ccb66bfbace0bf7df1c43a7c75d046f8ce60372
-  SDWebImage: 3f3f0c02f09798048c47a5ed0a13f17b063572d8
-  SideMenu: 1dcaabce84538c53325c287f7fe62999379a641c
+  RxAlamofire: e7875a012aff55345672d0f70a2a9cd6aeb0f211
+  RxBlocking: c67185d26498ea3cbe3e121917c3c16739e43123
+  RxSwift: 8b0671caa829a763bbce7271095859121cbd895f
+  RxTest: 4349afe98f564e0a9bc19063368904622d17d49a
+  SDWebImage: c10d14a8883ebd89664f02a422006f66a85c0c5d
+  SideMenu: 60c9be9452d0756c3e723f9e508abb028e138361
   SINQ: 64cab7b7c73486da8f4442c25ccdd6ada7e67b95
-  STT: 8a6409852efb118463e26377c8caeccdbb9e8440
-  Swinject: 48a96cda93633cf2860697b4ce76ab5db9ebaca2
+  STT: 6d37b0c816b04de38076c709a0de2ad4f9af3aad
+  Swinject: cf7458774b1b00323080a9c67e47a1ee7f9d2af1
   SwinjectStoryboard: 32512ef16c2b0ff5b8f823b23539c4a50f6d3383
-  TinyConstraints: 03bc091844b98c18dbaead8b1153242a42721b56
+  TinyConstraints: 8dd91295e56797648c7bc335dd20e1d91ec4c192
 
-PODFILE CHECKSUM: a43308931420ea6602b0d89ee52a8ff290c590d8
+PODFILE CHECKSUM: ef3ed382ff89990629eac36d3923a118a442c833
 
-COCOAPODS: 1.7.0.beta.3
+COCOAPODS: 1.7.5

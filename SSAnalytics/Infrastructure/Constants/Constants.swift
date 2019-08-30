@@ -19,7 +19,7 @@ final class Constants {
     // api config
     static let maxImageCacheSize = 1024 * 1024 * 200
     static let maxCacheAge = 60 * 60 * 24 * 7 * 4
-    static let timeout = TimeInterval(15) + TimeInterval(timeWaitNextRequest)
+    static let timeout = 40
     static let timeWaitNextRequest = UInt32(2)
     static let maxCountRepeatRequest = 3
     static let tokenPrefix = "Bearer "

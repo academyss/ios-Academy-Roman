@@ -91,8 +91,8 @@
 		507354C32255FD1100998237 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5073546D2255FD1000998237 /* LaunchScreen.storyboard */; };
 		507354C42255FD1100998237 /* AppDelegateExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507354702255FD1000998237 /* AppDelegateExtensions.swift */; };
 		507354C52255FD1100998237 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 507354712255FD1000998237 /* AppDelegate.swift */; };
-		52605E1163DEFE419D3FF8C2 /* Pods_SSAnalytics_SSAnalyticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 779807B0E3D2D503F3DFFCAF /* Pods_SSAnalytics_SSAnalyticsTests.framework */; };
-		6C6C3190F1D5E8331028A272 /* Pods_SSAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DED8297239D7CA178071780B /* Pods_SSAnalytics.framework */; };
+		5A070E2278C0D2090C421D11 /* Pods_SSAnalytics_SSAnalyticsTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7A94EBA1E007550CA69C9BA2 /* Pods_SSAnalytics_SSAnalyticsTests.framework */; };
+		5E3CE85725C1586BFC1951D4 /* Pods_SSAnalytics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D49495EACD69B0A83B44254A /* Pods_SSAnalytics.framework */; };
 		94C1855C22706DBC00BE009C /* WorkLogTimeTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1855722706DBC00BE009C /* WorkLogTimeTableViewCellDelegate.swift */; };
 		94C1855D22706DBC00BE009C /* WorkLogTimeTableViewCellPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1855822706DBC00BE009C /* WorkLogTimeTableViewCellPresenter.swift */; };
 		94C1855E22706DBC00BE009C /* WorkLogTimeTableViewCellViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 94C1855922706DBC00BE009C /* WorkLogTimeTableViewCellViewDelegate.swift */; };
@@ -221,10 +221,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		35613103FC2E83E3DE9D9A9B /* Pods-SSAnalytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.debug.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.debug.xcconfig"; sourceTree = "<group>"; };
-		35D6700BEED904763348C3E0 /* Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig"; sourceTree = "<group>"; };
-		431B4B4EB7DD048966677F77 /* Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig"; sourceTree = "<group>"; };
-		475B01B9A973770310EFC64B /* Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig"; sourceTree = "<group>"; };
+		04D451C28A01509A1F59550D /* Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig"; sourceTree = "<group>"; };
+		081F143A8E472F782295903B /* Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig"; sourceTree = "<group>"; };
+		2452047FBCA029B188A4FD2A /* Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig"; sourceTree = "<group>"; };
 		507353CC2255FC7D00998237 /* SSAnalytics.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SSAnalytics.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		507353DB2255FC7D00998237 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		507353E02255FC7D00998237 /* SSAnalyticsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SSAnalyticsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -313,8 +312,8 @@
 		5073546E2255FD1000998237 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		507354702255FD1000998237 /* AppDelegateExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegateExtensions.swift; sourceTree = "<group>"; };
 		507354712255FD1000998237 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		779807B0E3D2D503F3DFFCAF /* Pods_SSAnalytics_SSAnalyticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAnalytics_SSAnalyticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		825B874B32B9E634203C9F4A /* Pods-SSAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.release.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.release.xcconfig"; sourceTree = "<group>"; };
+		6CA3CF6F7846DBB362F7B00A /* Pods-SSAnalytics.release uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.release uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.release uat.xcconfig"; sourceTree = "<group>"; };
+		7A94EBA1E007550CA69C9BA2 /* Pods_SSAnalytics_SSAnalyticsTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAnalytics_SSAnalyticsTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		94C1855722706DBC00BE009C /* WorkLogTimeTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		94C1855822706DBC00BE009C /* WorkLogTimeTableViewCellPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeTableViewCellPresenter.swift; sourceTree = "<group>"; };
 		94C1855922706DBC00BE009C /* WorkLogTimeTableViewCellViewDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WorkLogTimeTableViewCellViewDelegate.swift; sourceTree = "<group>"; };
@@ -430,10 +429,11 @@
 		94FD576A2264CCCA006155E2 /* MenuRouterType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuRouterType.swift; sourceTree = "<group>"; };
 		94FD576B2264CCCA006155E2 /* MenuInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuInteractor.swift; sourceTree = "<group>"; };
 		94FD576C2264CCCA006155E2 /* MenuPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuPresenter.swift; sourceTree = "<group>"; };
-		B3F512D28292C3F8E4271A5E /* Pods-SSAnalytics.debug uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.debug uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.debug uat.xcconfig"; sourceTree = "<group>"; };
-		D9E9059AD76E7248C78862F3 /* Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig"; sourceTree = "<group>"; };
-		DED8297239D7CA178071780B /* Pods_SSAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F7ECD96960F607FDA52588CB /* Pods-SSAnalytics.release uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.release uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.release uat.xcconfig"; sourceTree = "<group>"; };
+		9858AFCDF40C363634F52D6C /* Pods-SSAnalytics.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.debug.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.debug.xcconfig"; sourceTree = "<group>"; };
+		9E90348D8B29BC9FDECEB2AA /* Pods-SSAnalytics.debug uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.debug uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.debug uat.xcconfig"; sourceTree = "<group>"; };
+		AD25C17F8E5E66DBCDAA5845 /* Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig"; path = "Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig"; sourceTree = "<group>"; };
+		CF02B9315551B44DAD2A4581 /* Pods-SSAnalytics.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SSAnalytics.release.xcconfig"; path = "Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics.release.xcconfig"; sourceTree = "<group>"; };
+		D49495EACD69B0A83B44254A /* Pods_SSAnalytics.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SSAnalytics.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -441,7 +441,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6C6C3190F1D5E8331028A272 /* Pods_SSAnalytics.framework in Frameworks */,
+				5E3CE85725C1586BFC1951D4 /* Pods_SSAnalytics.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -449,33 +449,24 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				52605E1163DEFE419D3FF8C2 /* Pods_SSAnalytics_SSAnalyticsTests.framework in Frameworks */,
+				5A070E2278C0D2090C421D11 /* Pods_SSAnalytics_SSAnalyticsTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		15172E501A26156B1D457CC8 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				DED8297239D7CA178071780B /* Pods_SSAnalytics.framework */,
-				779807B0E3D2D503F3DFFCAF /* Pods_SSAnalytics_SSAnalyticsTests.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 		369A1090AF691ACE252F15B1 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				35613103FC2E83E3DE9D9A9B /* Pods-SSAnalytics.debug.xcconfig */,
-				825B874B32B9E634203C9F4A /* Pods-SSAnalytics.release.xcconfig */,
-				D9E9059AD76E7248C78862F3 /* Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig */,
-				35D6700BEED904763348C3E0 /* Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig */,
-				B3F512D28292C3F8E4271A5E /* Pods-SSAnalytics.debug uat.xcconfig */,
-				F7ECD96960F607FDA52588CB /* Pods-SSAnalytics.release uat.xcconfig */,
-				431B4B4EB7DD048966677F77 /* Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig */,
-				475B01B9A973770310EFC64B /* Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig */,
+				9858AFCDF40C363634F52D6C /* Pods-SSAnalytics.debug.xcconfig */,
+				9E90348D8B29BC9FDECEB2AA /* Pods-SSAnalytics.debug uat.xcconfig */,
+				CF02B9315551B44DAD2A4581 /* Pods-SSAnalytics.release.xcconfig */,
+				6CA3CF6F7846DBB362F7B00A /* Pods-SSAnalytics.release uat.xcconfig */,
+				081F143A8E472F782295903B /* Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig */,
+				AD25C17F8E5E66DBCDAA5845 /* Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig */,
+				2452047FBCA029B188A4FD2A /* Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig */,
+				04D451C28A01509A1F59550D /* Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig */,
 			);
 			path = Pods;
 			sourceTree = "<group>";
@@ -487,7 +478,7 @@
 				507353E32255FC7D00998237 /* SSAnalyticsTests */,
 				507353CD2255FC7D00998237 /* Products */,
 				369A1090AF691ACE252F15B1 /* Pods */,
-				15172E501A26156B1D457CC8 /* Frameworks */,
+				A7CF28CD0F6A58187055DC15 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1587,6 +1578,15 @@
 			path = Menu;
 			sourceTree = "<group>";
 		};
+		A7CF28CD0F6A58187055DC15 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				D49495EACD69B0A83B44254A /* Pods_SSAnalytics.framework */,
+				7A94EBA1E007550CA69C9BA2 /* Pods_SSAnalytics_SSAnalyticsTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1594,11 +1594,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 507353E92255FC7D00998237 /* Build configuration list for PBXNativeTarget "SSAnalytics" */;
 			buildPhases = (
-				D2F6BF7A8BC2C69603C6FBB1 /* [CP] Check Pods Manifest.lock */,
+				A3649C0D812946C8A34A0F4A /* [CP] Check Pods Manifest.lock */,
 				507353C82255FC7D00998237 /* Sources */,
 				507353C92255FC7D00998237 /* Frameworks */,
 				507353CA2255FC7D00998237 /* Resources */,
-				F8E6134E9CC7F3DC1FCE25BE /* [CP] Embed Pods Frameworks */,
+				793D6CAA89C7DA9394F400AC /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1613,11 +1613,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 507353EC2255FC7D00998237 /* Build configuration list for PBXNativeTarget "SSAnalyticsTests" */;
 			buildPhases = (
-				BF978D29556AB846130D4642 /* [CP] Check Pods Manifest.lock */,
+				12BC233D2B1222638B8F63E5 /* [CP] Check Pods Manifest.lock */,
 				507353DC2255FC7D00998237 /* Sources */,
 				507353DD2255FC7D00998237 /* Frameworks */,
 				507353DE2255FC7D00998237 /* Resources */,
-				AE57B02BBF5AB3DBD16477FA /* [CP] Embed Pods Frameworks */,
+				CA4655773288ABBF226610EA /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1699,24 +1699,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		AE57B02BBF5AB3DBD16477FA /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BF978D29556AB846130D4642 /* [CP] Check Pods Manifest.lock */ = {
+		12BC233D2B1222638B8F63E5 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1738,7 +1721,24 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		D2F6BF7A8BC2C69603C6FBB1 /* [CP] Check Pods Manifest.lock */ = {
+		793D6CAA89C7DA9394F400AC /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A3649C0D812946C8A34A0F4A /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1760,21 +1760,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		F8E6134E9CC7F3DC1FCE25BE /* [CP] Embed Pods Frameworks */ = {
+		CA4655773288ABBF226610EA /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+				"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics/Pods-SSAnalytics-frameworks.sh\"\n";
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SSAnalytics-SSAnalyticsTests/Pods-SSAnalytics-SSAnalyticsTests-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -2131,18 +2131,18 @@
 		};
 		507353EA2255FC7D00998237 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35613103FC2E83E3DE9D9A9B /* Pods-SSAnalytics.debug.xcconfig */;
+			baseConfigurationReference = 9858AFCDF40C363634F52D6C /* Pods-SSAnalytics.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PMRZ87664;
+				DEVELOPMENT_TEAM = 2F54F8MAVV;
 				INFOPLIST_FILE = "$(SRCROOT)/SSAnalytics/App_Start/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.startupsoft.SSapp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romanKovalchuk.SSapp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -2152,18 +2152,18 @@
 		};
 		507353EB2255FC7D00998237 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 825B874B32B9E634203C9F4A /* Pods-SSAnalytics.release.xcconfig */;
+			baseConfigurationReference = CF02B9315551B44DAD2A4581 /* Pods-SSAnalytics.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PMRZ87664;
+				DEVELOPMENT_TEAM = 2F54F8MAVV;
 				INFOPLIST_FILE = "$(SRCROOT)/SSAnalytics/App_Start/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.startupsoft.SSapp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romanKovalchuk.SSapp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -2173,7 +2173,7 @@
 		};
 		507353ED2255FC7D00998237 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = D9E9059AD76E7248C78862F3 /* Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig */;
+			baseConfigurationReference = 081F143A8E472F782295903B /* Pods-SSAnalytics-SSAnalyticsTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2195,7 +2195,7 @@
 		};
 		507353EE2255FC7D00998237 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 35D6700BEED904763348C3E0 /* Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig */;
+			baseConfigurationReference = 2452047FBCA029B188A4FD2A /* Pods-SSAnalytics-SSAnalyticsTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2280,18 +2280,18 @@
 		};
 		507354C82255FDC100998237 /* Debug UAT */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B3F512D28292C3F8E4271A5E /* Pods-SSAnalytics.debug uat.xcconfig */;
+			baseConfigurationReference = 9E90348D8B29BC9FDECEB2AA /* Pods-SSAnalytics.debug uat.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PMRZ87664;
+				DEVELOPMENT_TEAM = 2F54F8MAVV;
 				INFOPLIST_FILE = "$(SRCROOT)/SSAnalytics/App_Start/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.startupsoft.SSapp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romanKovalchuk.SSapp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -2301,7 +2301,7 @@
 		};
 		507354C92255FDC100998237 /* Debug UAT */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 431B4B4EB7DD048966677F77 /* Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig */;
+			baseConfigurationReference = AD25C17F8E5E66DBCDAA5845 /* Pods-SSAnalytics-SSAnalyticsTests.debug uat.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -2380,18 +2380,18 @@
 		};
 		507354CB2255FDD100998237 /* Release UAT */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = F7ECD96960F607FDA52588CB /* Pods-SSAnalytics.release uat.xcconfig */;
+			baseConfigurationReference = 6CA3CF6F7846DBB362F7B00A /* Pods-SSAnalytics.release uat.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 7PMRZ87664;
+				DEVELOPMENT_TEAM = 2F54F8MAVV;
 				INFOPLIST_FILE = "$(SRCROOT)/SSAnalytics/App_Start/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.startupsoft.SSapp1;
+				PRODUCT_BUNDLE_IDENTIFIER = com.romanKovalchuk.SSapp1;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 4.2;
@@ -2401,7 +2401,7 @@
 		};
 		507354CC2255FDD100998237 /* Release UAT */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 475B01B9A973770310EFC64B /* Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig */;
+			baseConfigurationReference = 04D451C28A01509A1F59550D /* Pods-SSAnalytics-SSAnalyticsTests.release uat.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
